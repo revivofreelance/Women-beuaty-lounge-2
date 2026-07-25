@@ -111,10 +111,10 @@ export function GlowFinder() {
       <div className="pointer-events-none absolute -left-24 -top-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-salon-gold/20 blur-3xl" />
 
-      <div className="relative p-3 md:p-4 lg:p-5">
+      <div className="relative p-3 sm:p-4 lg:p-5">
         {/* Progress */}
         <div className="flex items-center justify-between">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <span className="inline-flex items-center gap-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-primary sm:gap-2 sm:text-xs sm:tracking-[0.2em]">
             <Sparkles className="h-3.5 w-3.5" /> Glow finder
           </span>
           <div className="flex items-center gap-1.5">
@@ -141,13 +141,13 @@ export function GlowFinder() {
                     key={o.id}
                     type="button"
                     onClick={() => setOccasion(o.id)}
-                    className="group flex items-center gap-2.5 rounded-2xl border border-border/70 sm:gap-4 bg-background p-4 text-left transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                    className="group flex flex-col items-start gap-1.5 rounded-xl border border-border/70 bg-background p-2.5 text-left sm:flex-row sm:items-center sm:gap-4 sm:rounded-2xl sm:p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                   >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                      <o.icon className="h-5 w-5" />
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-11 sm:w-11 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <o.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </span>
                     <span>
-                      <span className="block font-semibold">{o.label}</span>
+                      <span className="block text-xs font-semibold leading-tight sm:text-base">{o.label}</span>
                       <span className="block text-[0.65rem] text-muted-foreground sm:text-xs">{o.hint}</span>
                     </span>
                   </button>
@@ -166,19 +166,19 @@ export function GlowFinder() {
                     key={f.id}
                     type="button"
                     onClick={() => setFocus(f.id)}
-                    className="group flex items-center gap-2.5 rounded-2xl border border-border/70 sm:gap-4 bg-background p-4 text-left transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                    className="group flex flex-col items-start gap-1.5 rounded-xl border border-border/70 bg-background p-2.5 text-left sm:flex-row sm:items-center sm:gap-4 sm:rounded-2xl sm:p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                   >
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                      <f.icon className="h-5 w-5" />
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-11 sm:w-11 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <f.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </span>
                     <span>
-                      <span className="block font-semibold">{f.label}</span>
+                      <span className="block text-xs font-semibold leading-tight sm:text-base">{f.label}</span>
                       <span className="block text-[0.65rem] text-muted-foreground sm:text-xs">{f.hint}</span>
                     </span>
                   </button>
                 ))}
               </div>
-              <button type="button" onClick={reset} className="mt-5 inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-primary">
+              <button type="button" onClick={reset} className="mt-3 inline-flex items-center gap-1.5 text-xs sm:mt-5 font-medium text-muted-foreground transition-colors hover:text-primary">
                 <RotateCcw className="h-3 w-3" /> Start over
               </button>
             </motion.div>
@@ -186,34 +186,34 @@ export function GlowFinder() {
 
           {step === 2 && result && (
             <motion.div key="result" variants={stepVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.35 }}>
-              <p className="mt-5 text-sm font-medium text-primary">Your perfect match ✨</p>
-              <div className="mt-3 grid gap-6 sm:grid-cols-[220px_1fr] sm:items-center">
+              <p className="mt-3 text-xs font-medium text-primary sm:mt-5 sm:text-sm">Your perfect match ✨</p>
+              <div className="mt-3 grid gap-3 sm:gap-6 sm:grid-cols-[220px_1fr] sm:items-center">
                 <Image
                   src={result.image}
                   alt={result.name}
-                  className="rounded-arch-tight aspect-[4/5] w-full max-w-[220px] object-cover shadow-lg"
+                  className="rounded-arch-tight aspect-[3/2] w-full object-cover shadow-lg sm:aspect-[4/5] sm:max-w-[220px]"
                   width={440}
                   height={550}
                   sizes="220px"
                 />
                 <div>
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary px-2.5 py-0.5 text-[0.65rem] sm:px-3 sm:py-1 sm:text-xs font-medium text-secondary-foreground">
                     {result.tag}
                   </span>
-                  <h3 className="mt-3 font-serif font-semibold text-lg md:text-xl lg:text-2xl">{result.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">{result.description}</p>
-                  <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
-                    <span className="inline-flex items-center gap-1.5 text-muted-foreground"><Tag className="h-4 w-4 text-salon-gold" /> from <span className="font-serif text-lg font-semibold text-primary">${result.price}</span></span>
+                  <h3 className="mt-2 font-serif font-semibold text-base sm:mt-3 sm:text-lg md:text-xl lg:text-2xl">{result.name}</h3>
+                  <p className="mt-1.5 text-xs text-muted-foreground leading-snug sm:mt-2 sm:text-sm md:leading-relaxed">{result.description}</p>
+                  <div className="mt-2.5 flex flex-wrap items-center gap-3 text-xs sm:mt-4 sm:gap-4 sm:text-sm">
+                    <span className="inline-flex items-center gap-1.5 text-muted-foreground"><Tag className="h-4 w-4 text-salon-gold" /> from <span className="font-serif text-base font-semibold text-primary sm:text-lg">${result.price}</span></span>
                     <span className="inline-flex items-center gap-1.5 text-muted-foreground"><Clock className="h-4 w-4 text-salon-gold" /> {result.duration}</span>
                   </div>
-                  <div className="mt-5 flex flex-wrap items-center gap-3">
+                  <div className="mt-3 flex flex-wrap items-center gap-2 sm:mt-5 sm:gap-3">
                     <Button
                       onClick={() => openBooking(result.bookSlug ? { service: result.bookSlug } : undefined)}
-                      className="rounded-full bg-primary px-6 shadow-md shadow-primary/25 hover:bg-primary/90"
+                      className="rounded-full bg-primary px-4 text-xs shadow-md shadow-primary/25 hover:bg-primary/90 sm:px-6 sm:text-sm"
                     >
                       <CalendarHeart className="mr-2 h-4 w-4" /> Book this
                     </Button>
-                    <Link href={result.href} className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
+                    <Link href={result.href} className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline sm:text-sm">
                       See details <ArrowRight className="h-4 w-4" />
                     </Link>
                     <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-primary">

@@ -54,7 +54,7 @@ export default function HomePage() {
           alt="Lumière Beauty Lounge salon interior"
         />
 
-        <div className="mx-auto flex min-h-[62vh] sm:min-h-[75vh] md:min-h-[88vh] max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8 lg:min-h-[92vh] py-5 sm:py-5 sm:py-6 md:py-10 lg:py-12">
+        <div className="mx-auto flex min-h-[62vh] sm:min-h-[75vh] md:min-h-[88vh] max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8 lg:min-h-[92vh] py-5 sm:py-6 md:py-10 lg:py-12">
           <div className="max-w-2xl">
             <Reveal>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-background/15 px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-background backdrop-blur-sm ring-1 ring-background/20 sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs sm:tracking-[0.18em]">
@@ -261,7 +261,7 @@ export default function HomePage() {
       </section>
 
       {/* ============== NUMBERS BAND ============== */}
-      <section className="border-y border-border/60 bg-background py-5 sm:py-4 sm:py-6 md:py-8 lg:py-10">
+      <section className="border-y border-border/60 bg-background py-4 sm:py-6 md:py-8 lg:py-10">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-4 sm:gap-y-10 sm:px-6 lg:grid-cols-4 lg:px-8">
           {[
             { value: 28000, suffix: "+", label: "Happy clients" },
@@ -365,31 +365,31 @@ export default function HomePage() {
       <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Curated bundles" title="Popular beauty packages" description="Combine your favourite services and save. Perfect for brides, party prep and monthly self-care." />
-          <div className="mt-5 md:mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-4 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
             {featuredPackages.map((p, i) => (
               <Reveal key={p.slug} delay={i * 80}>
                 <Card className={`group relative h-full overflow-hidden border-border/70 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/10 ${p.popular ? "ring-2 ring-primary" : ""}`}>
                   {/* Both corner badges share one stack so they can never sit on each other */}
-                  <div className="absolute right-3 top-3 z-10 flex flex-col items-end gap-2">
-                    {p.popular && <Badge className="bg-primary text-primary-foreground">Most popular</Badge>}
-                    <span className="flex items-center gap-1 rounded-full bg-salon-gold px-2.5 py-1 text-xs font-bold text-foreground shadow-sm">
+                  <div className="absolute right-1.5 top-1.5 z-10 flex flex-col items-end gap-1 sm:right-3 sm:top-3 sm:gap-2">
+                    {p.popular && <Badge className="bg-primary px-1.5 py-0 text-[0.55rem] text-primary-foreground sm:px-2 sm:text-xs">Most popular</Badge>}
+                    <span className="flex items-center gap-1 rounded-full bg-salon-gold px-1.5 py-0.5 text-[0.55rem] sm:px-2.5 sm:py-1 sm:text-xs font-bold text-foreground shadow-sm">
                       <Sparkles className="h-3 w-3" /> Save {p.save}%
                     </span>
                   </div>
-                  <div className="relative aspect-[2/1] sm:aspect-[16/10] overflow-hidden">
+                  <div className="relative aspect-[3/2] sm:aspect-[16/10] overflow-hidden">
                     <Image src={getImage(p.imageKey, p.imageIndex)} alt={p.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent transition-opacity duration-500 group-hover:from-foreground/85" />
                     {/* Shine sweep */}
                     <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-                    <div className="absolute bottom-3 left-4 text-background"><span className="text-xs uppercase tracking-wider text-background/80">{p.duration}</span></div>
+                    <div className="absolute bottom-2 left-2 text-background sm:bottom-3 sm:left-4"><span className="text-[0.6rem] uppercase tracking-wider text-background/80 sm:text-xs">{p.duration}</span></div>
                   </div>
-                  <CardContent className="p-3.5 sm:p-6">
-                    <h3 className="font-serif text-base font-semibold sm:text-xl">{p.name}</h3>
-                    <p className="mt-1 text-xs text-muted-foreground sm:mt-1.5 sm:text-sm">{p.description}</p>
-                    <ul className="mt-2.5 space-y-1.5 sm:mt-4 sm:space-y-2">{p.services.slice(0, 4).map((s) => (<li key={s} className="flex items-start gap-2 text-xs sm:text-sm"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-primary transition-transform duration-300 group-hover:scale-110 sm:h-4 sm:w-4" /><span className="text-foreground/80">{s}</span></li>))}</ul>
-                    <div className="mt-3 flex items-end justify-between border-t border-border/60 pt-3 sm:mt-5 sm:pt-4">
-                      <div><span className="text-xs text-muted-foreground line-through">${p.originalPrice}</span><p className="font-serif font-bold text-primary text-lg md:text-xl lg:text-2xl">${p.price}</p><span className="text-xs font-medium text-green-600">Save {p.save}%</span></div>
-                      <BookButton size="sm" service={p.slug} className="rounded-full bg-primary transition-transform duration-300 group-hover:scale-105">Book</BookButton>
+                  <CardContent className="p-2.5 sm:p-6">
+                    <h3 className="font-serif text-sm font-semibold leading-snug sm:text-xl">{p.name}</h3>
+                    <p className="mt-1 line-clamp-2 text-[0.7rem] text-muted-foreground sm:mt-1.5 sm:line-clamp-none sm:text-sm">{p.description}</p>
+                    <ul className="mt-2 space-y-1 sm:mt-4 sm:space-y-2">{p.services.slice(0, 4).map((s) => (<li key={s} className="flex items-start gap-1.5 text-[0.7rem] sm:gap-2 sm:text-sm"><CheckCircle2 className="mt-0.5 h-3 w-3 flex-shrink-0 text-primary transition-transform duration-300 group-hover:scale-110 sm:h-4 sm:w-4" /><span className="line-clamp-1 text-foreground/80 sm:line-clamp-none">{s}</span></li>))}</ul>
+                    <div className="mt-2.5 flex flex-col gap-2 border-t border-border/60 pt-2.5 sm:mt-5 sm:flex-row sm:items-end sm:justify-between sm:pt-4">
+                      <div className="flex items-baseline gap-1.5 sm:block"><span className="text-[0.65rem] text-muted-foreground line-through sm:text-xs">${p.originalPrice}</span><p className="font-serif font-bold text-primary text-base sm:text-lg md:text-xl lg:text-2xl">${p.price}</p><span className="text-[0.65rem] font-medium text-green-600 sm:text-xs">Save {p.save}%</span></div>
+                      <BookButton size="sm" service={p.slug} className="w-full rounded-full bg-primary text-xs transition-transform duration-300 group-hover:scale-105 sm:w-auto sm:text-sm">Book</BookButton>
                     </div>
                   </CardContent>
                 </Card>
@@ -430,7 +430,7 @@ export default function HomePage() {
       </section>
 
       {/* ============== PRODUCTS USED ============== */}
-      <section className="border-y border-border/60 bg-secondary/40 py-5 sm:py-4 sm:py-6 md:py-8 lg:py-10">
+      <section className="border-y border-border/60 bg-secondary/40 py-4 sm:py-6 md:py-8 lg:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Premium brands we trust</p></Reveal>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 sm:mt-8 sm:gap-x-8 sm:gap-y-4">
