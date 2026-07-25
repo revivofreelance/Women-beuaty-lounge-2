@@ -162,7 +162,7 @@ export function ContactClient() {
                 <h2 className="font-serif font-semibold tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                   Visit, book or message
                 </h2>
-                <p className="mt-3 max-w-md text-pretty text-sm text-muted-foreground sm:text-base leading-snug md:leading-relaxed">
+                <p className="mt-2 max-w-md text-pretty text-xs text-muted-foreground sm:mt-3 sm:text-base leading-snug md:leading-relaxed">
                   However you like to reach us, we're here. Drop by the salon, book
                   online, or send a quick message — whatever's easiest for you.
                 </p>
@@ -171,21 +171,21 @@ export function ContactClient() {
                   {contactCards.map((c) => (
                     <Card
                       key={c.title}
-                      className="gap-0 border-border/70 py-5 shadow-sm"
+                      className="gap-0 border-border/70 py-2.5 shadow-sm sm:py-5"
                     >
-                      <CardContent className="flex flex-col gap-3">
+                      <CardContent className="flex flex-col gap-1.5 sm:gap-3">
                         <span className="flex h-8 w-8 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary/10 text-primary">
-                          <c.icon className="h-5 w-5" />
+                          <c.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                         </span>
                         <div>
-                          <p className="text-sm font-semibold text-foreground">
+                          <p className="text-[0.7rem] font-semibold leading-tight text-foreground sm:text-sm">
                             {c.title}
                           </p>
                           <div className="mt-1 flex flex-col gap-0.5">
                             {c.lines.map((line) => (
                               <span
                                 key={line}
-                                className="text-sm text-muted-foreground"
+                                className="text-[0.65rem] text-muted-foreground sm:text-sm"
                               >
                                 {line}
                               </span>
@@ -196,7 +196,7 @@ export function ContactClient() {
                           href={c.href}
                           target={c.href.startsWith("http") ? "_blank" : undefined}
                           rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                          className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+                          className="mt-0.5 inline-flex items-center gap-1 text-[0.6rem] font-medium text-primary hover:underline sm:mt-1 sm:text-xs"
                         >
                           {c.href.startsWith("mailto:")
                             ? "Send email"
@@ -213,31 +213,31 @@ export function ContactClient() {
                 </div>
 
                 {/* Opening hours */}
-                <Card className="mt-4 border-border/70 py-5 shadow-sm">
-                  <CardContent className="flex flex-col gap-3">
-                    <div className="flex items-center gap-2.5">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Clock className="h-5 w-5" />
+                <Card className="mt-2.5 border-border/70 py-2.5 shadow-sm sm:mt-4 sm:py-5">
+                  <CardContent className="flex flex-col gap-1.5 sm:gap-3">
+                    <div className="flex items-center gap-2 sm:gap-2.5">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary sm:h-9 sm:w-9">
+                        <Clock className="h-4 w-4 sm:h-5 sm:w-5" />
                       </span>
-                      <p className="text-sm font-semibold text-foreground">
+                      <p className="text-[0.7rem] font-semibold leading-tight text-foreground sm:text-sm">
                         Opening hours
                       </p>
                     </div>
-                    <ul className="divide-y divide-border/60 text-sm">
+                    <ul className="divide-y divide-border/60 text-[0.7rem] sm:text-sm">
                       {salonInfo.hours.map((h) => (
                         <li
                           key={h.day}
-                          className="flex items-center justify-between gap-3 py-2"
+                          className="flex items-center justify-between gap-2 py-1.5 sm:gap-3 sm:py-2"
                         >
                           <span className="font-medium text-foreground">
                             {h.day}
                           </span>
-                          <span className="flex items-center gap-2 text-muted-foreground">
+                          <span className="flex items-center gap-1.5 text-muted-foreground sm:gap-2">
                             <span>
                               {h.open} – {h.close}
                             </span>
                             {h.note && (
-                              <span className="rounded-full bg-secondary px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-secondary-foreground">
+                              <span className="rounded-full bg-secondary px-1.5 py-0 text-[0.55rem] font-semibold uppercase tracking-wide text-secondary-foreground sm:px-2 sm:py-0.5 sm:text-[0.65rem]">
                                 {h.note}
                               </span>
                             )}
@@ -249,21 +249,21 @@ export function ContactClient() {
                 </Card>
 
                 {/* Getting here */}
-                <Card className="mt-4 border-border/70 py-5 shadow-sm">
-                  <CardContent className="flex flex-col gap-3">
-                    <div className="flex items-center gap-2.5">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Car className="h-5 w-5" />
+                <Card className="mt-2.5 border-border/70 py-2.5 shadow-sm sm:mt-4 sm:py-5">
+                  <CardContent className="flex flex-col gap-1.5 sm:gap-3">
+                    <div className="flex items-center gap-2 sm:gap-2.5">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary sm:h-9 sm:w-9">
+                        <Car className="h-4 w-4 sm:h-5 sm:w-5" />
                       </span>
-                      <p className="text-sm font-semibold text-foreground">
+                      <p className="text-[0.7rem] font-semibold leading-tight text-foreground sm:text-sm">
                         Getting here
                       </p>
                     </div>
-                    <ul className="flex flex-col gap-2">
+                    <ul className="flex flex-col gap-1.5 sm:gap-2">
                       {salonInfo.landmarks.map((lm) => (
                         <li
                           key={lm}
-                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                          className="flex items-start gap-1.5 text-[0.7rem] text-muted-foreground sm:gap-2 sm:text-sm"
                         >
                           <Navigation className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
                           <span>{lm}</span>
@@ -274,8 +274,8 @@ export function ContactClient() {
                 </Card>
 
                 {/* Social */}
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <span className="text-sm font-medium text-foreground">
+                <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-6 sm:gap-3">
+                  <span className="text-xs font-medium text-foreground sm:text-sm">
                     Follow us:
                   </span>
                   <div className="flex items-center gap-2">
@@ -303,38 +303,38 @@ export function ContactClient() {
                   <CardContent className="p-0">
                     {done ? (
                       <div className="flex flex-col items-center py-4 sm:py-6 text-center">
-                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
-                          <CheckCircle2 className="h-9 w-9" />
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 text-green-600 sm:h-16 sm:w-16">
+                          <CheckCircle2 className="h-6 w-6 sm:h-9 sm:w-9" />
                         </span>
-                        <h3 className="mt-5 font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
+                        <h3 className="mt-3 font-serif font-semibold text-foreground text-sm sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">
                           Message sent!
                         </h3>
-                        <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
+                        <p className="mx-auto mt-1.5 max-w-sm text-xs text-muted-foreground sm:mt-2 sm:text-sm">
                           Thanks for reaching out, {form.name.split(" ")[0] || "friend"}.
                           A member of our team will respond within 24 hours.
                         </p>
                         <Button
                           onClick={resetForm}
                           variant="outline"
-                          className="mt-6 rounded-full"
+                          className="mt-4 h-8 rounded-full text-xs sm:mt-6 sm:h-9 sm:text-sm"
                         >
                           Send another
                         </Button>
                       </div>
                     ) : (
-                      <form onSubmit={onSubmit} className="flex flex-col gap-4">
+                      <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:gap-4">
                         <div className="flex flex-col gap-1">
-                          <h3 className="font-serif text-base font-semibold sm:text-xl text-foreground">
+                          <h3 className="font-serif text-sm font-semibold leading-tight text-foreground sm:text-xl">
                             Send us a message
                           </h3>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-[0.7rem] text-muted-foreground sm:text-sm">
                             Fields marked with * are required.
                           </p>
                         </div>
 
                         <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
                           <div className="flex flex-col gap-1.5">
-                            <Label htmlFor="c-name" className="text-sm font-medium">
+                            <Label htmlFor="c-name" className="text-xs font-medium sm:text-sm">
                               Name *
                             </Label>
                             <Input
@@ -343,11 +343,11 @@ export function ContactClient() {
                               onChange={(e) => update("name", e.target.value)}
                               required
                               placeholder="Your full name"
-                              className="h-11 rounded-xl"
+                              className="h-10 rounded-xl text-sm sm:h-11"
                             />
                           </div>
                           <div className="flex flex-col gap-1.5">
-                            <Label htmlFor="c-phone" className="text-sm font-medium">
+                            <Label htmlFor="c-phone" className="text-xs font-medium sm:text-sm">
                               Phone
                             </Label>
                             <Input
@@ -355,13 +355,13 @@ export function ContactClient() {
                               value={form.phone}
                               onChange={(e) => update("phone", e.target.value)}
                               placeholder="Your mobile number"
-                              className="h-11 rounded-xl"
+                              className="h-10 rounded-xl text-sm sm:h-11"
                             />
                           </div>
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                          <Label htmlFor="c-email" className="text-sm font-medium">
+                          <Label htmlFor="c-email" className="text-xs font-medium sm:text-sm">
                             Email *
                           </Label>
                           <Input
@@ -371,12 +371,12 @@ export function ContactClient() {
                             onChange={(e) => update("email", e.target.value)}
                             required
                             placeholder="you@email.com"
-                            className="h-11 rounded-xl"
+                            className="h-10 rounded-xl text-sm sm:h-11"
                           />
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                          <Label htmlFor="c-subject" className="text-sm font-medium">
+                          <Label htmlFor="c-subject" className="text-xs font-medium sm:text-sm">
                             Subject
                           </Label>
                           <Input
@@ -384,12 +384,12 @@ export function ContactClient() {
                             value={form.subject}
                             onChange={(e) => update("subject", e.target.value)}
                             placeholder="General enquiry"
-                            className="h-11 rounded-xl"
+                            className="h-10 rounded-xl text-sm sm:h-11"
                           />
                         </div>
 
                         <div className="flex flex-col gap-1.5">
-                          <Label htmlFor="c-message" className="text-sm font-medium">
+                          <Label htmlFor="c-message" className="text-xs font-medium sm:text-sm">
                             Message *
                           </Label>
                           <Textarea
@@ -398,14 +398,14 @@ export function ContactClient() {
                             onChange={(e) => update("message", e.target.value)}
                             required
                             placeholder="Tell us how we can help…"
-                            className="min-h-[120px] rounded-xl"
+                            className="min-h-[90px] rounded-xl text-sm sm:min-h-[120px]"
                           />
                         </div>
 
                         <Button
                           type="submit"
                           disabled={submitting}
-                          className="mt-1 h-11 w-full rounded-full bg-primary text-sm transition-colors hover:bg-primary/90"
+                          className="mt-1 h-10 w-full rounded-full bg-primary text-xs transition-colors hover:bg-primary/90 sm:h-11 sm:text-sm"
                         >
                           {submitting ? "Sending…" : "Send message"}
                           {!submitting && <Send className="ml-1.5 h-4 w-4" />}
@@ -416,11 +416,11 @@ export function ContactClient() {
                 </Card>
 
                 {/* Map */}
-                <div className="mt-5 overflow-hidden rounded-2xl border border-border/70">
+                <div className="mt-4 overflow-hidden rounded-2xl border border-border/70 sm:mt-5">
                   <iframe
                     title="Lumière Beauty Lounge location"
                     src={salonInfo.mapEmbed}
-                    className="h-60 md:h-72 w-full"
+                    className="h-44 w-full sm:h-60 md:h-72"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />

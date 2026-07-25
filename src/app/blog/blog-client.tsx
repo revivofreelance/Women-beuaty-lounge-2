@@ -73,33 +73,33 @@ export function BlogClient() {
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    <Badge className="absolute left-4 top-4 bg-background/90 text-foreground backdrop-blur-sm">
+                    <Badge className="absolute left-2 top-2 px-1.5 py-0 text-[0.55rem] bg-background/90 text-foreground backdrop-blur-sm sm:left-4 sm:top-4 sm:px-2 sm:py-0.5 sm:text-xs">
                       Featured
                     </Badge>
                   </div>
-                  <CardContent className="flex flex-col gap-4 p-3 sm:p-9">
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                      <Badge className="bg-secondary text-secondary-foreground">{featured.category}</Badge>
+                  <CardContent className="flex flex-col gap-2 p-3 sm:gap-4 sm:p-9">
+                    <div className="flex items-center gap-2 text-[0.6rem] text-muted-foreground sm:gap-3 sm:text-xs">
+                      <Badge className="bg-secondary px-1.5 py-0 text-[0.55rem] text-secondary-foreground sm:px-2 sm:py-0.5 sm:text-xs">{featured.category}</Badge>
                       <span className="flex items-center gap-1">
                         <Clock className="h-3.5 w-3.5" /> {featured.readTime}
                       </span>
                     </div>
-                    <h2 className="font-serif font-semibold leading-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
+                    <h2 className="font-serif font-semibold leading-tight text-foreground text-sm sm:text-lg md:text-xl lg:text-2xl">
                       {featured.title}
                     </h2>
-                    <p className="text-pretty text-muted-foreground leading-snug md:leading-relaxed">
+                    <p className="line-clamp-3 text-pretty text-[0.7rem] text-muted-foreground leading-snug sm:line-clamp-none sm:text-base md:leading-relaxed">
                       {featured.excerpt}
                     </p>
-                    <div className="mt-auto flex items-center gap-3 border-t border-border/60 pt-4">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-primary">
-                        <User className="h-4 w-4" />
+                    <div className="mt-auto flex items-center gap-2 border-t border-border/60 pt-2.5 sm:gap-3 sm:pt-4">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-secondary text-primary sm:h-9 sm:w-9">
+                        <User className="h-3 w-3 sm:h-4 sm:w-4" />
                       </span>
-                      <div className="text-sm">
-                        <p className="font-medium text-foreground">{featured.author}</p>
-                        <p className="text-xs text-muted-foreground">{featured.date}</p>
+                      <div className="min-w-0 flex-1 text-[0.65rem] sm:text-sm">
+                        <p className="truncate font-medium text-foreground">{featured.author}</p>
+                        <p className="text-[0.6rem] text-muted-foreground sm:text-xs">{featured.date}</p>
                       </div>
                     </div>
-                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    <span className="inline-flex shrink-0 items-center gap-1 text-[0.65rem] font-semibold text-primary sm:text-sm">
                       Read <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </CardContent>
@@ -113,7 +113,7 @@ export function BlogClient() {
       {/* ============== SEARCH + FILTER ============== */}
       <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3 sm:gap-5">
             <Reveal className="relative max-w-xl">
               <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
@@ -121,10 +121,10 @@ export function BlogClient() {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search articles, tags or topics..."
                 aria-label="Search articles"
-                className="h-11 rounded-full border-border/70 bg-background pl-11 pr-4"
+                className="h-9 rounded-full border-border/70 bg-background pl-10 pr-4 text-xs sm:h-11 sm:pl-11 sm:text-sm"
               />
             </Reveal>
-            <Reveal delay={80} className="flex flex-wrap gap-2">
+            <Reveal delay={80} className="flex flex-wrap gap-1.5 sm:gap-2">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
@@ -150,9 +150,9 @@ export function BlogClient() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
             <div className="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-border/80 bg-secondary/30 text-center py-5 sm:py-8 md:py-12 lg:py-20">
-              <Search className="h-10 w-10 text-muted-foreground" />
+              <Search className="h-7 w-7 text-muted-foreground sm:h-10 sm:w-10" />
               <h3 className="font-serif text-base font-semibold sm:text-xl text-foreground">No articles found</h3>
-              <p className="max-w-sm text-sm text-muted-foreground">
+              <p className="max-w-sm text-xs text-muted-foreground sm:text-sm">
                 Try a different search term or browse all articles by clearing the filters.
               </p>
               <Button
@@ -180,25 +180,25 @@ export function BlogClient() {
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
-                        <Badge className="absolute left-3 top-3 bg-background/90 text-foreground backdrop-blur-sm">
+                        <Badge className="absolute left-1.5 top-1.5 px-1.5 py-0 text-[0.55rem] bg-background/90 text-foreground backdrop-blur-sm sm:left-3 sm:top-3 sm:px-2 sm:py-0.5 sm:text-xs">
                           {post.category}
                         </Badge>
                       </div>
-                      <CardContent className="flex flex-col gap-3 pt-4">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <CardContent className="flex flex-1 flex-col gap-1.5 sm:gap-3">
+                        <div className="flex items-center gap-1.5 text-[0.6rem] text-muted-foreground sm:gap-2 sm:text-xs">
                           <span>{post.date}</span>
                           <span aria-hidden>·</span>
                           <span className="flex items-center gap-1">
                             <Clock className="h-3 w-3" /> {post.readTime}
                           </span>
                         </div>
-                        <h3 className="font-serif text-sm font-semibold sm:text-lg leading-snug text-foreground">
+                        <h3 className="font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:text-lg">
                           {post.title}
                         </h3>
-                        <p className="line-clamp-2 text-xs text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
+                        <p className="line-clamp-2 text-[0.7rem] text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
                           {post.excerpt}
                         </p>
-                        <p className="text-xs font-medium text-foreground/70">
+                        <p className="mt-auto text-[0.6rem] font-medium text-foreground/70 sm:text-xs">
                           By {post.author}
                         </p>
                       </CardContent>

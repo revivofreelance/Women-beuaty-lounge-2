@@ -83,16 +83,16 @@ export default function AboutPage() {
       {/* ============== STATS ============== */}
       <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-6 lg:grid-cols-4">
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 80} className="flex flex-col items-center text-center">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-secondary text-primary">
-                  <stat.icon className="h-6 w-6" />
+                  <stat.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                 </span>
-                <span className="mt-3 font-serif font-bold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
+                <span className="mt-1.5 font-serif font-bold leading-tight text-foreground text-sm sm:mt-3 sm:text-lg md:text-xl lg:text-2xl">
                   {stat.value}
                 </span>
-                <span className="mt-1 text-sm text-muted-foreground">{stat.label}</span>
+                <span className="mt-0.5 text-[0.65rem] leading-tight text-muted-foreground sm:mt-1 sm:text-sm">{stat.label}</span>
               </Reveal>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function AboutPage() {
       <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-            <Reveal className="grid grid-cols-2 gap-4">
+            <Reveal className="grid grid-cols-2 gap-2.5 sm:gap-4">
               <div className="rounded-arch relative aspect-[3/4] overflow-hidden shadow-lg">
                 <Image
                   src={getImage("hero", 1)}
@@ -113,7 +113,7 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg mt-6 md:mt-10">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg mt-4 sm:mt-6 md:mt-10">
                 <Image
                   src={getImage("ambiance", 1)}
                   alt="Salon ambiance"
@@ -130,7 +130,7 @@ export default function AboutPage() {
                 eyebrow="How it began"
                 title="From a single chair to a beloved lounge"
               />
-              <div className="mt-6 space-y-4 text-pretty text-muted-foreground leading-snug md:leading-relaxed">
+              <div className="mt-3 space-y-2.5 text-pretty text-xs text-muted-foreground leading-snug sm:mt-6 sm:space-y-4 sm:text-base md:leading-relaxed">
                 <p>
                   In {salonInfo.established}, Ananya Rao returned to San Francisco after a decade training with Vidal Sassoon in London, and opened Lumière with three chairs, a borrowed kettle and a notebook full of names. The first client walked in on day one — by month six, every chair was booked.
                 </p>
@@ -151,26 +151,26 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2">
             <Reveal>
-              <Card className="h-full border-border/70 p-3 sm:p-7">
-                <CardContent className="flex h-full flex-col gap-4 p-0">
+              <Card className="h-full border-border/70 p-2.5 sm:p-7">
+                <CardContent className="flex h-full flex-col gap-1.5 p-0 sm:gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-secondary text-primary">
-                    <Target className="h-6 w-6" />
+                    <Target className="h-4 w-4 sm:h-6 sm:w-6" />
                   </span>
-                  <h3 className="font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">Our mission</h3>
-                  <p className="text-pretty text-muted-foreground leading-snug md:leading-relaxed">
+                  <h3 className="font-serif font-semibold leading-tight text-foreground text-[0.8rem] sm:text-lg md:text-xl lg:text-2xl">Our mission</h3>
+                  <p className="text-pretty text-[0.7rem] text-muted-foreground leading-snug sm:text-base md:leading-relaxed">
                     To make expert beauty care accessible, transparent and genuinely caring — so every client leaves feeling more like herself, not less.
                   </p>
                 </CardContent>
               </Card>
             </Reveal>
             <Reveal delay={120}>
-              <Card className="h-full border-border/70 p-3 sm:p-7">
-                <CardContent className="flex h-full flex-col gap-4 p-0">
+              <Card className="h-full border-border/70 p-2.5 sm:p-7">
+                <CardContent className="flex h-full flex-col gap-1.5 p-0 sm:gap-4">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-secondary text-primary">
-                    <Eye className="h-6 w-6" />
+                    <Eye className="h-4 w-4 sm:h-6 sm:w-6" />
                   </span>
-                  <h3 className="font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">Our vision</h3>
-                  <p className="text-pretty text-muted-foreground leading-snug md:leading-relaxed">
+                  <h3 className="font-serif font-semibold leading-tight text-foreground text-[0.8rem] sm:text-lg md:text-xl lg:text-2xl">Our vision</h3>
+                  <p className="text-pretty text-[0.7rem] text-muted-foreground leading-snug sm:text-base md:leading-relaxed">
                     To be San Francisco&apos;s most trusted salon — known for our craft, our care, and the calm, hygienic space we offer every client who walks through our doors.
                   </p>
                 </CardContent>
@@ -193,13 +193,13 @@ export default function AboutPage() {
               const Icon = valueIcons[v.icon] ?? Heart;
               return (
                 <Reveal key={v.title} delay={i * 80}>
-                  <Card className="h-full border-border/70 p-4 md:p-5 lg:p-6">
-                    <CardContent className="flex h-full flex-col gap-4 p-0">
+                  <Card className="h-full border-border/70 p-2.5 sm:p-4 md:p-5 lg:p-6">
+                    <CardContent className="flex h-full flex-col gap-1.5 p-0 sm:gap-4">
                       <span className="flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-secondary text-primary">
-                        <Icon className="h-6 w-6" />
+                        <Icon className="h-4 w-4 sm:h-6 sm:w-6" />
                       </span>
-                      <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">{v.title}</h3>
-                      <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{v.description}</p>
+                      <h3 className="font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:text-lg">{v.title}</h3>
+                      <p className="text-[0.7rem] text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{v.description}</p>
                     </CardContent>
                   </Card>
                 </Reveal>
@@ -220,11 +220,11 @@ export default function AboutPage() {
           <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {salonTimeline.map((entry, i) => (
               <Reveal key={entry.year} delay={i * 70}>
-                <Card className="h-full border-border/70 p-4 md:p-5 lg:p-6">
-                  <CardContent className="flex h-full flex-col gap-2 p-0">
-                    <span className="font-serif font-semibold text-primary text-base sm:text-lg md:text-xl lg:text-2xl">{entry.year}</span>
-                    <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">{entry.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{entry.description}</p>
+                <Card className="h-full border-border/70 p-2.5 sm:p-4 md:p-5 lg:p-6">
+                  <CardContent className="flex h-full flex-col gap-1 p-0 sm:gap-2">
+                    <span className="font-serif font-semibold text-primary text-sm sm:text-lg md:text-xl lg:text-2xl">{entry.year}</span>
+                    <h3 className="font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:text-lg">{entry.title}</h3>
+                    <p className="text-[0.7rem] text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{entry.description}</p>
                   </CardContent>
                 </Card>
               </Reveal>
@@ -269,7 +269,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             <Reveal>
-              <h2 className="font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">Certifications</h2>
+              <h2 className="font-serif font-semibold leading-tight text-foreground text-[0.8rem] sm:text-lg md:text-xl lg:text-2xl">Certifications</h2>
               <ul className="mt-6 space-y-3">
                 {certifications.map((c) => (
                   <li key={c} className="flex items-start gap-3">
@@ -280,7 +280,7 @@ export default function AboutPage() {
               </ul>
             </Reveal>
             <Reveal delay={120}>
-              <h2 className="font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">Awards &amp; press</h2>
+              <h2 className="font-serif font-semibold leading-tight text-foreground text-[0.8rem] sm:text-lg md:text-xl lg:text-2xl">Awards &amp; press</h2>
               <ul className="mt-6 space-y-3">
                 {awards.map((a) => (
                   <li key={a.title} className="flex items-start gap-3">
@@ -328,13 +328,13 @@ export default function AboutPage() {
           <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {hygienePoints.map((h, i) => (
               <Reveal key={h.title} delay={i * 70}>
-                <Card className="h-full border-border/70 p-3 md:p-4 lg:p-5">
-                  <CardContent className="flex h-full flex-col gap-3 p-0">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary">
-                      <h.icon className="h-5 w-5" />
+                <Card className="h-full border-border/70 p-2.5 sm:p-3 md:p-4 lg:p-5">
+                  <CardContent className="flex h-full flex-col gap-1.5 p-0 sm:gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-primary sm:h-11 sm:w-11">
+                      <h.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </span>
-                    <h3 className="font-serif text-base font-semibold text-foreground">{h.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{h.description}</p>
+                    <h3 className="font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:text-base">{h.title}</h3>
+                    <p className="text-[0.7rem] text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{h.description}</p>
                   </CardContent>
                 </Card>
               </Reveal>
@@ -354,13 +354,13 @@ export default function AboutPage() {
           <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {sustainabilityInitiatives.map((s, i) => (
               <Reveal key={s.title} delay={i * 80}>
-                <Card className="h-full border-border/70 p-4 md:p-5 lg:p-6">
-                  <CardContent className="flex h-full flex-col gap-3 p-0">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary">
-                      <Recycle className="h-5 w-5" />
+                <Card className="h-full border-border/70 p-2.5 sm:p-4 md:p-5 lg:p-6">
+                  <CardContent className="flex h-full flex-col gap-1.5 p-0 sm:gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-primary sm:h-11 sm:w-11">
+                      <Recycle className="h-4 w-4 sm:h-5 sm:w-5" />
                     </span>
-                    <h3 className="font-serif text-base font-semibold text-foreground">{s.title}</h3>
-                    <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{s.description}</p>
+                    <h3 className="font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:text-base">{s.title}</h3>
+                    <p className="text-[0.7rem] text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{s.description}</p>
                   </CardContent>
                 </Card>
               </Reveal>
@@ -379,19 +379,19 @@ export default function AboutPage() {
             <h2 className="font-serif font-semibold text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Giving back to San Francisco
             </h2>
-            <p className="text-pretty text-muted-foreground leading-snug md:leading-relaxed">
+            <p className="text-pretty text-[0.7rem] text-muted-foreground leading-snug sm:text-base md:leading-relaxed">
               We partner with local women&apos;s shelters, fund vocational training for women re-entering the workforce, mentor cosmetology students, and host monthly free haircut days for seniors and those experiencing financial hardship. A portion of every bridal package funds this work.
             </p>
-            <div className="mt-2 grid w-full gap-4 text-left sm:grid-cols-2">
+            <div className="mt-1 grid w-full grid-cols-2 gap-2.5 text-left sm:mt-2 sm:gap-4">
               {communityWork.map((c) => (
-                <div key={c.title} className="rounded-2xl border border-border/70 bg-card p-3 md:p-4 lg:p-5">
-                  <h3 className="font-serif text-base font-semibold text-foreground">{c.title}</h3>
-                  <p className="mt-1.5 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{c.description}</p>
+                <div key={c.title} className="rounded-2xl border border-border/70 bg-card p-2.5 sm:p-3 md:p-4 lg:p-5">
+                  <h3 className="font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:text-base">{c.title}</h3>
+                  <p className="mt-1 text-[0.7rem] text-muted-foreground leading-snug sm:mt-1.5 sm:text-sm md:leading-relaxed">{c.description}</p>
                 </div>
               ))}
             </div>
             <Link href="/contact">
-              <Button className="mt-4 rounded-full bg-primary px-6 hover:bg-primary/90">
+              <Button className="mt-2 h-8 rounded-full bg-primary px-4 text-xs hover:bg-primary/90 sm:mt-4 sm:h-9 sm:px-6 sm:text-sm">
                 Learn about our community work <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
