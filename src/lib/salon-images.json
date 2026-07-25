@@ -1,0 +1,332 @@
+{
+  "hero": [
+    "/images/hero-0.webp",
+    "/images/hero-1.webp",
+    "/images/hero-2.webp",
+    "/images/hero-3.webp",
+    "/images/hero-4.webp",
+    "/images/hero-5.webp"
+  ],
+  "salonReception": [
+    "/images/salonReception-0.webp",
+    "/images/salonReception-1.webp",
+    "/images/salonReception-2.webp",
+    "/images/salonReception-3.webp",
+    "/images/salonReception-4.webp",
+    "/images/salonReception-5.webp"
+  ],
+  "salonInterior2": [
+    "/images/salonInterior2-0.webp",
+    "/images/salonInterior2-1.webp",
+    "/images/salonInterior2-2.webp",
+    "/images/salonInterior2-3.webp",
+    "/images/salonInterior2-4.webp",
+    "/images/salonInterior2-5.webp"
+  ],
+  "ambiance": [
+    "/images/ambiance-0.webp",
+    "/images/ambiance-1.webp",
+    "/images/ambiance-2.webp",
+    "/images/ambiance-3.webp",
+    "/images/ambiance-4.webp",
+    "/images/ambiance-5.webp"
+  ],
+  "team": [
+    "/images/team-0.webp",
+    "/images/team-1.webp",
+    "/images/team-2.webp",
+    "/images/team-3.webp"
+  ],
+  "haircut": [
+    "/images/haircut-0.webp",
+    "/images/haircut-1.webp",
+    "/images/haircut-2.webp",
+    "/images/haircut-3.webp",
+    "/images/haircut-4.webp",
+    "/images/haircut-5.webp"
+  ],
+  "kidsHaircut": [
+    "/images/kidsHaircut-0.webp",
+    "/images/kidsHaircut-1.webp",
+    "/images/kidsHaircut-2.webp",
+    "/images/kidsHaircut-3.webp"
+  ],
+  "hairSpa": [
+    "/images/hairSpa-0.webp",
+    "/images/hairSpa-1.webp",
+    "/images/hairSpa-2.webp",
+    "/images/hairSpa-3.webp",
+    "/images/hairSpa-4.webp",
+    "/images/hairSpa-5.webp"
+  ],
+  "hairExtensions": [
+    "/images/hairExtensions-0.webp",
+    "/images/hairExtensions-1.webp",
+    "/images/hairExtensions-2.webp",
+    "/images/hairExtensions-3.webp",
+    "/images/hairExtensions-4.webp",
+    "/images/hairExtensions-5.webp"
+  ],
+  "hairColor": [
+    "/images/hairColor-0.webp",
+    "/images/hairColor-1.webp",
+    "/images/hairColor-2.webp",
+    "/images/hairColor-3.webp",
+    "/images/hairColor-4.webp",
+    "/images/hairColor-5.webp"
+  ],
+  "foilHighlights": [
+    "/images/foilHighlights-0.webp",
+    "/images/foilHighlights-1.webp",
+    "/images/foilHighlights-2.webp",
+    "/images/foilHighlights-3.webp"
+  ],
+  "galleryColor": [
+    "/images/galleryColor-0.webp",
+    "/images/galleryColor-1.webp",
+    "/images/galleryColor-2.webp",
+    "/images/galleryColor-3.webp",
+    "/images/galleryColor-4.webp",
+    "/images/galleryColor-5.webp",
+    "/images/galleryColor-6.webp",
+    "/images/galleryColor-7.webp",
+    "/images/galleryColor-8.webp",
+    "/images/galleryColor-9.webp"
+  ],
+  "galleryBob": [
+    "/images/galleryBob-0.webp",
+    "/images/galleryBob-1.webp",
+    "/images/galleryBob-2.webp",
+    "/images/galleryBob-3.webp"
+  ],
+  "galleryHaircut": [
+    "/images/galleryHaircut-0.webp",
+    "/images/galleryHaircut-1.webp",
+    "/images/galleryHaircut-2.webp",
+    "/images/galleryHaircut-3.webp",
+    "/images/galleryHaircut-4.webp",
+    "/images/galleryHaircut-5.webp",
+    "/images/galleryHaircut-6.webp"
+  ],
+  "hairTreatment": [
+    "/images/hairTreatment-0.webp",
+    "/images/hairTreatment-1.webp",
+    "/images/hairTreatment-2.webp",
+    "/images/hairTreatment-3.webp",
+    "/images/hairTreatment-4.webp",
+    "/images/hairTreatment-5.webp",
+    "/images/hairTreatment-6.webp",
+    "/images/hairTreatment-7.webp"
+  ],
+  "facial": [
+    "/images/facial-0.webp",
+    "/images/facial-1.webp",
+    "/images/facial-2.webp",
+    "/images/facial-3.webp",
+    "/images/facial-4.webp",
+    "/images/facial-5.webp",
+    "/images/facial-6.webp",
+    "/images/facial-7.webp"
+  ],
+  "hydraFacial": [
+    "/images/hydraFacial-0.webp",
+    "/images/hydraFacial-1.webp",
+    "/images/hydraFacial-2.webp",
+    "/images/hydraFacial-3.webp"
+  ],
+  "deTanFacial": [
+    "/images/deTanFacial-0.webp",
+    "/images/deTanFacial-1.webp",
+    "/images/deTanFacial-2.webp",
+    "/images/deTanFacial-3.webp"
+  ],
+  "makeup": [
+    "/images/makeup-0.webp",
+    "/images/makeup-1.webp",
+    "/images/makeup-2.webp",
+    "/images/makeup-3.webp",
+    "/images/makeup-4.webp",
+    "/images/makeup-5.webp"
+  ],
+  "galleryMakeup": [
+    "/images/galleryMakeup-0.webp",
+    "/images/galleryMakeup-1.webp",
+    "/images/galleryMakeup-2.webp",
+    "/images/galleryMakeup-3.webp"
+  ],
+  "bridal": [
+    "/images/bridal-0.webp",
+    "/images/bridal-1.webp",
+    "/images/bridal-2.webp",
+    "/images/bridal-3.webp",
+    "/images/bridal-4.webp",
+    "/images/bridal-5.webp",
+    "/images/bridal-6.webp",
+    "/images/bridal-7.webp"
+  ],
+  "bridal2": [
+    "/images/bridal2-0.webp",
+    "/images/bridal2-1.webp",
+    "/images/bridal2-2.webp",
+    "/images/bridal2-3.webp"
+  ],
+  "galleryBridal": [
+    "/images/galleryBridal-0.webp",
+    "/images/galleryBridal-1.webp",
+    "/images/galleryBridal-2.webp",
+    "/images/galleryBridal-3.webp"
+  ],
+  "galleryUpdo": [
+    "/images/galleryUpdo-0.webp",
+    "/images/galleryUpdo-1.webp",
+    "/images/galleryUpdo-2.webp",
+    "/images/galleryUpdo-3.webp"
+  ],
+  "galleryNails": [
+    "/images/galleryNails-0.webp",
+    "/images/galleryNails-1.webp",
+    "/images/galleryNails-2.webp",
+    "/images/galleryNails-3.webp",
+    "/images/galleryNails-4.webp",
+    "/images/galleryNails-5.webp"
+  ],
+  "manicure": [
+    "/images/manicure-0.webp",
+    "/images/manicure-1.webp",
+    "/images/manicure-2.webp",
+    "/images/manicure-3.webp"
+  ],
+  "spa": [
+    "/images/spa-0.webp",
+    "/images/spa-1.webp",
+    "/images/spa-2.webp",
+    "/images/spa-3.webp",
+    "/images/spa-4.webp",
+    "/images/spa-5.webp",
+    "/images/spa-6.webp",
+    "/images/spa-7.webp"
+  ],
+  "deepTissue": [
+    "/images/deepTissue-0.webp",
+    "/images/deepTissue-1.webp",
+    "/images/deepTissue-2.webp",
+    "/images/deepTissue-3.webp"
+  ],
+  "reflexology": [
+    "/images/reflexology-0.webp",
+    "/images/reflexology-1.webp",
+    "/images/reflexology-2.webp",
+    "/images/reflexology-3.webp"
+  ],
+  "threading": [
+    "/images/threading-0.webp",
+    "/images/threading-1.webp",
+    "/images/threading-2.webp",
+    "/images/threading-3.webp"
+  ],
+  "waxing": [
+    "/images/waxing-0.webp",
+    "/images/waxing-1.webp",
+    "/images/waxing-2.webp",
+    "/images/waxing-3.webp"
+  ],
+  "products": [
+    "/images/products-0.webp",
+    "/images/products-1.webp",
+    "/images/products-2.webp",
+    "/images/products-3.webp",
+    "/images/products-4.webp",
+    "/images/products-5.webp"
+  ],
+  "blogHair": [
+    "/images/blogHair-0.webp",
+    "/images/blogHair-1.webp",
+    "/images/blogHair-2.webp",
+    "/images/blogHair-3.webp"
+  ],
+  "beforeAfter": [
+    "/images/beforeAfter-0.webp",
+    "/images/beforeAfter-1.webp",
+    "/images/beforeAfter-2.webp",
+    "/images/beforeAfter-3.webp",
+    "/images/beforeAfter-4.webp",
+    "/images/beforeAfter-5.webp"
+  ],
+  "blogSkin": [
+    "/images/blogSkin-0.webp",
+    "/images/blogSkin-1.webp",
+    "/images/blogSkin-2.webp",
+    "/images/blogSkin-3.webp"
+  ],
+  "testimonial1": [
+    "/images/testimonial1-0.webp",
+    "/images/testimonial1-1.webp",
+    "/images/testimonial1-2.webp",
+    "/images/testimonial1-3.webp",
+    "/images/testimonial1-4.webp",
+    "/images/testimonial1-5.webp",
+    "/images/testimonial1-6.webp"
+  ],
+  "testimonial2": [
+    "/images/testimonial2-0.webp",
+    "/images/testimonial2-1.webp",
+    "/images/testimonial2-2.webp",
+    "/images/testimonial2-3.webp",
+    "/images/testimonial2-4.webp",
+    "/images/testimonial2-5.webp"
+  ],
+  "stylist1": [
+    "/images/stylist1-0.webp",
+    "/images/stylist1-1.webp",
+    "/images/stylist1-2.webp",
+    "/images/stylist1-3.webp",
+    "/images/stylist1-4.webp",
+    "/images/stylist1-5.webp",
+    "/images/stylist1-6.webp"
+  ],
+  "stylist2": [
+    "/images/stylist2-0.webp",
+    "/images/stylist2-1.webp",
+    "/images/stylist2-2.webp",
+    "/images/stylist2-3.webp",
+    "/images/stylist2-4.webp",
+    "/images/stylist2-5.webp",
+    "/images/stylist2-6.webp"
+  ],
+  "stylist3": [
+    "/images/stylist3-0.webp",
+    "/images/stylist3-1.webp",
+    "/images/stylist3-2.webp",
+    "/images/stylist3-3.webp",
+    "/images/stylist3-4.webp",
+    "/images/stylist3-5.webp",
+    "/images/stylist3-6.webp"
+  ],
+  "stylist4": [
+    "/images/stylist4-0.webp",
+    "/images/stylist4-1.webp",
+    "/images/stylist4-2.webp",
+    "/images/stylist4-3.webp",
+    "/images/stylist4-4.webp",
+    "/images/stylist4-5.webp",
+    "/images/stylist4-6.webp"
+  ],
+  "stylist5": [
+    "/images/stylist5-0.webp",
+    "/images/stylist5-1.webp",
+    "/images/stylist5-2.webp",
+    "/images/stylist5-3.webp",
+    "/images/stylist5-4.webp",
+    "/images/stylist5-5.webp",
+    "/images/stylist5-6.webp"
+  ],
+  "stylist6": [
+    "/images/stylist6-0.webp",
+    "/images/stylist6-1.webp",
+    "/images/stylist6-2.webp",
+    "/images/stylist6-3.webp",
+    "/images/stylist6-4.webp",
+    "/images/stylist6-5.webp",
+    "/images/stylist6-6.webp"
+  ]
+}
