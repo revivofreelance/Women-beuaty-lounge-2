@@ -64,7 +64,7 @@ export default function BridalPage() {
             size="lg"
             className="h-9 rounded-full bg-primary px-4 text-xs sm:h-11 sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
           >
-            <CalendarHeart className="mr-2 h-5 w-5" /> Book bridal trial
+            <CalendarHeart className="mr-1.5 h-4 w-4" /> Book bridal trial
           </BookButton>
           <Link href="/gallery">
             <Button
@@ -81,19 +81,19 @@ export default function BridalPage() {
       {/* ============== INTRO STATS ============== */}
       <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-6 lg:grid-cols-4">
             {introStats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 80} className="flex flex-col items-center text-center">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-secondary text-primary">
-                  <stat.icon className="h-6 w-6" />
+                  <stat.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                 </span>
                 {stat.isStars ? (
-                  <Stars rating={5} size={18} className="mt-4" />
+                  <Stars rating={5} size={14} className="mt-2 sm:mt-4" />
                 ) : null}
-                <span className="mt-3 font-serif font-bold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
+                <span className="mt-1.5 font-serif font-bold leading-tight text-foreground text-sm sm:mt-3 sm:text-lg md:text-xl lg:text-2xl">
                   {stat.value}
                 </span>
-                <span className="mt-1 text-sm text-muted-foreground">{stat.label}</span>
+                <span className="mt-0.5 text-[0.65rem] leading-tight text-muted-foreground sm:mt-1 sm:text-sm">{stat.label}</span>
               </Reveal>
             ))}
           </div>
@@ -122,18 +122,18 @@ export default function BridalPage() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent" />
-                      <Badge className="absolute left-3 top-3 bg-background/90 text-foreground backdrop-blur-sm">
+                      <Badge className="absolute left-1.5 top-1.5 px-1.5 py-0 text-[0.55rem] bg-background/90 text-foreground backdrop-blur-sm sm:left-3 sm:top-3 sm:px-2 sm:py-0.5 sm:text-xs">
                         {s.category}
                       </Badge>
                     </div>
-                    <CardContent className="space-y-2 pt-4">
+                    <CardContent className="flex flex-1 flex-col gap-1 pt-0 sm:gap-2">
                       <h3 className="font-serif text-sm font-semibold sm:text-lg leading-snug text-foreground">
                         {s.name}
                       </h3>
                       <p className="line-clamp-2 text-xs text-muted-foreground sm:text-sm">
                         {s.shortDescription}
                       </p>
-                      <p className="text-sm font-medium text-primary">
+                      <p className="mt-auto text-[0.7rem] font-medium text-primary sm:text-sm">
                         from ${s.startingPrice}
                       </p>
                     </CardContent>
@@ -156,14 +156,14 @@ export default function BridalPage() {
           <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {processSteps.map((step, i) => (
               <Reveal key={step.num} delay={i * 80}>
-                <div className="relative h-full rounded-2xl border border-border/70 bg-secondary/30 p-4 md:p-5 lg:p-6">
-                  <span className="font-serif font-semibold text-primary/30 text-base sm:text-lg md:text-xl lg:text-2xl">
+                <div className="relative h-full rounded-2xl border border-border/70 bg-secondary/30 p-2.5 sm:p-4 md:p-5 lg:p-6">
+                  <span className="font-serif font-semibold text-primary/30 text-sm sm:text-lg md:text-xl lg:text-2xl">
                     {step.num}
                   </span>
-                  <h3 className="mt-3 font-serif text-sm font-semibold sm:text-lg text-foreground">
+                  <h3 className="mt-1.5 font-serif text-[0.8rem] font-semibold leading-tight text-foreground sm:mt-3 sm:text-lg">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
+                  <p className="mt-1 text-[0.7rem] text-muted-foreground leading-snug sm:mt-2 sm:text-sm md:leading-relaxed">
                     {step.description}
                   </p>
                   {i < processSteps.length - 1 && (
@@ -191,11 +191,11 @@ export default function BridalPage() {
                     sizes="(max-width: 640px) 100vw, 384px"
                   />
                 </div>
-                <div className="absolute -bottom-5 -right-5 rounded-2xl bg-salon-gold px-5 py-3 text-center shadow-xl">
-                  <p className="font-serif font-bold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
+                <div className="absolute -bottom-3 -right-3 rounded-2xl bg-salon-gold px-3 py-2 text-center shadow-xl sm:-bottom-5 sm:-right-5 sm:px-5 sm:py-3">
+                  <p className="font-serif font-bold leading-tight text-foreground text-sm sm:text-lg md:text-xl lg:text-2xl">
                     {kavya.reviews}+
                   </p>
-                  <p className="text-xs font-medium uppercase tracking-wider text-foreground/80">
+                  <p className="text-[0.55rem] font-medium uppercase tracking-wider text-foreground/80 sm:text-xs">
                     Brides styled
                   </p>
                 </div>
@@ -203,35 +203,35 @@ export default function BridalPage() {
 
               <Reveal delay={120}>
                 <Badge className="bg-salon-gold text-foreground">Lead bridal artist</Badge>
-                <h2 className="mt-4 font-serif font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                <h2 className="mt-2.5 font-serif font-semibold leading-tight text-base sm:mt-4 sm:text-xl md:text-2xl lg:text-3xl">
                   {kavya.name}
                 </h2>
-                <p className="mt-1 text-background/70">{kavya.position}</p>
-                <Stars rating={kavya.rating} size={18} className="mt-3" />
-                <p className="mt-5 text-pretty text-background/80 leading-snug md:leading-relaxed">
+                <p className="mt-0.5 text-[0.7rem] text-background/70 sm:text-sm">{kavya.position}</p>
+                <Stars rating={kavya.rating} size={14} className="mt-2 sm:mt-3" />
+                <p className="mt-2.5 text-pretty text-xs text-background/80 leading-snug sm:mt-5 sm:text-base md:leading-relaxed">
                   {kavya.longBio}
                 </p>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-3 flex flex-wrap gap-1 sm:mt-6 sm:gap-2">
                   {kavya.expertise.map((e) => (
                     <Badge
                       key={e}
                       variant="outline"
-                      className="border-background/30 text-background/85"
+                      className="border-background/30 px-1.5 py-0 text-[0.6rem] text-background/85 sm:px-2 sm:py-0.5 sm:text-xs"
                     >
                       {e}
                     </Badge>
                   ))}
                 </div>
-                <div className="mt-7 flex flex-wrap items-center gap-3">
+                <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-7 sm:gap-3">
                   <BookButton stylist={kavya.slug} service="bridal-makeup"
-                    className="rounded-full bg-background px-6 text-foreground hover:bg-background/90"
+                    className="h-8 rounded-full bg-background px-3 text-xs text-foreground hover:bg-background/90 sm:h-9 sm:px-6 sm:text-sm"
                   >
                     <CalendarHeart className="mr-2 h-4 w-4" /> Book with {kavya.name.split(" ")[0]}
                   </BookButton>
                   <Link href={`/team/${kavya.slug}`}>
                     <Button
                       variant="outline"
-                      className="rounded-full border-background/30 bg-transparent text-background hover:bg-background/10 hover:text-background"
+                      className="h-8 rounded-full border-background/30 bg-transparent px-3 text-xs text-background hover:bg-background/10 hover:text-background sm:h-9 sm:px-6 sm:text-sm"
                     >
                       View profile <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -254,7 +254,7 @@ export default function BridalPage() {
           <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2">
             {bridalPackages.map((p, i) => (
               <Reveal key={p.slug} delay={i * 100}>
-                <Card className="h-full overflow-hidden border-border/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <Card className="flex h-full flex-col overflow-hidden border-border/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
                       src={getImage(p.imageKey, p.imageIndex)}
@@ -264,39 +264,40 @@ export default function BridalPage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/40 to-transparent" />
-                    <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+                    {/* one badge stack — badges and the title can never collide */}
+                    <div className="absolute left-1.5 top-1.5 flex flex-col items-start gap-1 sm:left-4 sm:top-4 sm:flex-row sm:flex-wrap sm:gap-2">
                       {p.popular && (
-                        <Badge className="bg-salon-gold text-foreground">Most popular</Badge>
+                        <Badge className="bg-salon-gold px-1.5 py-0 text-[0.55rem] text-foreground sm:px-2 sm:py-0.5 sm:text-xs">Most popular</Badge>
                       )}
-                      <Badge className="bg-primary text-primary-foreground">Save {p.save}%</Badge>
+                      <Badge className="bg-primary px-1.5 py-0 text-[0.55rem] text-primary-foreground sm:px-2 sm:py-0.5 sm:text-xs">Save {p.save}%</Badge>
                     </div>
-                    <h3 className="absolute bottom-4 left-4 right-4 font-serif font-semibold text-background text-base sm:text-lg md:text-xl lg:text-2xl">
+                  </div>
+                  <CardContent className="flex flex-1 flex-col gap-2 sm:gap-4">
+                    <h3 className="font-serif font-semibold leading-tight text-foreground text-[0.8rem] sm:text-lg md:text-xl lg:text-2xl">
                       {p.name}
                     </h3>
-                  </div>
-                  <CardContent className="space-y-4 pt-5">
-                    <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{p.description}</p>
-                    <ul className="space-y-2">
+                    <p className="line-clamp-2 text-[0.7rem] text-muted-foreground leading-snug sm:line-clamp-none sm:text-sm md:leading-relaxed">{p.description}</p>
+                    <ul className="space-y-1 sm:space-y-2">
                       {p.services.map((svc) => (
-                        <li key={svc} className="flex items-start gap-2 text-sm text-foreground/85">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                          <span>{svc}</span>
+                        <li key={svc} className="flex items-start gap-1.5 text-[0.7rem] text-foreground/85 sm:gap-2 sm:text-sm">
+                          <CheckCircle2 className="mt-0.5 h-3 w-3 flex-shrink-0 text-primary sm:h-4 sm:w-4" />
+                          <span className="line-clamp-1 sm:line-clamp-none">{svc}</span>
                         </li>
                       ))}
                     </ul>
-                    <div className="flex items-end justify-between border-t border-border/60 pt-4">
-                      <div>
-                        <span className="text-sm text-muted-foreground line-through">
+                    <div className="mt-auto flex flex-col items-stretch gap-2 border-t border-border/60 pt-2.5 sm:flex-row sm:items-end sm:justify-between sm:pt-4">
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-[0.7rem] text-muted-foreground line-through sm:text-sm">
                           ${p.originalPrice}
                         </span>
-                        <span className="ml-2 font-serif font-semibold text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl">
+                        <span className="font-serif font-semibold text-primary text-sm sm:text-xl md:text-2xl lg:text-3xl">
                           ${p.price}
                         </span>
                       </div>
                       <BookButton service={p.slug}
-                        className="rounded-full bg-primary px-5 hover:bg-primary/90"
+                        className="h-8 w-full rounded-full bg-primary px-3 text-xs hover:bg-primary/90 sm:h-9 sm:w-auto sm:px-5 sm:text-sm"
                       >
-                        Enquire <ArrowRight className="ml-1.5 h-4 w-4" />
+                        Enquire <ArrowRight className="ml-1.5 h-3 w-3 sm:h-4 sm:w-4" />
                       </BookButton>
                     </div>
                   </CardContent>
@@ -319,13 +320,13 @@ export default function BridalPage() {
             {testimonials.slice(0, 3).map((t, i) => (
               <Reveal key={t.id} delay={i * 90}>
                 <Card className="h-full border-border/70 bg-card">
-                  <CardContent className="flex h-full flex-col gap-4 pt-6">
-                    <Quote className="h-8 w-8 text-salon-gold" />
-                    <p className="flex-1 text-pretty text-sm text-foreground/85 leading-snug md:leading-relaxed">
+                  <CardContent className="flex h-full flex-col gap-2 sm:gap-4">
+                    <Quote className="h-5 w-5 text-salon-gold sm:h-8 sm:w-8" />
+                    <p className="line-clamp-5 flex-1 text-pretty text-[0.7rem] text-foreground/85 leading-snug sm:line-clamp-none sm:text-sm md:leading-relaxed">
                       “{t.text}”
                     </p>
-                    <div className="mt-2 flex items-center gap-3 border-t border-border/60 pt-4">
-                      <div className="relative h-11 w-11 overflow-hidden rounded-full ring-2 ring-secondary">
+                    <div className="mt-1 flex items-center gap-2 border-t border-border/60 pt-2 sm:mt-2 sm:gap-3 sm:pt-4">
+                      <div className="relative h-7 w-7 shrink-0 overflow-hidden rounded-full ring-2 ring-secondary sm:h-11 sm:w-11">
                         <Image
                           src={getImage(t.imageKey, t.imageIndex)}
                           alt={t.name}
@@ -335,8 +336,8 @@ export default function BridalPage() {
                         />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-semibold text-foreground">{t.name}</p>
-                        <p className="truncate text-xs text-muted-foreground">{t.service}</p>
+                        <p className="truncate text-[0.7rem] font-semibold text-foreground sm:text-sm">{t.name}</p>
+                        <p className="truncate text-[0.6rem] text-muted-foreground sm:text-xs">{t.service}</p>
                       </div>
                       <Stars rating={t.rating} size={14} />
                     </div>
@@ -360,30 +361,30 @@ export default function BridalPage() {
           />
         </div>
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <Reveal className="flex flex-col items-center gap-5">
+          <Reveal className="flex flex-col items-center gap-2.5 sm:gap-5">
             <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-background/15 text-salon-gold ring-1 ring-background/20">
-              <Gem className="h-7 w-7" />
+              <Gem className="h-5 w-5 sm:h-7 sm:w-7" />
             </span>
             <h2 className="font-serif font-semibold leading-tight text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Let&apos;s plan your wedding-day look
             </h2>
-            <p className="max-w-xl text-pretty text-base text-primary-foreground/85 sm:text-lg leading-snug md:leading-relaxed">
+            <p className="max-w-xl text-pretty text-xs text-primary-foreground/85 sm:text-lg leading-snug md:leading-relaxed">
               From the first consultation to your final touch-up, our bridal team is here to make your wedding morning calm, joyful and unforgettable. Book a trial with Kavya and begin your journey.
             </p>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
               <BookButton service="bridal-makeup" stylist="kavya-reddy"
                 size="lg"
-                className="rounded-full bg-background px-7 text-base text-primary shadow-lg hover:bg-background/90"
+                className="h-9 rounded-full bg-background px-4 text-xs text-primary shadow-lg hover:bg-background/90 sm:h-11 sm:px-7 sm:text-base"
               >
-                <CalendarHeart className="mr-2 h-5 w-5" /> Book bridal trial
+                <CalendarHeart className="mr-1.5 h-4 w-4" /> Book bridal trial
               </BookButton>
               <Link href={`mailto:${salonInfo.bookingEmail}`}>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-background/30 bg-transparent px-7 text-base text-primary-foreground hover:bg-background/10 hover:text-primary-foreground"
+                  className="h-9 rounded-full border-background/30 bg-transparent px-4 text-xs text-primary-foreground hover:bg-background/10 hover:text-primary-foreground sm:h-11 sm:px-7 sm:text-base"
                 >
-                  <Mail className="mr-2 h-5 w-5" /> Email us
+                  <Mail className="mr-1.5 h-4 w-4" /> Email us
                 </Button>
               </Link>
             </div>

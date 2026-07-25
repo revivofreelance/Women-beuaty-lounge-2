@@ -28,7 +28,7 @@ export function FloatingButtons() {
       <a
         href={`mailto:${salonInfo.bookingEmail}?subject=${mailSubject}`}
         aria-label="Email us about an appointment"
-        className="fixed bottom-[5.25rem] right-5 z-40 flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-foreground text-background shadow-lg shadow-black/20 transition-transform hover:scale-110 md:bottom-5 sm:h-14 sm:w-14"
+        className="fixed bottom-[5.25rem] right-5 z-40 flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background shadow-lg shadow-black/20 transition-transform hover:scale-110 md:bottom-5 sm:h-12 sm:w-12"
       >
         <Mail className="h-6 w-6 sm:h-7 sm:w-7" />
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-foreground opacity-20" />

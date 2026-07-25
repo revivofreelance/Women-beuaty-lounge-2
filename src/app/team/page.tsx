@@ -5,6 +5,7 @@ import { stylists, salonInfo } from "@/lib/salon-data";
 import { getImage } from "@/lib/salon-images";
 import { BookButton } from "@/components/site/book-button";
 import { PageHero } from "@/components/site/page-hero";
+import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/site/reveal";
 import { Stars } from "@/components/site/stars";
 import { Button } from "@/components/ui/button";
@@ -69,7 +70,7 @@ export default function TeamPage() {
             {stylists.map((st, i) => (
               <Reveal key={st.slug} delay={i * 80} as="article">
                 <Link href={`/team/${st.slug}`} className="group block h-full">
-                  <Card className="h-full border-transparent bg-transparent p-0 shadow-none transition-all duration-300 hover:-translate-y-1.5">
+                  <Card className="flex h-full flex-col border-transparent bg-transparent p-0 shadow-none transition-all duration-300 hover:-translate-y-1.5">
                     <div className="rounded-arch relative aspect-[4/5] overflow-hidden shadow-md transition-shadow duration-300 group-hover:shadow-2xl group-hover:shadow-primary/15">
                       <Image
                         src={getImage(st.imageKey, st.imageIndex)}
@@ -97,23 +98,23 @@ export default function TeamPage() {
                         {st.tier}
                       </span>
                     </div>
-                    <CardContent className="flex flex-col gap-1.5 px-1 pb-1 pt-2 sm:gap-3 sm:px-2 sm:pb-2 sm:pt-4">
+                    <CardContent className="flex flex-1 flex-col gap-1.5 px-1 pb-1 pt-2 sm:gap-3 sm:px-2 sm:pb-2 sm:pt-4">
                       <p className="line-clamp-2 text-[0.7rem] text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
                         {st.bio}
                       </p>
-                      <div className="flex flex-wrap gap-1 sm:gap-1.5">
-                        {st.expertise.slice(0, 3).map((e) => (
+                      <div className="flex gap-1 overflow-hidden sm:flex-wrap sm:gap-1.5">
+                        {st.expertise.slice(0, 3).map((e, ei) => (
                           <Badge
                             key={e}
                             variant="secondary"
-                            className="rounded-full bg-primary/10 px-1.5 py-0 text-[0.6rem] font-medium text-primary hover:bg-primary/15 sm:px-2 sm:py-0.5 sm:text-xs"
+                            className={cn("shrink-0 whitespace-nowrap rounded-full bg-primary/10 px-1.5 py-0 text-[0.6rem] font-medium text-primary hover:bg-primary/15 sm:px-2 sm:py-0.5 sm:text-xs", ei > 1 && "hidden sm:inline-flex")}
                           >
                             {e}
                           </Badge>
                         ))}
                       </div>
-                      <div className="mt-0.5 flex items-center justify-between border-t border-border/60 pt-2 sm:mt-1 sm:pt-3">
-                        <span className="inline-flex items-center gap-1 text-[0.6rem] font-medium text-muted-foreground sm:gap-1.5 sm:text-xs">
+                      <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-2 sm:pt-3">
+                        <span className="hidden items-center gap-1 text-[0.6rem] font-medium text-muted-foreground sm:inline-flex sm:gap-1.5 sm:text-xs">
                           <Clock className="h-3.5 w-3.5 text-salon-rose" />
                           {st.experience} experience
                         </span>

@@ -112,14 +112,14 @@ export function GalleryClient() {
                 aria-selected={activeCategory === "All"}
                 onClick={() => setActiveCategory("All")}
                 className={
-                  "flex-shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors " +
+                  "flex-shrink-0 rounded-full px-2.5 py-1 text-[0.7rem] font-medium transition-colors sm:px-4 sm:py-2 sm:text-sm " +
                   (activeCategory === "All"
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/70")
                 }
               >
                 All
-                <span className="ml-1.5 text-xs opacity-70">
+                <span className="ml-1 text-[0.6rem] opacity-70 sm:ml-1.5 sm:text-xs">
                   ({galleryItems.length})
                 </span>
               </button>
@@ -135,7 +135,7 @@ export function GalleryClient() {
                     aria-selected={isActive}
                     onClick={() => setActiveCategory(cat)}
                     className={
-                      "flex-shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors " +
+                      "flex-shrink-0 rounded-full px-2.5 py-1 text-[0.7rem] font-medium transition-colors sm:px-4 sm:py-2 sm:text-sm " +
                       (isActive
                         ? "bg-primary text-primary-foreground shadow-sm"
                         : "bg-secondary text-secondary-foreground hover:bg-secondary/70")
@@ -143,7 +143,7 @@ export function GalleryClient() {
                   >
                     {cat}
                     {count > 0 && (
-                      <span className="ml-1.5 text-xs opacity-70">
+                      <span className="ml-1 text-[0.6rem] opacity-70 sm:ml-1.5 sm:text-xs">
                         ({count})
                       </span>
                     )}
@@ -176,15 +176,15 @@ export function GalleryClient() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/10 to-transparent transition-colors duration-300 group-hover:from-foreground/95" />
-                    <Maximize2 className="absolute right-3 top-3 h-4 w-4 text-background/80 drop-shadow transition-colors duration-300 group-hover:text-background" />
-                    <div className="absolute inset-x-0 bottom-0 p-3 text-left">
-                      <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-background/80">
+                    <Maximize2 className="absolute right-1.5 top-1.5 h-3 w-3 text-background/80 drop-shadow transition-colors duration-300 group-hover:text-background sm:right-3 sm:top-3 sm:h-4 sm:w-4" />
+                    <div className="absolute inset-x-0 bottom-0 p-2 text-left sm:p-3">
+                      <span className="block text-[0.5rem] font-semibold uppercase tracking-wider text-background/80 sm:text-[0.65rem]">
                         {g.category}
                       </span>
-                      <span className="block font-serif text-sm font-semibold leading-tight text-background">
+                      <span className="line-clamp-1 block font-serif text-[0.7rem] font-semibold leading-tight text-background sm:line-clamp-none sm:text-sm">
                         {g.title}
                       </span>
-                      <span className="mt-0.5 block text-xs text-background/75">
+                      <span className="mt-0.5 hidden text-xs text-background/75 sm:block">
                         by {stylistName(g.stylistSlug)}
                       </span>
                     </div>
@@ -213,18 +213,18 @@ export function GalleryClient() {
                   afterSrc={getImage(ba.afterKey, ba.afterIndex)}
                   alt={ba.title}
                 />
-                <div className="flex items-center justify-between gap-3 px-1">
+                <div className="flex items-center justify-between gap-2 px-1 sm:gap-3">
                   <div className="flex flex-col">
-                    <span className="font-serif text-base font-semibold text-background">
+                    <span className="font-serif text-[0.8rem] font-semibold leading-tight text-background sm:text-base">
                       {ba.title}
                     </span>
-                    <span className="text-xs text-background/70">
+                    <span className="text-[0.65rem] text-background/70 sm:text-xs">
                       {ba.service}
                     </span>
                   </div>
                   <Badge
                     variant="outline"
-                    className="rounded-full border-background/30 text-[0.65rem] font-medium uppercase tracking-wider text-background/80"
+                    className="shrink-0 rounded-full border-background/30 px-1.5 py-0 text-[0.55rem] font-medium uppercase tracking-wider text-background/80 sm:px-2 sm:py-0.5 sm:text-[0.65rem]"
                   >
                     Real client
                   </Badge>
@@ -238,9 +238,9 @@ export function GalleryClient() {
       {/* ============== FINAL CTA ============== */}
       <section className="bg-background text-center py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="flex flex-col items-center gap-5">
+          <Reveal className="flex flex-col items-center gap-2.5 sm:gap-5">
             <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-primary text-primary-foreground shadow-sm">
-              <Sparkles className="h-6 w-6" />
+              <Sparkles className="h-4 w-4 sm:h-6 sm:w-6" />
             </span>
             <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Your transformation, next
@@ -249,11 +249,11 @@ export function GalleryClient() {
               Book a free 10-minute consultation and we'll match you with the
               right stylist and service for your goals, your hair and your skin.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
               <Button
                 onClick={() => openBooking()}
                 size="lg"
-                className="rounded-full bg-primary px-7 shadow-sm hover:bg-primary/90"
+                className="h-8 rounded-full bg-primary px-4 text-xs shadow-sm hover:bg-primary/90 sm:h-9 sm:px-7 sm:text-sm"
               >
                 <CalendarHeart className="mr-2 h-4 w-4" /> Book a consultation
               </Button>
@@ -261,7 +261,7 @@ export function GalleryClient() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-border px-7 hover:bg-secondary"
+                  className="h-8 rounded-full border-border px-4 text-xs hover:bg-secondary sm:h-9 sm:px-7 sm:text-sm"
                 >
                   Browse services <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -333,7 +333,7 @@ export function GalleryClient() {
               height={1600}
               sizes="100vw"
             />
-            <figcaption className="mt-4 flex w-full max-w-3xl flex-col items-center gap-2 text-center">
+            <figcaption className="mt-3 flex w-full max-w-3xl flex-col items-center gap-1.5 text-center sm:mt-4 sm:gap-2">
               <div className="flex flex-col items-center gap-1">
                 <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-background/70">
                   {active.category}
@@ -341,11 +341,11 @@ export function GalleryClient() {
                 <span className="font-serif text-base font-semibold sm:text-xl text-background">
                   {active.title}
                 </span>
-                <span className="text-sm text-background/80">
+                <span className="text-xs text-background/80 sm:text-sm">
                   by {stylistName(active.stylistSlug)}
                 </span>
               </div>
-              <span className="mt-1 rounded-full bg-background/15 px-3 py-1 text-xs font-medium text-background/85">
+              <span className="mt-1 rounded-full bg-background/15 px-2.5 py-0.5 text-[0.65rem] font-medium text-background/85 sm:px-3 sm:py-1 sm:text-xs">
                 {lightboxIndex + 1} / {filtered.length}
               </span>
             </figcaption>
