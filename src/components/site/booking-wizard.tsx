@@ -104,8 +104,9 @@ export function BookingWizard({
     [stylistSlug]
   );
 
-  const canContinueStep0 = !!serviceSlug && !!stylistSlug && !!date && !!time;
-  const canContinueStep1 = name.trim().length > 1 && phone.trim().length >= 10;
+  const canContinueStep0 = !!serviceSlug && !!stylistSlug && !!date;
+  const canContinueStep1 =
+    !!time && name.trim().length > 1 && phone.trim().length >= 10;
 
   const submit = async () => {
     setSubmitting(true);
@@ -301,42 +302,18 @@ export function BookingWizard({
             </Select>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label className="flex items-center gap-1.5 text-sm font-medium">
-                <CalendarDays className="h-3.5 w-3.5 text-primary" /> Date
-              </Label>
-              <div className="rounded-xl border border-border/70 p-2">
-                <Calendar
-                  mode="single"
-                  selected={date}
-                  onSelect={setDate}
-                  disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
-                  className="mx-auto"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <Label className="flex items-center gap-1.5 text-sm font-medium">
-                <Clock className="h-3.5 w-3.5 text-primary" /> Time
-              </Label>
-              <div className="grid max-h-[280px] grid-cols-2 gap-1.5 overflow-y-auto scroll-elegant rounded-xl border border-border/70 p-2 sm:grid-cols-3">
-                {TIME_SLOTS.map((slot) => (
-                  <button
-                    key={slot}
-                    type="button"
-                    onClick={() => setTime(slot)}
-                    className={cn(
-                      "rounded-lg px-2 py-2 text-xs font-medium transition-colors",
-                      time === slot
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary/60 text-foreground/80 hover:bg-secondary"
-                    )}
-                  >
-                    {slot}
-                  </button>
-                ))}
-              </div>
+          <div className="space-y-2">
+            <Label className="flex items-center gap-1.5 text-sm font-medium">
+              <CalendarDays className="h-3.5 w-3.5 text-primary" /> Date
+            </Label>
+            <div className="rounded-xl border border-border/70 p-2">
+              <Calendar
+                mode="single"
+                selected={date}
+                onSelect={setDate}
+                disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
+                className="mx-auto"
+              />
             </div>
           </div>
         </div>
@@ -345,6 +322,34 @@ export function BookingWizard({
       {/* STEP 1 — DETAILS */}
       {step === 1 && (
         <div className="space-y-4">
+          <div className="space-y-2">
+            <Label className="flex items-center gap-1.5 text-sm font-medium">
+              <Clock className="h-3.5 w-3.5 text-primary" /> Time
+              {date && (
+                <span className="text-xs font-normal text-muted-foreground">
+                  · {format(date, "EEE, MMM d")}
+                </span>
+              )}
+            </Label>
+            <div className="grid grid-cols-3 gap-1.5 rounded-xl border border-border/70 p-2 sm:grid-cols-5">
+              {TIME_SLOTS.map((slot) => (
+                <button
+                  key={slot}
+                  type="button"
+                  onClick={() => setTime(slot)}
+                  className={cn(
+                    "rounded-lg px-1 py-2 text-[0.7rem] font-medium transition-colors sm:text-xs",
+                    time === slot
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary/60 text-foreground/80 hover:bg-secondary"
+                  )}
+                >
+                  {slot}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="bk-name" className="text-sm font-medium">
