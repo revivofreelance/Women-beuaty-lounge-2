@@ -59,20 +59,21 @@ export default function BridalPage() {
         imageKey="bridal"
         imageIndex={5}
       >
-        <div className="flex flex-wrap items-center gap-3">
+        {/* two-up on phone so the pair never stacks */}
+        <div className="grid grid-cols-2 items-center gap-2 sm:flex sm:flex-wrap sm:gap-3">
           <BookButton service="bridal-makeup"
             size="lg"
-            className="h-9 rounded-full bg-primary px-4 text-xs sm:h-11 sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
+            className="h-9 w-full rounded-full bg-primary px-2 text-[0.7rem] sm:h-11 sm:w-auto sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
           >
-            <CalendarHeart className="mr-1.5 h-4 w-4" /> Book bridal trial
+            <CalendarHeart className="mr-1 h-3.5 w-3.5" /> Book bridal trial
           </BookButton>
-          <Link href="/gallery">
+          <Link href="/gallery" className="w-full sm:w-auto">
             <Button
               size="lg"
               variant="outline"
-              className="h-9 rounded-full border-background/30 bg-background/10 px-4 text-xs sm:h-11 sm:px-7 sm:text-base text-background backdrop-blur-sm hover:bg-background/20 hover:text-background"
+              className="h-9 w-full rounded-full border-background/30 bg-background/10 px-2 text-[0.7rem] sm:h-11 sm:w-auto sm:px-7 sm:text-base text-background backdrop-blur-sm hover:bg-background/20 hover:text-background"
             >
-              See bridal gallery <ArrowRight className="ml-2 h-4 w-4" />
+              See bridal gallery <ArrowRight className="ml-1 h-3 w-3 sm:ml-2 sm:h-4 sm:w-4" />
             </Button>
           </Link>
         </div>

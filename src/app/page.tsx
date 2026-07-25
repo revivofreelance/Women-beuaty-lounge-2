@@ -76,13 +76,14 @@ export default function HomePage() {
               </p>
             </Reveal>
             <Reveal delay={300}>
-              <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-7 sm:gap-3">
-                <BookButton className="rounded-full bg-primary px-4 text-xs shadow-lg shadow-primary/25 hover:bg-primary/90 sm:px-7 sm:text-base sm:h-11">
-                  <CalendarHeart className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" /> Book Appointment
+              {/* two-up on phone so the pair never stacks */}
+              <div className="mt-4 grid grid-cols-2 items-center gap-2 sm:mt-7 sm:flex sm:flex-wrap sm:gap-3">
+                <BookButton className="w-full rounded-full bg-primary px-2 text-[0.7rem] shadow-lg shadow-primary/25 hover:bg-primary/90 sm:w-auto sm:px-7 sm:text-base sm:h-11">
+                  <CalendarHeart className="mr-1 h-3.5 w-3.5 sm:mr-2 sm:h-5 sm:w-5" /> Book Appointment
                 </BookButton>
-                <Link href="/services">
-                  <Button variant="outline" className="rounded-full border-background/30 bg-background/10 px-4 text-xs text-background backdrop-blur-sm hover:bg-background/20 hover:text-background sm:px-7 sm:text-base sm:h-11">
-                    Explore Services <ArrowRight className="ml-1.5 h-3.5 w-3.5 sm:ml-2 sm:h-4 sm:w-4" />
+                <Link href="/services" className="w-full sm:w-auto">
+                  <Button variant="outline" className="w-full rounded-full border-background/30 bg-background/10 px-2 text-[0.7rem] text-background backdrop-blur-sm hover:bg-background/20 hover:text-background sm:w-auto sm:px-7 sm:text-base sm:h-11">
+                    Explore Services <ArrowRight className="ml-1 h-3 w-3 sm:ml-2 sm:h-4 sm:w-4" />
                   </Button>
                 </Link>
               </div>
