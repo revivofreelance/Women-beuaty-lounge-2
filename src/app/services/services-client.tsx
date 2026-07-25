@@ -222,14 +222,6 @@ export function ServicesClient() {
                             {s.longevity}
                           </span>
                         </div>
-
-                        {/* Hover "View details" pill */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                          <span className="flex items-center gap-1.5 rounded-full bg-background/90 px-4 py-2 text-xs font-semibold text-foreground shadow-lg backdrop-blur-md">
-                            View details
-                            <ArrowRight className="h-3.5 w-3.5 text-primary" />
-                          </span>
-                        </div>
                       </div>
 
                       {/* Body */}
@@ -257,7 +249,7 @@ export function ServicesClient() {
                             <p className="text-[0.65rem] uppercase tracking-wide text-muted-foreground">from</p>
                             <p className="font-serif text-xl font-bold text-primary">${s.startingPrice}</p>
                           </div>
-                          <span className="flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                          <span className="flex items-center gap-1 text-xs font-medium text-primary">
                             Details
                             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                           </span>

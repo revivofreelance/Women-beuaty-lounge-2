@@ -21,12 +21,12 @@ const CATEGORIES: { name: string; img: SalonImageKey; idx: number; count: number
  */
 export function CategoryExplorer() {
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2 sm:gap-3 sm:grid-cols-4">
       {CATEGORIES.map((cat, i) => (
         <Reveal key={cat.name} delay={i * 60}>
           <Link
             href="/services"
-            className="group relative block aspect-square overflow-hidden rounded-2xl shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
+            className="group relative block aspect-[5/4] overflow-hidden rounded-xl sm:aspect-square sm:rounded-2xl shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-[0.98]"
           >
             <Image
               src={getImage(cat.img, cat.idx)}
@@ -38,18 +38,18 @@ export function CategoryExplorer() {
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/35 to-foreground/5 transition-opacity duration-300 group-hover:from-foreground/95" />
 
             {/* Count pill */}
-            <span className="absolute right-2.5 top-2.5 rounded-full bg-background/90 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-foreground backdrop-blur-sm">
+            <span className="absolute right-1.5 top-1.5 rounded-full bg-background/90 px-1.5 py-0.5 text-[0.55rem] sm:right-2.5 sm:top-2.5 sm:px-2 sm:text-[0.6rem] font-bold uppercase tracking-wider text-foreground backdrop-blur-sm">
               {cat.count} services
             </span>
 
-            <div className="absolute inset-x-0 bottom-0 flex flex-col p-3 text-background">
-              <span className="font-serif text-base font-semibold leading-tight sm:text-lg">
+            <div className="absolute inset-x-0 bottom-0 flex flex-col p-2 text-background sm:p-3">
+              <span className="font-serif text-sm font-semibold leading-tight sm:text-base md:text-lg">
                 {cat.name}
               </span>
-              <span className="mt-0.5 line-clamp-1 text-[0.65rem] text-background/85">
+              <span className="mt-0.5 line-clamp-1 text-[0.6rem] text-background/85 sm:text-[0.65rem]">
                 {cat.desc}
               </span>
-              <span className="mt-1.5 flex items-center gap-1 text-[0.65rem] font-semibold uppercase tracking-wider text-salon-gold">
+              <span className="mt-1 hidden items-center gap-1 text-[0.65rem] font-semibold sm:mt-1.5 sm:flex uppercase tracking-wider text-salon-gold">
                 Explore
                 <ArrowRight className="h-2.5 w-2.5 transition-transform duration-300 group-hover:translate-x-1" />
               </span>

@@ -54,35 +54,35 @@ export default function HomePage() {
           alt="Lumière Beauty Lounge salon interior"
         />
 
-        <div className="mx-auto flex min-h-[75vh] md:min-h-[88vh] max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8 lg:min-h-[92vh] py-6 md:py-10 lg:py-12">
+        <div className="mx-auto flex min-h-[62vh] sm:min-h-[75vh] md:min-h-[88vh] max-w-7xl flex-col justify-center px-4 sm:px-6 lg:px-8 lg:min-h-[92vh] py-5 sm:py-5 sm:py-6 md:py-10 lg:py-12">
           <div className="max-w-2xl">
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-background backdrop-blur-sm ring-1 ring-background/20">
-                <Sparkles className="h-3.5 w-3.5 text-salon-gold" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-background/15 px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-background backdrop-blur-sm ring-1 ring-background/20 sm:gap-2 sm:px-4 sm:py-1.5 sm:text-xs sm:tracking-[0.18em]">
+                <Sparkles className="h-3 w-3 text-salon-gold sm:h-3.5 sm:w-3.5" />
                 San Francisco's home for beauty since {salonInfo.established}
               </span>
             </Reveal>
             <Reveal delay={100}>
-              <h1 className="mt-5 font-serif font-semibold leading-[1.05] tracking-tight text-background text-xl md:text-2xl lg:text-3xl">
+              <h1 className="mt-3 font-serif font-semibold leading-[1.05] tracking-tight text-background text-xl sm:mt-5 md:text-2xl lg:text-3xl">
                 Where modern beauty meets <span className="text-shimmer-gold">timeless care</span>
               </h1>
-              <p className="mt-3 font-serif text-lg font-medium text-background/90 sm:text-2xl">
+              <p className="mt-2 font-serif text-base font-medium text-background/90 sm:mt-3 sm:text-2xl">
                 Loved for <RotatingHeadline />
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <p className="mt-5 max-w-xl text-pretty text-sm text-background/85 sm:text-lg leading-snug md:leading-relaxed">
+              <p className="mt-3 line-clamp-3 max-w-xl text-pretty text-xs text-background/85 sm:mt-5 sm:line-clamp-none sm:text-lg leading-snug md:leading-relaxed">
                 Expert hair, skin, makeup, bridal, spa and nail services — delivered by certified stylists in a calm, hygienic space in the heart of Hayes Valley. Discover a salon that listens, then styles.
               </p>
             </Reveal>
             <Reveal delay={300}>
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <BookButton size="lg" className="rounded-full bg-primary px-7 text-base shadow-lg shadow-primary/25 hover:bg-primary/90">
-                  <CalendarHeart className="mr-2 h-5 w-5" /> Book Appointment
+              <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-7 sm:gap-3">
+                <BookButton className="rounded-full bg-primary px-4 text-xs shadow-lg shadow-primary/25 hover:bg-primary/90 sm:px-7 sm:text-base sm:h-11">
+                  <CalendarHeart className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" /> Book Appointment
                 </BookButton>
                 <Link href="/services">
-                  <Button size="lg" variant="outline" className="rounded-full border-background/30 bg-background/10 px-7 text-base text-background backdrop-blur-sm hover:bg-background/20 hover:text-background">
-                    Explore Services <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button variant="outline" className="rounded-full border-background/30 bg-background/10 px-4 text-xs text-background backdrop-blur-sm hover:bg-background/20 hover:text-background sm:px-7 sm:text-base sm:h-11">
+                    Explore Services <ArrowRight className="ml-1.5 h-3.5 w-3.5 sm:ml-2 sm:h-4 sm:w-4" />
                   </Button>
                 </Link>
               </div>
@@ -90,37 +90,37 @@ export default function HomePage() {
 
             {/* Trust stats */}
             <Reveal delay={400}>
-              <div className="mt-6 md:mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-                <div className="flex items-center gap-2">
-                  <Stars rating={salonInfo.stats.rating} size={16} />
-                  <span className="text-sm font-medium text-background">{salonInfo.stats.rating} <span className="text-background/70">({salonInfo.stats.reviews}+ reviews)</span></span>
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1.5 sm:mt-6 sm:gap-x-8 sm:gap-y-4 md:mt-10">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Stars rating={salonInfo.stats.rating} size={13} />
+                  <span className="text-xs font-medium text-background sm:text-sm">{salonInfo.stats.rating} <span className="text-background/70">({salonInfo.stats.reviews}+ reviews)</span></span>
                 </div>
                 <div className="hidden h-5 w-px bg-background/30 sm:block" />
-                <div className="text-sm text-background/85"><span className="font-semibold text-background">{salonInfo.stats.clients}</span> happy clients</div>
+                <div className="text-xs text-background/85 sm:text-sm"><span className="font-semibold text-background">{salonInfo.stats.clients}</span> happy clients</div>
                 <div className="hidden h-5 w-px bg-background/30 sm:block" />
-                <div className="text-sm text-background/85"><span className="font-semibold text-background">{salonInfo.stats.years}</span> years of care</div>
+                <div className="text-xs text-background/85 sm:text-sm"><span className="font-semibold text-background">{salonInfo.stats.years}</span> years of care</div>
               </div>
             </Reveal>
           </div>
 
           {/* Popular-right-now rail — fills the hero's dead band and gets people
               one tap from a real service page. Scrolls sideways on mobile. */}
-          <Reveal delay={500} className="mt-8 md:mt-12 max-w-3xl">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-background/70">
+          <Reveal delay={500} className="mt-4 sm:mt-5 md:mt-12 max-w-3xl">
+            <div className="flex items-center gap-2 text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-background/70 sm:text-xs sm:tracking-[0.18em]">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-salon-gold opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-salon-gold" />
               </span>
               Booking fast this week
             </div>
-            <div className="mt-3 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="mt-2 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-2 sm:mt-3 sm:gap-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {popularServices.slice(0, 4).map((s) => (
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
                   className="group flex shrink-0 snap-start items-center gap-3 rounded-2xl border border-background/20 bg-background/10 p-2 pr-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-salon-gold/50 hover:bg-background/20"
                 >
-                  <span className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl ring-1 ring-background/20">
+                  <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg ring-1 ring-background/20 sm:h-11 sm:w-11 sm:rounded-xl">
                     <Image src={getImage(s.imageKey, 0)} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" fill sizes="44px" />
                   </span>
                   <span className="min-w-0">
@@ -155,11 +155,11 @@ export default function HomePage() {
               { icon: Clock, label: "Open today", value: "9 AM – 9 PM" },
               { icon: Mail, label: "Email us", value: salonInfo.email },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-3 px-2 py-4 sm:px-6">
-                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-background/15 text-background"><item.icon className="h-4 w-4" /></span>
+              <div key={item.label} className="flex items-center gap-2.5 px-2 py-2.5 sm:gap-3 sm:px-6 sm:py-4">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-background/15 text-background sm:h-10 sm:w-10"><item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" /></span>
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wider text-background/60">{item.label}</p>
-                  <p className="truncate text-sm font-medium text-background">{item.value}</p>
+                  <p className="text-[0.6rem] uppercase tracking-wider text-background/60 sm:text-xs">{item.label}</p>
+                  <p className="truncate text-xs font-medium text-background sm:text-sm">{item.value}</p>
                 </div>
               </div>
             ))}
@@ -177,24 +177,24 @@ export default function HomePage() {
       <LiveTicker />
 
       {/* ============== INTERACTIVE CATEGORY EXPLORER ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Explore by category"
             title="What are you in the mood for?"
             description="Tap any category to browse every service inside it."
           />
-          <div className="mt-8 md:mt-12">
+          <div className="mt-5 md:mt-12">
             <CategoryExplorer />
           </div>
         </div>
       </section>
 
       {/* ============== FEATURED SERVICES ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-12">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="What we do" title="Services crafted around you" description="From precision haircuts to bridal artistry, every service begins with a consultation and ends with you feeling completely yourself. Over 120 services across 12 categories." />
-          <div className="mt-8 md:mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {popularServices.map((s, i) => (
               <Reveal key={s.slug} delay={i * 70}>
                 <Link href={`/services/${s.slug}`}>
@@ -202,15 +202,15 @@ export default function HomePage() {
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image src={getImage(s.imageKey, 0)} alt={s.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                      <Badge className="absolute left-3 top-3 bg-background/90 text-foreground hover:bg-background">{s.category}</Badge>
-                      <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-background"><Clock className="h-3.5 w-3.5" /><span className="text-xs font-medium">{s.duration}</span></div>
+                      <Badge className="absolute left-2 top-2 max-w-[calc(100%-1rem)] truncate bg-background/90 text-[0.6rem] text-foreground hover:bg-background sm:left-3 sm:top-3 sm:text-xs">{s.category}</Badge>
+                      <div className="absolute bottom-2 left-2 flex items-center gap-1 text-background sm:bottom-3 sm:left-3 sm:gap-1.5"><Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5" /><span className="text-[0.65rem] font-medium sm:text-xs">{s.duration}</span></div>
                     </div>
-                    <CardContent className="p-4 sm:p-5">
-                      <h3 className="font-serif text-lg font-semibold leading-snug">{s.name}</h3>
-                      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{s.shortDescription}</p>
-                      <div className="mt-4 flex items-center justify-between">
-                        <div><span className="text-xs text-muted-foreground">from </span><span className="font-serif text-xl font-semibold text-primary">${s.startingPrice}</span></div>
-                        <span className="flex items-center gap-1 text-sm font-medium text-primary">Details <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
+                    <CardContent className="p-3 sm:p-5">
+                      <h3 className="font-serif text-sm font-semibold leading-snug sm:text-lg">{s.name}</h3>
+                      <p className="mt-1 line-clamp-2 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{s.shortDescription}</p>
+                      <div className="mt-2.5 flex items-center justify-between sm:mt-4">
+                        <div><span className="text-[0.65rem] text-muted-foreground sm:text-xs">from </span><span className="font-serif text-base font-semibold text-primary sm:text-xl">${s.startingPrice}</span></div>
+                        <span className="flex items-center gap-1 text-xs font-medium text-primary sm:text-sm">Details <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
                       </div>
                     </CardContent>
                   </Card>
@@ -225,12 +225,12 @@ export default function HomePage() {
       </section>
 
       {/* ============== WHY CHOOSE US ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-12">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
             <div>
               <SectionHeading eyebrow="Why Lumière" title="A salon you can trust" description="We've built Lumière around what real customers want — expertise, hygiene, honest pricing and a genuinely caring team." align="left" />
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-4">
                 {[
                   { icon: Award, title: "Certified stylists", desc: "L'Oréal, Wella & CIDESCO trained team, learning every quarter." },
                   { icon: ShieldCheck, title: "Hygiene-first", desc: "Single-use tools, UV-sterilised equipment, 90°C-laundered towels." },
@@ -238,9 +238,9 @@ export default function HomePage() {
                   { icon: Leaf, title: "Premium products", desc: "L'Oréal, Kérastase, MAC & Dermalogica across every service." },
                 ].map((f, i) => (
                   <Reveal key={f.title} delay={i * 80}>
-                    <div className="flex gap-3.5 rounded-2xl bg-background p-4 shadow-sm ring-1 ring-border/40">
-                      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><f.icon className="h-5 w-5" /></span>
-                      <div><h4 className="font-semibold">{f.title}</h4><p className="mt-1 text-sm text-muted-foreground">{f.desc}</p></div>
+                    <div className="flex h-full flex-col gap-2 rounded-2xl bg-background p-3 shadow-sm ring-1 ring-border/40 sm:flex-row sm:gap-3.5 sm:p-4">
+                      <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-11 sm:w-11"><f.icon className="h-4 w-4 sm:h-5 sm:w-5" /></span>
+                      <div><h4 className="text-sm font-semibold sm:text-base">{f.title}</h4><p className="mt-1 text-xs text-muted-foreground sm:text-sm">{f.desc}</p></div>
                     </div>
                   </Reveal>
                 ))}
@@ -261,8 +261,8 @@ export default function HomePage() {
       </section>
 
       {/* ============== NUMBERS BAND ============== */}
-      <section className="border-y border-border/60 bg-background py-6 md:py-8 lg:py-10">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-10 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <section className="border-y border-border/60 bg-background py-5 sm:py-4 sm:py-6 md:py-8 lg:py-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-4 sm:gap-y-10 sm:px-6 lg:grid-cols-4 lg:px-8">
           {[
             { value: 28000, suffix: "+", label: "Happy clients" },
             { value: 640, suffix: "+", label: "Brides styled" },
@@ -281,10 +281,10 @@ export default function HomePage() {
       </section>
 
       {/* ============== MEET OUR STYLISTS ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Meet the team" title="Stylists who genuinely care" description="Each of our stylists brings years of training and a personal touch. Find the one who's right for your next look." />
-          <div className="mt-8 md:mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {featuredStylists.map((st, i) => (
               <Reveal key={st.slug} delay={i * 80}>
                 <Link href={`/team/${st.slug}`} className="group block">
@@ -295,21 +295,21 @@ export default function HomePage() {
                     {/* Shine sweep */}
                     <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
                     {/* Rating badge */}
-                    <div className="absolute right-4 top-6 flex items-center gap-1 rounded-full bg-background/90 px-2.5 py-1 text-xs font-bold text-foreground backdrop-blur-sm">
+                    <div className="absolute right-2 top-3 flex items-center gap-1 rounded-full bg-background/90 px-2 py-0.5 text-[0.65rem] font-bold text-foreground backdrop-blur-sm sm:right-4 sm:top-6 sm:px-2.5 sm:py-1 sm:text-xs">
                       <Star className="h-3 w-3 fill-salon-gold text-salon-gold" />
                       {st.rating}
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 text-center text-background p-3 md:p-4 lg:p-5">
-                      <p className="text-[0.65rem] uppercase tracking-[0.18em] text-background/70">{st.position}</p>
-                      <h3 className="mt-0.5 font-serif text-lg font-semibold">{st.name}</h3>
-                      <div className="mt-1.5 flex items-center justify-center gap-1.5"><Stars rating={st.rating} size={12} /><span className="text-xs text-background/80">{st.rating} · {st.reviews}</span></div>
-                      <div className="mt-2 flex items-center justify-center gap-1 text-xs font-medium text-salon-gold">
+                    <div className="absolute bottom-0 left-0 right-0 text-center text-background p-2 sm:p-3 md:p-4 lg:p-5">
+                      <p className="truncate text-[0.55rem] uppercase tracking-[0.14em] text-background/70 sm:text-[0.65rem] sm:tracking-[0.18em]">{st.position}</p>
+                      <h3 className="mt-0.5 truncate font-serif text-sm font-semibold sm:text-lg">{st.name}</h3>
+                      <div className="mt-1 flex items-center justify-center gap-1 sm:mt-1.5 sm:gap-1.5"><Stars rating={st.rating} size={11} /><span className="text-[0.65rem] text-background/80 sm:text-xs">{st.rating} · {st.reviews}</span></div>
+                      <div className="mt-2 hidden items-center justify-center gap-1 text-xs font-medium text-salon-gold sm:flex">
                         View profile <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
-                  <div className="mt-3 flex flex-wrap justify-center gap-1.5">
-                    {st.expertise.slice(0, 2).map((e) => (<Badge key={e} variant="secondary" className="text-xs transition-colors group-hover:bg-primary/10 group-hover:text-primary">{e}</Badge>))}
+                  <div className="mt-2 flex flex-wrap justify-center gap-1 sm:mt-3 sm:gap-1.5">
+                    {st.expertise.slice(0, 2).map((e) => (<Badge key={e} variant="secondary" className="text-[0.6rem] transition-colors group-hover:bg-primary/10 group-hover:text-primary sm:text-xs">{e}</Badge>))}
                   </div>
                 </Link>
               </Reveal>
@@ -322,15 +322,15 @@ export default function HomePage() {
       </section>
 
       {/* ============== BEFORE & AFTER ============== */}
-      <section className="bg-foreground text-background py-6 md:py-10 lg:py-12">
+      <section className="bg-foreground text-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Real transformations" title="Before & after" description="Drag the slider to see the difference a Lumière appointment makes. Real clients, real results — no filters." light />
-          <div className="mt-8 md:mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-4 md:mt-12 grid gap-4 sm:gap-6 lg:grid-cols-3">
             {beforeAfter.slice(0, 3).map((ba, i) => (
               <Reveal key={ba.id} delay={i * 100}>
                 <div>
                   <BeforeAfterSlider beforeSrc={getImage(ba.beforeKey, ba.beforeIndex)} afterSrc={getImage(ba.afterKey, ba.afterIndex)} alt={ba.title} />
-                  <div className="mt-4"><h3 className="font-serif text-lg font-semibold">{ba.title}</h3><p className="text-sm text-background/70">{ba.service}</p></div>
+                  <div className="mt-2.5 sm:mt-4"><h3 className="font-serif text-sm font-semibold sm:text-lg">{ba.title}</h3><p className="text-xs text-background/70 sm:text-sm">{ba.service}</p></div>
                 </div>
               </Reveal>
             ))}
@@ -342,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* ============== GLOW FINDER QUIZ ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Not sure where to start?" title="Find your glow in 20 seconds" description="Answer two quick questions and we'll match you with the perfect service — no scrolling through menus." />
           <Reveal delay={120} className="mt-6 md:mt-10">
@@ -356,36 +356,38 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Loved by clients" title="A wall of love" description={`Over ${salonInfo.stats.reviews} reviews across Google, Yelp and Instagram — drifting by below. Hover to pause and read.`} />
         </div>
-        <div className="mt-8 md:mt-12">
+        <div className="mt-5 md:mt-12">
           <TestimonialMarquee />
         </div>
       </section>
 
       {/* ============== PACKAGES ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-12">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Curated bundles" title="Popular beauty packages" description="Combine your favourite services and save. Perfect for brides, party prep and monthly self-care." />
-          <div className="mt-8 md:mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-5 md:mt-12 grid gap-5 md:grid-cols-3">
             {featuredPackages.map((p, i) => (
               <Reveal key={p.slug} delay={i * 80}>
                 <Card className={`group relative h-full overflow-hidden border-border/70 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/10 ${p.popular ? "ring-2 ring-primary" : ""}`}>
-                  {p.popular && (<div className="absolute right-4 top-4 z-10"><Badge className="bg-primary text-primary-foreground">Most popular</Badge></div>)}
-                  <div className="relative aspect-[16/10] overflow-hidden">
+                  {/* Both corner badges share one stack so they can never sit on each other */}
+                  <div className="absolute right-3 top-3 z-10 flex flex-col items-end gap-2">
+                    {p.popular && <Badge className="bg-primary text-primary-foreground">Most popular</Badge>}
+                    <span className="flex items-center gap-1 rounded-full bg-salon-gold px-2.5 py-1 text-xs font-bold text-foreground shadow-sm">
+                      <Sparkles className="h-3 w-3" /> Save {p.save}%
+                    </span>
+                  </div>
+                  <div className="relative aspect-[2/1] sm:aspect-[16/10] overflow-hidden">
                     <Image src={getImage(p.imageKey, p.imageIndex)} alt={p.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent transition-opacity duration-500 group-hover:from-foreground/85" />
                     {/* Shine sweep */}
                     <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
                     <div className="absolute bottom-3 left-4 text-background"><span className="text-xs uppercase tracking-wider text-background/80">{p.duration}</span></div>
-                    {/* Savings badge */}
-                    <div className="absolute right-3 top-3 z-10 flex items-center gap-1 rounded-full bg-salon-gold px-2.5 py-1 text-xs font-bold text-foreground shadow-sm" style={{ marginTop: p.popular ? "2rem" : "0" }}>
-                      <Sparkles className="h-3 w-3" /> Save {p.save}%
-                    </div>
                   </div>
-                  <CardContent className="p-4 sm:p-6">
-                    <h3 className="font-serif text-xl font-semibold">{p.name}</h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground">{p.description}</p>
-                    <ul className="mt-4 space-y-2">{p.services.slice(0, 4).map((s) => (<li key={s} className="flex items-start gap-2 text-sm"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary transition-transform duration-300 group-hover:scale-110" /><span className="text-foreground/80">{s}</span></li>))}</ul>
-                    <div className="mt-5 flex items-end justify-between border-t border-border/60 pt-4">
+                  <CardContent className="p-3.5 sm:p-6">
+                    <h3 className="font-serif text-base font-semibold sm:text-xl">{p.name}</h3>
+                    <p className="mt-1 text-xs text-muted-foreground sm:mt-1.5 sm:text-sm">{p.description}</p>
+                    <ul className="mt-2.5 space-y-1.5 sm:mt-4 sm:space-y-2">{p.services.slice(0, 4).map((s) => (<li key={s} className="flex items-start gap-2 text-xs sm:text-sm"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-primary transition-transform duration-300 group-hover:scale-110 sm:h-4 sm:w-4" /><span className="text-foreground/80">{s}</span></li>))}</ul>
+                    <div className="mt-3 flex items-end justify-between border-t border-border/60 pt-3 sm:mt-5 sm:pt-4">
                       <div><span className="text-xs text-muted-foreground line-through">${p.originalPrice}</span><p className="font-serif font-bold text-primary text-lg md:text-xl lg:text-2xl">${p.price}</p><span className="text-xs font-medium text-green-600">Save {p.save}%</span></div>
                       <BookButton size="sm" service={p.slug} className="rounded-full bg-primary transition-transform duration-300 group-hover:scale-105">Book</BookButton>
                     </div>
@@ -399,10 +401,10 @@ export default function HomePage() {
       </section>
 
       {/* ============== OFFERS ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Save more" title="Current offers" description="Promotions running right now — for new clients, students, brides and referrals." />
-          <div className="mt-8 md:mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
             {featuredOffers.map((o, i) => (
               <Reveal key={o.id} delay={i * 80}>
                 <Card className="group h-full overflow-hidden border-border/70 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/10">
@@ -411,13 +413,13 @@ export default function HomePage() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-foreground/80 to-foreground/20 transition-opacity duration-500 group-hover:from-foreground/90" />
                     {/* Shine sweep */}
                     <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-                    <div className="absolute left-4 top-4"><Badge className="bg-salon-gold text-foreground transition-transform duration-300 group-hover:scale-110">{o.badge}</Badge></div>
-                    <div className="absolute bottom-4 left-4 right-4"><p className="font-serif font-bold text-background text-lg md:text-xl lg:text-2xl">{o.discount}</p><p className="text-sm text-background/85">{o.title}</p></div>
+                    <div className="absolute left-2 top-2 sm:left-4 sm:top-4"><Badge className="bg-salon-gold text-[0.6rem] text-foreground transition-transform duration-300 group-hover:scale-110 sm:text-xs">{o.badge}</Badge></div>
+                    <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4"><p className="font-serif font-bold text-background text-base sm:text-lg md:text-xl lg:text-2xl">{o.discount}</p><p className="truncate text-xs text-background/85 sm:text-sm">{o.title}</p></div>
                   </div>
-                  <CardContent className="p-4 sm:p-5">
-                    <p className="text-sm text-muted-foreground">{o.description}</p>
-                    <div className="mt-4 flex items-center justify-between rounded-lg bg-secondary/60 px-3 py-2 transition-colors group-hover:bg-primary/5"><span className="text-xs text-muted-foreground">Code</span><code className="font-mono text-sm font-semibold text-primary transition-transform duration-300 group-hover:scale-105">{o.code}</code></div>
-                    <p className="mt-2 text-xs text-muted-foreground">{o.validUntil}</p>
+                  <CardContent className="p-3 sm:p-5">
+                    <p className="line-clamp-3 text-xs text-muted-foreground sm:line-clamp-none sm:text-sm">{o.description}</p>
+                    <div className="mt-2.5 flex items-center justify-between rounded-lg bg-secondary/60 px-2 py-1.5 transition-colors group-hover:bg-primary/5 sm:mt-4 sm:px-3 sm:py-2"><span className="text-[0.65rem] text-muted-foreground sm:text-xs">Code</span><code className="font-mono text-xs font-semibold text-primary transition-transform duration-300 group-hover:scale-105 sm:text-sm">{o.code}</code></div>
+                    <p className="mt-1.5 text-[0.65rem] text-muted-foreground sm:mt-2 sm:text-xs">{o.validUntil}</p>
                   </CardContent>
                 </Card>
               </Reveal>
@@ -428,20 +430,20 @@ export default function HomePage() {
       </section>
 
       {/* ============== PRODUCTS USED ============== */}
-      <section className="border-y border-border/60 bg-secondary/40 py-6 md:py-8 lg:py-10">
+      <section className="border-y border-border/60 bg-secondary/40 py-5 sm:py-4 sm:py-6 md:py-8 lg:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Premium brands we trust</p></Reveal>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-            {brandsUsed.map((b, i) => (<Reveal key={b} delay={i * 40}><span className="font-serif text-lg font-medium text-foreground/70 transition-all duration-300 hover:scale-110 hover:text-primary sm:text-xl">{b}</span></Reveal>))}
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2.5 sm:mt-8 sm:gap-x-8 sm:gap-y-4">
+            {brandsUsed.map((b, i) => (<Reveal key={b} delay={i * 40}><span className="font-serif text-sm font-medium text-foreground/70 transition-all duration-300 hover:scale-110 hover:text-primary sm:text-xl">{b}</span></Reveal>))}
           </div>
         </div>
       </section>
 
       {/* ============== INSTAGRAM GALLERY ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Follow us @lumierebeauty" title="From our Instagram" description="A peek at our latest work. Tap any image to see more on our feed." />
-          <div className="mt-8 md:mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="mt-4 md:mt-12 grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-6">
             {instagramShots.map((src, i) => (
               <Reveal key={i} delay={i * 50}>
                 <a href={salonInfo.social.instagram} target="_blank" rel="noopener noreferrer" className="group relative block aspect-square overflow-hidden rounded-xl ring-2 ring-transparent transition-all duration-500 hover:ring-primary/40 hover:shadow-xl">
@@ -456,10 +458,10 @@ export default function HomePage() {
       </section>
 
       {/* ============== BLOG TEASER ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-12">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Beauty tips & blog" title="Expert guides for everyday glow" description="Hair care, skincare, bridal prep and seasonal routines — written by our stylists and therapists." />
-          <div className="mt-8 md:mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
             {blogPosts.slice(0, 3).map((p, i) => (
               <Reveal key={p.slug} delay={i * 80}>
                 <Link href={`/blog/${p.slug}`}>
@@ -468,13 +470,13 @@ export default function HomePage() {
                       <Image src={getImage(p.imageKey, p.imageIndex)} alt={p.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                       {/* Shine sweep */}
                       <div className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
-                      <Badge className="absolute left-3 top-3 bg-background/90 text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground">{p.category}</Badge>
+                      <Badge className="absolute left-2 top-2 max-w-[calc(100%-1rem)] truncate bg-background/90 text-[0.6rem] text-foreground transition-colors group-hover:bg-primary group-hover:text-primary-foreground sm:left-3 sm:top-3 sm:text-xs">{p.category}</Badge>
                     </div>
-                    <CardContent className="p-4 sm:p-5">
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground"><span>{p.date}</span><span>·</span><span className="flex items-center gap-1"><Clock className="h-3 w-3" />{p.readTime}</span></div>
-                      <h3 className="mt-2 font-serif text-lg font-semibold leading-snug transition-colors group-hover:text-primary">{p.title}</h3>
-                      <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{p.excerpt}</p>
-                      <p className="mt-4 text-xs text-muted-foreground">By {p.author}</p>
+                    <CardContent className="p-3 sm:p-5">
+                      <div className="flex items-center gap-1.5 text-[0.65rem] text-muted-foreground sm:gap-2 sm:text-xs"><span>{p.date}</span><span>·</span><span className="flex items-center gap-1"><Clock className="h-3 w-3" />{p.readTime}</span></div>
+                      <h3 className="mt-1.5 font-serif text-sm font-semibold leading-snug transition-colors group-hover:text-primary sm:mt-2 sm:text-lg">{p.title}</h3>
+                      <p className="mt-1.5 line-clamp-2 text-xs text-muted-foreground sm:mt-2 sm:text-sm">{p.excerpt}</p>
+                      <p className="mt-2.5 text-[0.65rem] text-muted-foreground sm:mt-4 sm:text-xs">By {p.author}</p>
                     </CardContent>
                   </Card>
                 </Link>
@@ -486,31 +488,31 @@ export default function HomePage() {
       </section>
 
       {/* ============== FAQ ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Good to know" title="Frequently asked questions" description="Everything you need to know before your visit. Can't find your answer? Just drop us a message." />
           <Accordion type="single" collapsible className="mt-6 md:mt-10 space-y-3">
             {faqs.slice(0, 6).map((f, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="overflow-hidden rounded-xl border border-border/70 bg-background px-5">
-                <AccordionTrigger className="text-left text-base font-medium hover:no-underline">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-pretty text-sm text-muted-foreground leading-snug md:leading-relaxed">{f.a}</AccordionContent>
+              <AccordionItem key={i} value={`item-${i}`} className="overflow-hidden rounded-xl border border-border/70 bg-background px-4 sm:px-5">
+                <AccordionTrigger className="text-left text-sm font-medium hover:no-underline sm:text-base">{f.q}</AccordionTrigger>
+                <AccordionContent className="text-pretty text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{f.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-          <div className="mt-8 flex justify-center"><Link href="/faq"><Button variant="outline" className="group rounded-full">View all FAQs <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></Button></Link></div>
+          <div className="mt-5 flex justify-center sm:mt-8"><Link href="/faq"><Button variant="outline" className="group rounded-full">View all FAQs <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" /></Button></Link></div>
         </div>
       </section>
 
       {/* ============== LOCATION / HOURS / CONTACT ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-12">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto grid max-w-7xl px-4 sm:px-6 lg:grid-cols-2 lg:px-8 gap-6 md:gap-8 lg:gap-10">
           <div>
             <SectionHeading eyebrow="Find us" title="Visit Lumière" align="left" />
-            <div className="mt-8 space-y-5">
-              <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><MapPin className="h-5 w-5" /></span><div><h4 className="font-semibold">Address</h4><p className="mt-1 text-sm text-muted-foreground">{salonInfo.address.line1}<br />{salonInfo.address.line2}</p></div></div>
-              <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Clock className="h-5 w-5" /></span><div className="flex-1"><h4 className="font-semibold">Opening hours</h4><ul className="mt-2 space-y-1 text-sm text-muted-foreground">{salonInfo.hours.map((h) => (<li key={h.day} className="flex justify-between border-b border-border/40 pb-1"><span>{h.day}</span><span className="font-medium text-foreground/80">{h.open} – {h.close}</span></li>))}</ul></div></div>
-              <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Mail className="h-5 w-5" /></span><div><h4 className="font-semibold">Contact</h4><p className="mt-1 text-sm text-muted-foreground"><a href={`mailto:${salonInfo.email}`} className="hover:text-primary">{salonInfo.email}</a></p></div></div>
-              <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><MapPin className="h-5 w-5" /></span><div><h4 className="font-semibold">Nearby landmarks</h4><ul className="mt-1 space-y-1 text-sm text-muted-foreground">{salonInfo.landmarks.map((l) => <li key={l}>· {l}</li>)}</ul></div></div>
+            <div className="mt-5 space-y-3.5 sm:mt-8 sm:space-y-5">
+              <div className="flex gap-3 sm:gap-4"><span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-11 sm:w-11"><MapPin className="h-5 w-5" /></span><div><h4 className="text-sm font-semibold sm:text-base">Address</h4><p className="mt-1 text-xs text-muted-foreground sm:text-sm">{salonInfo.address.line1}<br />{salonInfo.address.line2}</p></div></div>
+              <div className="flex gap-3 sm:gap-4"><span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-11 sm:w-11"><Clock className="h-5 w-5" /></span><div className="flex-1"><h4 className="text-sm font-semibold sm:text-base">Opening hours</h4><ul className="mt-2 space-y-1 text-xs text-muted-foreground sm:text-sm">{salonInfo.hours.map((h) => (<li key={h.day} className="flex justify-between border-b border-border/40 pb-1"><span>{h.day}</span><span className="font-medium text-foreground/80">{h.open} – {h.close}</span></li>))}</ul></div></div>
+              <div className="flex gap-3 sm:gap-4"><span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-11 sm:w-11"><Mail className="h-5 w-5" /></span><div><h4 className="text-sm font-semibold sm:text-base">Contact</h4><p className="mt-1 text-sm text-muted-foreground"><a href={`mailto:${salonInfo.email}`} className="hover:text-primary">{salonInfo.email}</a></p></div></div>
+              <div className="flex gap-3 sm:gap-4"><span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:h-11 sm:w-11"><MapPin className="h-5 w-5" /></span><div><h4 className="text-sm font-semibold sm:text-base">Nearby landmarks</h4><ul className="mt-1 space-y-1 text-xs text-muted-foreground sm:text-sm">{salonInfo.landmarks.map((l) => <li key={l}>· {l}</li>)}</ul></div></div>
             </div>
             <div className="mt-7 flex flex-wrap gap-3">
               <BookButton className="rounded-full bg-primary"><CalendarHeart className="mr-2 h-4 w-4" /> Book Appointment</BookButton>
@@ -519,7 +521,7 @@ export default function HomePage() {
           </div>
           <Reveal delay={150}>
             <div className="overflow-hidden rounded-3xl border border-border/70 shadow-lg">
-              <iframe title="Lumière Beauty Lounge location" src={salonInfo.mapEmbed} className="h-[300px] md:h-[420px] w-full border-0 lg:h-full lg:min-h-[520px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+              <iframe title="Lumière Beauty Lounge location" src={salonInfo.mapEmbed} className="h-[210px] sm:h-[300px] md:h-[420px] w-full border-0 lg:h-full lg:min-h-[520px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             </div>
           </Reveal>
         </div>
@@ -532,17 +534,17 @@ export default function HomePage() {
       />
 
       {/* ============== FINAL CTA ============== */}
-      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground py-6 md:py-10 lg:py-12">
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="absolute inset-0 -z-10 opacity-20"><Image src={getImage("ambiance", 0)} alt="" className="h-full w-full object-cover" fill sizes="100vw" /></div>
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal>
-            <Wand2 className="mx-auto h-10 w-10 text-salon-gold" />
-            <h2 className="mt-5 font-serif font-semibold leading-tight text-xl md:text-2xl lg:text-3xl">Ready for your Lumière moment?</h2>
-            <p className="mx-auto mt-4 max-w-xl text-pretty text-primary-foreground/85">Book online in under two minutes, or drop us an email — we'll find a time and stylist that's perfect for you.</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <BookButton size="lg" className="rounded-full bg-background px-7 text-base text-primary hover:bg-background/90"><CalendarHeart className="mr-2 h-5 w-5" /> Book Appointment</BookButton>
+            <Wand2 className="mx-auto h-8 w-8 text-salon-gold sm:h-10 sm:w-10" />
+            <h2 className="mt-3 font-serif font-semibold leading-tight text-xl sm:mt-5 md:text-2xl lg:text-3xl">Ready for your Lumière moment?</h2>
+            <p className="mx-auto mt-2 max-w-xl text-pretty text-xs text-primary-foreground/85 sm:mt-4 sm:text-base">Book online in under two minutes, or drop us an email — we'll find a time and stylist that's perfect for you.</p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-3">
+              <BookButton className="rounded-full bg-background px-4 text-xs text-primary hover:bg-background/90 sm:h-11 sm:px-7 sm:text-base"><CalendarHeart className="mr-1.5 h-4 w-4 sm:mr-2 sm:h-5 sm:w-5" /> Book Appointment</BookButton>
               <Link href={`mailto:${salonInfo.bookingEmail}`}>
-                <Button size="lg" variant="outline" className="rounded-full border-primary-foreground/40 bg-primary-foreground/10 px-7 text-base text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground/20"><Mail className="mr-2 h-5 w-5" /> {salonInfo.bookingEmail}</Button>
+                <Button variant="outline" className="max-w-full rounded-full border-primary-foreground/40 bg-primary-foreground/10 px-4 text-xs text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground/20 sm:h-11 sm:px-7 sm:text-base"><Mail className="mr-1.5 h-4 w-4 shrink-0 sm:mr-2 sm:h-5 sm:w-5" /> <span className="truncate">{salonInfo.bookingEmail}</span></Button>
               </Link>
             </div>
           </Reveal>

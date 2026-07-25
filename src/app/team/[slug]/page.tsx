@@ -331,8 +331,8 @@ export default async function StylistDetailPage({ params }: Props) {
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  <span className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-medium text-background opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent transition-colors duration-300 group-hover:from-foreground/85" />
+                  <span className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-medium text-background">
                     <span>View gallery</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </span>

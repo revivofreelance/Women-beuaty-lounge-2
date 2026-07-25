@@ -133,22 +133,22 @@ export function GlowFinder() {
         <AnimatePresence mode="wait">
           {step === 0 && (
             <motion.div key="q1" variants={stepVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.35 }}>
-              <h3 className="mt-5 font-serif font-semibold text-lg md:text-xl lg:text-2xl">What brings you in?</h3>
-              <p className="mt-1.5 text-sm text-muted-foreground">Two quick questions — we'll match you with your perfect appointment.</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <h3 className="mt-3 font-serif font-semibold text-base sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">What brings you in?</h3>
+              <p className="mt-1 text-xs text-muted-foreground sm:mt-1.5 sm:text-sm">Two quick questions — we'll match you with your perfect appointment.</p>
+              <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
                 {OCCASIONS.map((o) => (
                   <button
                     key={o.id}
                     type="button"
                     onClick={() => setOccasion(o.id)}
-                    className="group flex items-center gap-4 rounded-2xl border border-border/70 bg-background p-4 text-left transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                    className="group flex items-center gap-2.5 rounded-2xl border border-border/70 sm:gap-4 bg-background p-4 text-left transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                       <o.icon className="h-5 w-5" />
                     </span>
                     <span>
                       <span className="block font-semibold">{o.label}</span>
-                      <span className="block text-xs text-muted-foreground">{o.hint}</span>
+                      <span className="block text-[0.65rem] text-muted-foreground sm:text-xs">{o.hint}</span>
                     </span>
                   </button>
                 ))}
@@ -158,22 +158,22 @@ export function GlowFinder() {
 
           {step === 1 && (
             <motion.div key="q2" variants={stepVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.35 }}>
-              <h3 className="mt-5 font-serif font-semibold text-lg md:text-xl lg:text-2xl">Lovely. What's the focus?</h3>
-              <p className="mt-1.5 text-sm text-muted-foreground">Pick what matters most today.</p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <h3 className="mt-3 font-serif font-semibold text-base sm:mt-5 sm:text-lg md:text-xl lg:text-2xl">Lovely. What's the focus?</h3>
+              <p className="mt-1 text-xs text-muted-foreground sm:mt-1.5 sm:text-sm">Pick what matters most today.</p>
+              <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-6 sm:gap-3">
                 {FOCUSES.map((f) => (
                   <button
                     key={f.id}
                     type="button"
                     onClick={() => setFocus(f.id)}
-                    className="group flex items-center gap-4 rounded-2xl border border-border/70 bg-background p-4 text-left transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                    className="group flex items-center gap-2.5 rounded-2xl border border-border/70 sm:gap-4 bg-background p-4 text-left transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-11 sm:w-11 rounded-full bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                       <f.icon className="h-5 w-5" />
                     </span>
                     <span>
                       <span className="block font-semibold">{f.label}</span>
-                      <span className="block text-xs text-muted-foreground">{f.hint}</span>
+                      <span className="block text-[0.65rem] text-muted-foreground sm:text-xs">{f.hint}</span>
                     </span>
                   </button>
                 ))}

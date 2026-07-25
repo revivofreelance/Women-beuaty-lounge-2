@@ -23,7 +23,7 @@ export function SectionHeading({
   return (
     <Reveal
       className={cn(
-        "flex flex-col gap-3",
+        "flex flex-col gap-2 sm:gap-3",
         align === "center" ? "items-center text-center" : "items-start text-left",
         className
       )}
@@ -51,7 +51,7 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "max-w-2xl text-pretty text-base sm:text-lg leading-snug md:leading-relaxed",
+            "max-w-2xl text-pretty text-sm sm:text-lg leading-snug md:leading-relaxed",
             light ? "text-primary-foreground/80" : "text-muted-foreground"
           )}
         >

@@ -28,12 +28,12 @@ export function LiveTicker() {
   const Icon = activity.icon;
 
   return (
-    <div className="flex items-center justify-center gap-2.5 overflow-hidden border-y border-primary/15 bg-primary/5 px-4 py-2.5 text-sm">
+    <div className="flex items-center justify-center gap-2 overflow-hidden border-y border-primary/15 bg-primary/5 px-3 py-2 text-xs sm:gap-2.5 sm:px-4 sm:py-2.5 sm:text-sm">
       <span className="relative flex h-2 w-2 flex-shrink-0">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
         <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
       </span>
-      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Live</span>
+      <span className="text-[0.6rem] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">Live</span>
       <div className="h-3.5 w-px bg-border" />
       <div className="relative h-5 min-w-0 flex-1 max-w-md">
         <AnimatePresence mode="wait">

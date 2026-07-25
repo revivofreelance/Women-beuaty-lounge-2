@@ -25,7 +25,7 @@ export function MarqueeRibbon({ words, variant = "rose", tilt = false, className
     <div className="flex shrink-0 items-center">
       {words.map((w) => (
         <span key={w} className="flex items-center">
-          <span className="whitespace-nowrap px-6 font-serif text-lg font-semibold uppercase tracking-[0.22em] sm:text-xl">
+          <span className="whitespace-nowrap px-4 font-serif text-sm font-semibold uppercase tracking-[0.18em] sm:px-6 sm:text-xl sm:tracking-[0.22em]">
             {w}
           </span>
           <Sparkles className="h-4 w-4 shrink-0 opacity-70" />

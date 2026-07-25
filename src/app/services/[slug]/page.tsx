@@ -190,30 +190,32 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Reveal>
                 <div className="space-y-6">
                   <SectionTitle icon={ListChecks}>What to expect</SectionTitle>
-                  <ol className="relative space-y-4 before:absolute before:left-[1.15rem] before:top-2 before:bottom-2 before:w-px before:bg-border">
+                  <ol className="relative space-y-4 before:absolute before:left-7 before:top-2 before:bottom-2 before:w-px before:bg-border md:before:left-8 lg:before:left-9">
                     {service.process.map((step, i) => (
                       <li
                         key={step.title}
-                        className="relative rounded-2xl border border-border/70 bg-card pl-16 transition-colors hover:border-primary/30 p-3 md:p-4 lg:p-5"
+                        className="flex gap-3 rounded-2xl border border-border/70 bg-card p-3 transition-colors hover:border-primary/30 md:gap-4 md:p-4 lg:p-5"
                       >
-                        <span className="absolute left-4 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-sm ring-4 ring-background">
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-sm ring-4 ring-background">
                           {i + 1}
                         </span>
-                        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                          <h3 className="font-serif text-lg font-semibold text-foreground">
-                            {step.title}
-                          </h3>
-                          <Badge
-                            variant="secondary"
-                            className="w-fit gap-1 rounded-full text-xs font-medium"
-                          >
-                            <Clock className="h-3 w-3 text-primary" />
-                            {step.duration}
-                          </Badge>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                            <h3 className="font-serif text-lg font-semibold text-foreground">
+                              {step.title}
+                            </h3>
+                            <Badge
+                              variant="secondary"
+                              className="w-fit gap-1 rounded-full text-xs font-medium"
+                            >
+                              <Clock className="h-3 w-3 text-primary" />
+                              {step.duration}
+                            </Badge>
+                          </div>
+                          <p className="mt-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                            {step.description}
+                          </p>
                         </div>
-                        <p className="mt-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
-                          {step.description}
-                        </p>
                       </li>
                     ))}
                   </ol>
@@ -657,7 +659,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                           <p className="font-serif text-lg font-semibold text-primary">
                             from ${s.startingPrice}
                           </p>
-                          <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 -translate-x-1">
+                          <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-transform duration-300 group-hover:translate-x-0.5">
                             Details
                             <ArrowRight className="h-4 w-4 text-primary" />
                           </span>

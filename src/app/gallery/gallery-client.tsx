@@ -175,9 +175,9 @@ export function GalleryClient() {
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <Maximize2 className="absolute right-3 top-3 h-4 w-4 text-background opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="absolute inset-x-0 bottom-0 p-3 text-left opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/10 to-transparent transition-colors duration-300 group-hover:from-foreground/95" />
+                    <Maximize2 className="absolute right-3 top-3 h-4 w-4 text-background/80 drop-shadow transition-colors duration-300 group-hover:text-background" />
+                    <div className="absolute inset-x-0 bottom-0 p-3 text-left">
                       <span className="block text-[0.65rem] font-semibold uppercase tracking-wider text-background/80">
                         {g.category}
                       </span>
