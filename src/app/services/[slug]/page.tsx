@@ -25,7 +25,7 @@ function SectionTitle({
   children: React.ReactNode;
 }) {
   return (
-    <h2 className="flex items-center gap-2.5 font-serif font-semibold tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
+    <h2 className="flex items-center gap-2.5 font-serif font-semibold tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
       <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
         <Icon className="h-4.5 w-4.5" />
       </span>
@@ -115,7 +115,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/92 via-foreground/75 to-foreground/45" />
         </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-10 lg:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5 sm:py-6 md:py-10 lg:py-16">
           <Reveal className="max-w-2xl">
             <div className="flex flex-wrap items-center gap-2">
               <Badge className="rounded-full border border-background/20 bg-background/15 text-background backdrop-blur-sm hover:bg-background/15">
@@ -128,7 +128,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </Badge>
               )}
             </div>
-            <h1 className="mt-4 font-serif font-semibold leading-tight tracking-tight text-background text-lg md:text-xl lg:text-2xl">
+            <h1 className="mt-4 font-serif font-semibold leading-tight tracking-tight text-background text-base sm:text-lg md:text-xl lg:text-2xl">
               {service.name}
             </h1>
             <p className="mt-4 max-w-xl text-pretty text-base text-background/85 sm:text-lg leading-snug md:leading-relaxed">
@@ -171,7 +171,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       {/* ============== BODY ============== */}
-      <section className="py-6 md:py-10 lg:py-16">
+      <section className="py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
             {/* ---------- MAIN ---------- */}
@@ -180,7 +180,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Reveal>
                 <div className="space-y-4">
                   <SectionTitle icon={Sparkles}>Overview</SectionTitle>
-                  <p className="text-pretty text-base text-muted-foreground leading-snug md:leading-relaxed">
+                  <p className="text-pretty text-xs text-muted-foreground sm:text-base leading-snug md:leading-relaxed">
                     {service.overview}
                   </p>
                 </div>
@@ -201,7 +201,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         </span>
                         <div className="min-w-0 flex-1">
                           <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                            <h3 className="font-serif text-lg font-semibold text-foreground">
+                            <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                               {step.title}
                             </h3>
                             <Badge
@@ -212,7 +212,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                               {step.duration}
                             </Badge>
                           </div>
-                          <p className="mt-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <p className="mt-2 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             {step.description}
                           </p>
                         </div>
@@ -226,17 +226,17 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Reveal>
                 <div className="space-y-6">
                   <SectionTitle icon={CheckCircle2}>Benefits &amp; suitability</SectionTitle>
-                  <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-5">
                     <Card className="border-border/70 shadow-none p-3 md:p-4 lg:p-5">
                       <div className="mb-4 flex items-center gap-2">
                         <CheckCircle2 className="h-5 w-5 text-primary" />
-                        <h3 className="font-serif text-lg font-semibold text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                           Benefits
                         </h3>
                       </div>
                       <ul className="space-y-2.5">
                         {service.benefits.map((b) => (
-                          <li key={b} className="flex gap-2.5 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <li key={b} className="flex gap-2.5 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-salon-rose" />
                             <span>{b}</span>
                           </li>
@@ -246,13 +246,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <Card className="border-border/70 shadow-none p-3 md:p-4 lg:p-5">
                       <div className="mb-4 flex items-center gap-2">
                         <User className="h-5 w-5 text-primary" />
-                        <h3 className="font-serif text-lg font-semibold text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                           Suitable for
                         </h3>
                       </div>
                       <ul className="space-y-2.5">
                         {service.suitableFor.map((b) => (
-                          <li key={b} className="flex gap-2.5 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <li key={b} className="flex gap-2.5 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-salon-gold" />
                             <span>{b}</span>
                           </li>
@@ -282,17 +282,17 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Reveal>
                 <div className="space-y-6">
                   <SectionTitle icon={Heart}>Preparation &amp; aftercare</SectionTitle>
-                  <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-5">
                     <Card className="border-border/70 shadow-none p-3 md:p-4 lg:p-5">
                       <div className="mb-4 flex items-center gap-2">
                         <Info className="h-5 w-5 text-primary" />
-                        <h3 className="font-serif text-lg font-semibold text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                           Before your visit
                         </h3>
                       </div>
                       <ul className="space-y-2.5">
                         {service.preparation.map((p) => (
-                          <li key={p} className="flex gap-2.5 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <li key={p} className="flex gap-2.5 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                             <span>{p}</span>
                           </li>
@@ -302,13 +302,13 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <Card className="border-border/70 shadow-none p-3 md:p-4 lg:p-5">
                       <div className="mb-4 flex items-center gap-2">
                         <Heart className="h-5 w-5 text-primary" />
-                        <h3 className="font-serif text-lg font-semibold text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                           After-care
                         </h3>
                       </div>
                       <ul className="space-y-2.5">
                         {service.aftercare.map((p) => (
-                          <li key={p} className="flex gap-2.5 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <li key={p} className="flex gap-2.5 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             <Heart className="mt-0.5 h-3.5 w-3.5 shrink-0 text-salon-rose" />
                             <span>{p}</span>
                           </li>
@@ -323,7 +323,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               <Reveal>
                 <div className="space-y-6">
                   <SectionTitle icon={Wrench}>Products we use</SectionTitle>
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     {service.products.map((p) => (
                       <div
                         key={p.name}
@@ -338,7 +338,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                             Salon-grade
                           </Badge>
                         </div>
-                        <p className="text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                        <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                           {p.description}
                         </p>
                       </div>
@@ -352,7 +352,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <Reveal>
                   <div className="space-y-6">
                     <SectionTitle icon={Sparkles}>Enhance your service</SectionTitle>
-                    <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
                       {service.addOns.map((a) => (
                         <div
                           key={a.name}
@@ -364,7 +364,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                               +${a.price}
                             </span>
                           </div>
-                          <p className="text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             {a.description}
                           </p>
                         </div>
@@ -391,7 +391,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                           <span className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                             {tier.tier}
                           </span>
-                          <span className="font-serif font-semibold text-foreground text-lg md:text-xl lg:text-2xl">
+                          <span className="font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                             ${tier.price}
                           </span>
                           {i === 0 && (
@@ -408,7 +408,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     </div>
                   </div>
                   <div className="flex items-center gap-3 rounded-2xl bg-blush p-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary text-primary-foreground">
                       <Sparkles className="h-4 w-4" />
                     </span>
                     <p className="text-sm text-foreground">
@@ -458,7 +458,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                           <AccordionTrigger className="text-left text-base font-medium text-foreground hover:no-underline">
                             {f.q}
                           </AccordionTrigger>
-                          <AccordionContent className="text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                          <AccordionContent className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                             {f.a}
                           </AccordionContent>
                         </AccordionItem>
@@ -470,7 +470,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
               {/* Results */}
               <Reveal>
-                <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/8 via-blush to-background p-7 sm:p-9">
+                <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/8 via-blush to-background p-3 sm:p-9">
                   <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-salon-rose">
                     <Sparkles className="h-3.5 w-3.5" />
                     The result
@@ -505,7 +505,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     Starting price
                   </p>
                   <div className="mt-1 flex items-baseline gap-2">
-                    <span className="font-serif font-semibold text-primary text-xl md:text-2xl lg:text-3xl">
+                    <span className="font-serif font-semibold text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl">
                       ${service.startingPrice}
                     </span>
                     <span className="text-sm text-muted-foreground">USD</span>
@@ -521,7 +521,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     </Badge>
                   </div>
                   <BookButton service={service.slug}
-                    className="mt-5 w-full rounded-full bg-primary py-6 text-base shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+                    className="mt-5 w-full rounded-full bg-primary py-4 sm:py-6 text-base shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
                   >
                     <CalendarHeart className="mr-2 h-4 w-4" />
                     Book appointment
@@ -604,15 +604,15 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       {/* ============== RELATED ============== */}
       {related.length > 0 && (
-        <section className="border-t border-border/60 bg-secondary/30 py-6 md:py-10 lg:py-14">
+        <section className="border-t border-border/60 bg-secondary/30 py-5 sm:py-6 md:py-10 lg:py-14">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="mb-5 sm:mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <Reveal>
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-salon-rose">
                   <span className="h-px w-6 bg-salon-rose/50" />
                   You may also like
                 </span>
-                <h2 className="mt-2 font-serif font-semibold tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
+                <h2 className="mt-2 font-serif font-semibold tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                   Related services
                 </h2>
               </Reveal>
@@ -627,7 +627,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </Link>
               </Button>
             </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
               {related.map((s, i) => (
                 <Reveal key={s.slug} delay={Math.min(i * 80, 240)}>
                   <Link
@@ -649,14 +649,14 @@ export default async function ServiceDetailPage({ params }: Props) {
                         </Badge>
                       </div>
                       <CardContent className="p-3 md:p-4 lg:p-5">
-                        <h3 className="font-serif text-lg font-semibold leading-snug text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg leading-snug text-foreground">
                           {s.name}
                         </h3>
-                        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                        <p className="mt-2 line-clamp-2 text-xs text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
                           {s.shortDescription}
                         </p>
                         <div className="mt-4 flex items-end justify-between">
-                          <p className="font-serif text-lg font-semibold text-primary">
+                          <p className="font-serif text-sm font-semibold sm:text-lg text-primary">
                             from ${s.startingPrice}
                           </p>
                           <span className="inline-flex items-center gap-1 text-sm font-medium text-foreground transition-transform duration-300 group-hover:translate-x-0.5">

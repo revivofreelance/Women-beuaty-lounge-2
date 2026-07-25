@@ -117,7 +117,7 @@ export default async function StylistDetailPage({ params }: Props) {
       </nav>
 
       {/* ============== HERO ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-start lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {/* Portrait */}
@@ -136,7 +136,7 @@ export default async function StylistDetailPage({ params }: Props) {
                 <div className="absolute -bottom-5 -right-5 flex flex-col items-center rounded-2xl bg-primary px-6 py-4 text-primary-foreground shadow-lg">
                   <div className="flex items-center gap-1.5">
                     <Star className="h-5 w-5 fill-current text-salon-gold" />
-                    <span className="font-serif font-semibold leading-none text-lg md:text-xl lg:text-2xl">
+                    <span className="font-serif font-semibold leading-none text-base sm:text-lg md:text-xl lg:text-2xl">
                       {st.rating.toFixed(1)}
                     </span>
                   </div>
@@ -156,7 +156,7 @@ export default async function StylistDetailPage({ params }: Props) {
                 >
                   {st.position} · {st.tier}
                 </Badge>
-                <h1 className="font-serif font-semibold leading-tight tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
+                <h1 className="font-serif font-semibold leading-tight tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                   {st.name}
                 </h1>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
@@ -180,7 +180,7 @@ export default async function StylistDetailPage({ params }: Props) {
               </p>
 
               {/* Certifications, Languages, Availability cards */}
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 <Card className="border-border/70 shadow-sm p-3 md:p-4 lg:p-5">
                   <CardContent className="flex flex-col gap-3 p-0">
                     <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-salon-rose">
@@ -300,18 +300,18 @@ export default async function StylistDetailPage({ params }: Props) {
       </section>
 
       {/* ============== PORTFOLIO ============== */}
-      <section className="border-t border-border/60 bg-secondary/30 py-6 md:py-10 lg:py-14">
+      <section className="border-t border-border/60 bg-secondary/30 py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-8 flex flex-col gap-2 text-center">
+          <Reveal className="mb-5 sm:mb-8 flex flex-col gap-2 text-center">
             <span className="mx-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-salon-rose">
               <span className="h-px w-6 bg-salon-rose/50" />
               Recent work
               <span className="h-px w-6 bg-salon-rose/50" />
             </span>
-            <h2 className="font-serif font-semibold tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               {firstName}'s portfolio
             </h2>
-            <p className="mx-auto max-w-2xl text-pretty text-base text-muted-foreground leading-snug md:leading-relaxed">
+            <p className="mx-auto max-w-2xl text-pretty text-xs text-muted-foreground sm:text-base leading-snug md:leading-relaxed">
               A selection of {firstName}'s recent cuts, colour and styling work.
               Tap any photo to see more in the gallery.
             </p>
@@ -344,15 +344,15 @@ export default async function StylistDetailPage({ params }: Props) {
       </section>
 
       {/* ============== REVIEWS ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-14">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-10 flex flex-col gap-2 text-center">
+          <Reveal className="mb-5 sm:mb-10 flex flex-col gap-2 text-center">
             <span className="mx-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-salon-rose">
               <span className="h-px w-6 bg-salon-rose/50" />
               Client love
               <span className="h-px w-6 bg-salon-rose/50" />
             </span>
-            <h2 className="font-serif font-semibold tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               What clients say about {firstName}
             </h2>
             <div className="mx-auto mt-1 flex items-center gap-2 text-sm text-muted-foreground">
@@ -364,14 +364,14 @@ export default async function StylistDetailPage({ params }: Props) {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {stylistReviews.map((t, i) => (
               <Reveal key={t.id} delay={i * 80} as="article">
                 <Card className="h-full border-border/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg p-4 md:p-5 lg:p-6">
                   <CardContent className="flex h-full flex-col gap-4 p-0">
                     <div className="flex items-center justify-between">
                       <Quote className="h-7 w-7 text-primary/30" />
-                      <span className="rounded-full bg-secondary px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-secondary-foreground">
+                      <span className="rounded-full bg-secondary px-1.5 py-0 text-[0.55rem] sm:px-2.5 sm:py-1 sm:text-[0.65rem] font-semibold uppercase tracking-wider text-secondary-foreground">
                         {t.source}
                       </span>
                     </div>
@@ -380,7 +380,7 @@ export default async function StylistDetailPage({ params }: Props) {
                       "{t.text}"
                     </p>
                     <div className="mt-1 flex items-center gap-3 border-t border-border/60 pt-4">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary/10 text-sm font-semibold text-primary">
                         {t.name
                           .split(" ")
                           .map((w) => w[0])
@@ -405,18 +405,18 @@ export default async function StylistDetailPage({ params }: Props) {
       </section>
 
       {/* ============== SERVICES BY THIS STYLIST ============== */}
-      <section className="border-t border-border/60 bg-secondary/30 py-6 md:py-10 lg:py-14">
+      <section className="border-t border-border/60 bg-secondary/30 py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-10 flex flex-col gap-2 text-center">
+          <Reveal className="mb-5 sm:mb-10 flex flex-col gap-2 text-center">
             <span className="mx-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-salon-rose">
               <span className="h-px w-6 bg-salon-rose/50" />
               Book with {firstName}
               <span className="h-px w-6 bg-salon-rose/50" />
             </span>
-            <h2 className="font-serif font-semibold tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Services by {firstName}
             </h2>
-            <p className="mx-auto max-w-2xl text-pretty text-base text-muted-foreground leading-snug md:leading-relaxed">
+            <p className="mx-auto max-w-2xl text-pretty text-xs text-muted-foreground sm:text-base leading-snug md:leading-relaxed">
               {firstName} personally recommends these services — book any of them
               and request {firstName} as your stylist.
             </p>
@@ -431,7 +431,7 @@ export default async function StylistDetailPage({ params }: Props) {
               .
             </p>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
               {stylistServices.map((s, i) => (
                 <Reveal key={s.slug} delay={i * 70} as="article">
                   <Link href="/services" className="group block h-full">
@@ -444,12 +444,12 @@ export default async function StylistDetailPage({ params }: Props) {
                           fill
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         />
-                        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
+                        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-1.5 py-0 text-[0.55rem] sm:px-2.5 sm:py-1 sm:text-[0.65rem] font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
                           {s.category}
                         </span>
                       </div>
                       <CardContent className="flex flex-col gap-2 p-3 md:p-4 lg:p-5">
-                        <h3 className="font-serif text-lg font-semibold text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                           {s.name}
                         </h3>
                         <p className="line-clamp-1 text-sm text-muted-foreground">

@@ -146,20 +146,20 @@ export function ContactClient() {
       >
         <Button
           onClick={() => openBooking()}
-          className="rounded-full bg-primary px-6 text-sm shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+          className="h-8 rounded-full bg-primary px-4 text-xs sm:h-9 sm:px-6 sm:text-sm shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
         >
           <CalendarHeart className="mr-1.5 h-4 w-4" />
           Book appointment
         </Button>
       </PageHero>
 
-      <main className="bg-background py-6 md:py-8 lg:py-10">
+      <main className="bg-background py-4 sm:py-6 md:py-8 lg:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {/* LEFT — info */}
             <Reveal>
               <section className="flex flex-col">
-                <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
+                <h2 className="font-serif font-semibold tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                   Visit, book or message
                 </h2>
                 <p className="mt-3 max-w-md text-pretty text-sm text-muted-foreground sm:text-base leading-snug md:leading-relaxed">
@@ -167,14 +167,14 @@ export function ContactClient() {
                   online, or send a quick message — whatever's easiest for you.
                 </p>
 
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <div className="mt-6 grid grid-cols-2 gap-2.5 sm:gap-4">
                   {contactCards.map((c) => (
                     <Card
                       key={c.title}
                       className="gap-0 border-border/70 py-5 shadow-sm"
                     >
                       <CardContent className="flex flex-col gap-3">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary/10 text-primary">
                           <c.icon className="h-5 w-5" />
                         </span>
                         <div>
@@ -299,14 +299,14 @@ export function ContactClient() {
             {/* RIGHT — form */}
             <Reveal delay={80}>
               <section className="flex flex-col">
-                <Card className="border-border/70 p-4 sm:p-6 md:p-7 shadow-sm">
+                <Card className="border-border/70 p-3 sm:p-6 md:p-7 shadow-sm">
                   <CardContent className="p-0">
                     {done ? (
-                      <div className="flex flex-col items-center py-6 text-center">
+                      <div className="flex flex-col items-center py-4 sm:py-6 text-center">
                         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
                           <CheckCircle2 className="h-9 w-9" />
                         </span>
-                        <h3 className="mt-5 font-serif font-semibold text-foreground text-lg md:text-xl lg:text-2xl">
+                        <h3 className="mt-5 font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                           Message sent!
                         </h3>
                         <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
@@ -324,7 +324,7 @@ export function ContactClient() {
                     ) : (
                       <form onSubmit={onSubmit} className="flex flex-col gap-4">
                         <div className="flex flex-col gap-1">
-                          <h3 className="font-serif text-xl font-semibold text-foreground">
+                          <h3 className="font-serif text-base font-semibold sm:text-xl text-foreground">
                             Send us a message
                           </h3>
                           <p className="text-sm text-muted-foreground">
@@ -332,7 +332,7 @@ export function ContactClient() {
                           </p>
                         </div>
 
-                        <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
                           <div className="flex flex-col gap-1.5">
                             <Label htmlFor="c-name" className="text-sm font-medium">
                               Name *

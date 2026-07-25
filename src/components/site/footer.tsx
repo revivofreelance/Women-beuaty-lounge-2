@@ -43,9 +43,9 @@ export function Footer() {
       {/* pb-24 on mobile clears the fixed bottom navigation bar (lg:hidden) */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6 md:pt-8 lg:pt-10 pb-24 md:pb-8 lg:pb-10">
         {/* Newsletter */}
-        <div className="mb-8 md:mb-12 grid gap-5 md:gap-6 rounded-3xl bg-background/5 ring-1 ring-background/10 lg:grid-cols-2 lg:items-center lg:gap-10 p-4 md:p-5 lg:p-6">
+        <div className="mb-5 sm:mb-8 md:mb-12 grid gap-5 md:gap-6 rounded-3xl bg-background/5 ring-1 ring-background/10 lg:grid-cols-2 lg:items-center lg:gap-10 p-4 md:p-5 lg:p-6">
           <div>
-            <h3 className="font-serif font-semibold text-background text-lg md:text-xl lg:text-2xl">
+            <h3 className="font-serif font-semibold text-background text-base sm:text-lg md:text-xl lg:text-2xl">
               Beauty in your inbox
             </h3>
             <p className="mt-2 text-sm text-background/70 sm:text-base">
@@ -73,7 +73,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:pr-6">
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <span className="relative flex h-8 w-8 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary text-primary-foreground">
                 <Sparkles className="h-5 w-5" />
               </span>
               <span className="flex flex-col leading-none">

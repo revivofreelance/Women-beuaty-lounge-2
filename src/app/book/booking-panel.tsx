@@ -29,9 +29,9 @@ export function BookingPanel() {
       {!done && (
         <Reveal delay={80}>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <Card className="border-border/70 py-4 shadow-sm">
+            <Card className="border-border/70 py-2.5 shadow-sm sm:py-4">
               <CardContent className="flex items-center gap-3 p-0 px-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary/10 text-primary">
                   <ShieldCheck className="h-5 w-5" />
                 </span>
                 <div>
@@ -44,9 +44,9 @@ export function BookingPanel() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-border/70 py-4 shadow-sm">
+            <Card className="border-border/70 py-2.5 shadow-sm sm:py-4">
               <CardContent className="flex items-center gap-3 p-0 px-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary/10 text-primary">
                   <Clock className="h-5 w-5" />
                 </span>
                 <div>
@@ -59,9 +59,9 @@ export function BookingPanel() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-border/70 py-4 shadow-sm">
+            <Card className="border-border/70 py-2.5 shadow-sm sm:py-4">
               <CardContent className="flex items-center gap-3 p-0 px-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary/10 text-primary">
                   <Mail className="h-5 w-5" />
                 </span>
                 <div>

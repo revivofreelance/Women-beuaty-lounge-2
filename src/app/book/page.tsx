@@ -14,7 +14,7 @@ export default function BookPage() {
   return (
     <div className="flex flex-col bg-blush">
       {/* LIGHT HERO */}
-      <section className="bg-blush text-center py-6 md:py-10 lg:py-12">
+      <section className="bg-blush text-center py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <Badge
@@ -23,10 +23,10 @@ export default function BookPage() {
             >
               Booking
             </Badge>
-            <h1 className="mt-4 font-serif font-semibold tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
+            <h1 className="mt-4 font-serif font-semibold tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
               Book your appointment
             </h1>
-            <p className="mx-auto mt-3 max-w-xl text-pretty text-base text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
+            <p className="mx-auto mt-3 max-w-xl text-pretty text-xs text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
               Choose your service, stylist and time. Takes under two minutes.
             </p>
           </Reveal>
@@ -34,7 +34,7 @@ export default function BookPage() {
       </section>
 
       {/* MAIN BOOKING CARD */}
-      <section className="bg-blush pb-16 sm:pb-20">
+      <section className="bg-blush pb-10 sm:pb-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <BookingPanel />
         </div>

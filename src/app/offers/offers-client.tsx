@@ -51,7 +51,7 @@ export function OffersClient() {
         <div className="flex flex-wrap items-center gap-3">
           <Button
             onClick={() => openBooking()}
-            className="rounded-full bg-primary px-6 text-sm shadow-sm hover:bg-primary/90 hover:shadow-md"
+            className="h-8 rounded-full bg-primary px-4 text-xs sm:h-9 sm:px-6 sm:text-sm shadow-sm hover:bg-primary/90 hover:shadow-md"
           >
             <CalendarHeart className="mr-1.5 h-4 w-4" />
             Book now
@@ -70,9 +70,9 @@ export function OffersClient() {
       </PageHero>
 
       {/* ============== OFFERS GRID ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2">
             {offers.map((offer, i) => {
               const isCopied = copiedId === offer.id;
               return (
@@ -88,25 +88,25 @@ export function OffersClient() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/40 to-foreground/10" />
-                      <Badge className="absolute left-3 top-3 rounded-full bg-salon-gold px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-salon-espresso">
+                      <Badge className="absolute left-1.5 top-1.5 rounded-full bg-salon-gold px-1.5 py-0 text-[0.55rem] font-bold uppercase tracking-wide text-salon-espresso sm:left-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[0.65rem]">
                         <Tag className="mr-1 h-3 w-3" />
                         {offer.badge}
                       </Badge>
-                      <div className="absolute bottom-3 left-4 right-4">
-                        <p className="font-serif font-bold text-background text-xl md:text-2xl lg:text-3xl">
+                      <div className="absolute bottom-2 left-2.5 right-2.5 sm:bottom-3 sm:left-4 sm:right-4">
+                        <p className="font-serif font-bold leading-tight text-background text-base sm:text-xl md:text-2xl lg:text-3xl">
                           {offer.discount}
                         </p>
-                        <h3 className="mt-1 font-serif text-xl font-semibold text-background">
+                        <h3 className="mt-0.5 font-serif text-xs font-semibold leading-tight text-background sm:mt-1 sm:text-xl">
                           {offer.title}
                         </h3>
                       </div>
                     </div>
 
-                    <CardContent className="flex flex-1 flex-col gap-4 p-4 md:p-5 lg:p-6">
-                      <p className="text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                    <CardContent className="flex flex-1 flex-col gap-2 p-2.5 sm:gap-4 sm:p-4 md:p-5 lg:p-6">
+                      <p className="line-clamp-3 text-[0.7rem] text-muted-foreground leading-snug sm:line-clamp-none sm:text-sm md:leading-relaxed">
                         {offer.description}
                       </p>
-                      <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                      <p className="text-[0.6rem] font-medium uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">
                         Valid:{" "}
                         <span className="text-foreground/80">
                           {offer.validUntil}
@@ -114,12 +114,12 @@ export function OffersClient() {
                       </p>
 
                       {/* Code box */}
-                      <div className="flex items-center gap-3 rounded-xl border border-dashed border-primary/40 bg-primary/5 p-3">
+                      <div className="flex flex-col items-stretch gap-1.5 rounded-xl border border-dashed border-primary/40 bg-primary/5 p-2 sm:flex-row sm:items-center sm:gap-3 sm:p-3">
                         <div className="flex-1">
                           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                             Code
                           </p>
-                          <code className="font-mono text-sm font-bold uppercase tracking-wider text-primary">
+                          <code className="font-mono text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
                             {offer.code}
                           </code>
                         </div>
@@ -128,7 +128,7 @@ export function OffersClient() {
                           variant="outline"
                           size="sm"
                           onClick={() => handleCopy(offer.code, offer.id)}
-                          className="rounded-full border-primary/40 px-3 text-xs hover:bg-primary/10 hover:text-primary"
+                          className="h-7 rounded-full border-primary/40 px-3 text-[0.7rem] hover:bg-primary/10 hover:text-primary sm:h-9 sm:text-xs"
                           aria-label={`Copy promo code ${offer.code}`}
                         >
                           {isCopied ? (
@@ -147,7 +147,7 @@ export function OffersClient() {
 
                       <Button
                         onClick={() => openBooking()}
-                        className="mt-1 rounded-full bg-primary px-5 text-sm shadow-sm hover:bg-primary/90 hover:shadow-md"
+                        className="mt-auto h-8 rounded-full bg-primary px-3 text-xs shadow-sm hover:bg-primary/90 hover:shadow-md sm:h-9 sm:px-5 sm:text-sm"
                       >
                         <CalendarHeart className="mr-1.5 h-4 w-4" />
                         Book with this offer
@@ -162,14 +162,14 @@ export function OffersClient() {
       </section>
 
       {/* ============== TERMS NOTE ============== */}
-      <section className="bg-background pb-20">
+      <section className="bg-background pb-10 sm:pb-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="rounded-2xl border border-dashed border-border bg-secondary/30 p-4 md:p-5 lg:p-6">
-              <h3 className="font-serif text-xl font-semibold text-foreground">
+              <h3 className="font-serif text-base font-semibold sm:text-xl text-foreground">
                 Offer terms
               </h3>
-              <ul className="mt-3 space-y-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                 <li className="flex items-start gap-2">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted-foreground" />
                   Offers cannot be combined with other promotions unless

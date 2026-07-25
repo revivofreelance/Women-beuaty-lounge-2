@@ -37,7 +37,7 @@ export default function PackagesPage() {
         imageIndex={5}
       >
         <BookButton
-          className="rounded-full bg-primary px-6 text-sm shadow-sm hover:bg-primary/90 hover:shadow-md"
+          className="h-8 rounded-full bg-primary px-4 text-xs sm:h-9 sm:px-6 sm:text-sm shadow-sm hover:bg-primary/90 hover:shadow-md"
         >
           <CalendarHeart className="mr-1.5 h-4 w-4" />
           Book a package
@@ -45,9 +45,9 @@ export default function PackagesPage() {
       </PageHero>
 
       {/* ============== PACKAGES GRID ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2">
             {packages.map((p, i) => {
               const savings = p.originalPrice - p.price;
               return (
@@ -70,49 +70,49 @@ export default function PackagesPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-foreground/5" />
 
                       {/* Badges */}
-                      <div className="absolute left-3 top-3 flex flex-wrap gap-2">
+                      <div className="absolute left-1.5 top-1.5 flex flex-wrap gap-1 sm:left-3 sm:top-3 sm:gap-2">
                         {p.popular && (
-                          <Badge className="rounded-full bg-primary px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wide text-primary-foreground">
+                          <Badge className="rounded-full bg-primary px-1.5 py-0 text-[0.55rem] font-semibold uppercase tracking-wide text-primary-foreground sm:px-2.5 sm:py-1 sm:text-[0.65rem]">
                             Most popular
                           </Badge>
                         )}
                       </div>
-                      <Badge className="absolute right-3 top-3 rounded-full bg-salon-gold px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wide text-salon-espresso">
+                      <Badge className="absolute right-1.5 top-1.5 rounded-full bg-salon-gold px-1.5 py-0 text-[0.55rem] font-bold uppercase tracking-wide text-salon-espresso sm:right-3 sm:top-3 sm:px-2.5 sm:py-1 sm:text-[0.65rem]">
                         Save {p.save}%
                       </Badge>
 
                       {/* Bottom-left name + duration */}
-                      <div className="absolute bottom-3 left-4 right-4">
-                        <h3 className="font-serif font-semibold text-background text-lg md:text-xl lg:text-2xl">
+                      <div className="absolute bottom-2 left-2.5 right-2.5 sm:bottom-3 sm:left-4 sm:right-4">
+                        <h3 className="font-serif font-semibold leading-tight text-background text-sm sm:text-lg md:text-xl lg:text-2xl">
                           {p.name}
                         </h3>
-                        <div className="mt-1 flex items-center gap-1.5 text-xs font-medium text-background/85">
+                        <div className="mt-0.5 flex items-center gap-1 text-[0.65rem] font-medium text-background/85 sm:mt-1 sm:gap-1.5 sm:text-xs">
                           <Clock className="h-3.5 w-3.5" />
                           {p.duration}
                         </div>
                       </div>
                     </div>
 
-                    <CardContent className="flex flex-1 flex-col gap-4 p-4 md:p-5 lg:p-6">
-                      <p className="text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                    <CardContent className="flex flex-1 flex-col gap-2 p-2.5 sm:gap-4 sm:p-4 md:p-5 lg:p-6">
+                      <p className="line-clamp-2 text-[0.7rem] text-muted-foreground leading-snug sm:line-clamp-none sm:text-sm md:leading-relaxed">
                         {p.description}
                       </p>
 
                       {/* Services list */}
-                      <ul className="flex flex-col gap-2">
+                      <ul className="flex flex-col gap-1 sm:gap-2">
                         {p.services.map((svc) => (
                           <li
                             key={svc}
-                            className="flex items-start gap-2 text-sm text-foreground/90"
+                            className="flex items-start gap-1.5 text-[0.7rem] text-foreground/90 sm:gap-2 sm:text-sm"
                           >
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                            <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-primary sm:h-4 sm:w-4" />
                             <span>{svc}</span>
                           </li>
                         ))}
                       </ul>
 
                       {p.bestFor && (
-                        <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                        <p className="hidden text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground sm:block">
                           Best for:{" "}
                           <span className="text-foreground/80">
                             {p.bestFor}
@@ -121,22 +121,22 @@ export default function PackagesPage() {
                       )}
 
                       {/* Price row */}
-                      <div className="mt-auto flex flex-wrap items-end justify-between gap-3 border-t border-border/60 pt-4">
+                      <div className="mt-auto flex flex-col items-stretch gap-2 border-t border-border/60 pt-2.5 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-3 sm:pt-4">
                         <div>
                           <div className="flex items-baseline gap-2">
-                            <span className="text-sm text-muted-foreground line-through">
+                            <span className="text-[0.7rem] text-muted-foreground line-through sm:text-sm">
                               ${p.originalPrice}
                             </span>
-                            <span className="font-serif font-bold text-primary text-xl md:text-2xl lg:text-3xl">
+                            <span className="font-serif font-bold text-primary text-base sm:text-xl md:text-2xl lg:text-3xl">
                               ${p.price}
                             </span>
                           </div>
-                          <p className="mt-0.5 text-xs font-semibold text-emerald-600">
+                          <p className="mt-0.5 text-[0.65rem] font-semibold text-emerald-600 sm:text-xs">
                             You save ${savings}
                           </p>
                         </div>
                         <BookButton service={p.slug}
-                          className="rounded-full bg-primary px-5 text-sm shadow-sm hover:bg-primary/90 hover:shadow-md"
+                          className="w-full rounded-full bg-primary px-3 text-xs shadow-sm hover:bg-primary/90 hover:shadow-md sm:w-auto sm:px-5 sm:text-sm"
                         >
                           <CalendarHeart className="mr-1.5 h-4 w-4" />
                           Book
@@ -152,7 +152,7 @@ export default function PackagesPage() {
       </section>
 
       {/* ============== GIFT CARD BANNER ============== */}
-      <section className="bg-background pb-20">
+      <section className="bg-background pb-10 sm:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="flex flex-col items-start gap-6 rounded-3xl bg-foreground text-background md:flex-row md:items-center md:justify-between p-4 md:p-6 lg:p-8">
@@ -161,7 +161,7 @@ export default function PackagesPage() {
                   <Gift className="h-7 w-7" />
                 </span>
                 <div>
-                  <h2 className="font-serif font-semibold tracking-tight text-background text-lg md:text-xl lg:text-2xl">
+                  <h2 className="font-serif font-semibold tracking-tight text-background text-base sm:text-lg md:text-xl lg:text-2xl">
                     Gift a Lumière moment
                   </h2>
                   <p className="mt-2 max-w-xl text-sm text-background/80 leading-snug md:leading-relaxed">

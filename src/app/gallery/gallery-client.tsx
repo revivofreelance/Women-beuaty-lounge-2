@@ -91,17 +91,17 @@ export function GalleryClient() {
         <Button
           onClick={() => openBooking()}
           size="lg"
-          className="rounded-full bg-primary px-7 text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
+          className="h-9 rounded-full bg-primary px-4 text-xs sm:h-11 sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
         >
           <CalendarHeart className="mr-2 h-5 w-5" /> Book your transformation
         </Button>
       </PageHero>
 
       {/* ============== FILTERS + GRID ============== */}
-      <section className="bg-background py-6 md:py-8 lg:py-10">
+      <section className="bg-background py-4 sm:py-6 md:py-8 lg:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Filters */}
-          <Reveal className="mb-8">
+          <Reveal className="mb-5 sm:mb-8">
             <div
               role="tablist"
               aria-label="Filter gallery by category"
@@ -155,7 +155,7 @@ export function GalleryClient() {
 
           {/* Grid */}
           {filtered.length === 0 ? (
-            <p className="text-center text-muted-foreground py-6 md:py-10 lg:py-16">
+            <p className="text-center text-muted-foreground py-5 sm:py-6 md:py-10 lg:py-16">
               No items in this category yet — check back soon.
             </p>
           ) : (
@@ -197,7 +197,7 @@ export function GalleryClient() {
       </section>
 
       {/* ============== BEFORE & AFTER ============== */}
-      <section className="border-t border-border/60 bg-foreground text-background py-6 md:py-10 lg:py-12">
+      <section className="border-t border-border/60 bg-foreground text-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             light
@@ -205,7 +205,7 @@ export function GalleryClient() {
             title="Before & after slider"
             description="Drag the handle to reveal the difference our colour, cut, keratin and bridal services make. Every photo is real client work — no filters, no retouching."
           />
-          <div className="mt-6 md:mt-10 grid gap-6 lg:grid-cols-3">
+          <div className="mt-6 md:mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {beforeAfter.slice(0, 3).map((ba, i) => (
               <Reveal key={ba.id} delay={i * 100} className="flex flex-col gap-3">
                 <BeforeAfterSlider
@@ -236,16 +236,16 @@ export function GalleryClient() {
       </section>
 
       {/* ============== FINAL CTA ============== */}
-      <section className="bg-background text-center py-6 md:py-10 lg:py-12">
+      <section className="bg-background text-center py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Reveal className="flex flex-col items-center gap-5">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-primary text-primary-foreground shadow-sm">
               <Sparkles className="h-6 w-6" />
             </span>
-            <h2 className="font-serif font-semibold tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Your transformation, next
             </h2>
-            <p className="max-w-xl text-pretty text-base text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
+            <p className="max-w-xl text-pretty text-xs text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
               Book a free 10-minute consultation and we'll match you with the
               right stylist and service for your goals, your hair and your skin.
             </p>
@@ -322,7 +322,7 @@ export function GalleryClient() {
 
           {/* Figure */}
           <figure
-            className="relative mx-auto flex max-h-[90vh] w-full max-w-5xl flex-col items-center px-4 py-6"
+            className="relative mx-auto flex max-h-[90vh] w-full max-w-5xl flex-col items-center px-4 py-4 sm:py-6"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -338,7 +338,7 @@ export function GalleryClient() {
                 <span className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-background/70">
                   {active.category}
                 </span>
-                <span className="font-serif text-xl font-semibold text-background">
+                <span className="font-serif text-base font-semibold sm:text-xl text-background">
                   {active.title}
                 </span>
                 <span className="text-sm text-background/80">

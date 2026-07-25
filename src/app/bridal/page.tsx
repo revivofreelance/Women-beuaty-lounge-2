@@ -62,7 +62,7 @@ export default function BridalPage() {
         <div className="flex flex-wrap items-center gap-3">
           <BookButton service="bridal-makeup"
             size="lg"
-            className="rounded-full bg-primary px-7 text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
+            className="h-9 rounded-full bg-primary px-4 text-xs sm:h-11 sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
           >
             <CalendarHeart className="mr-2 h-5 w-5" /> Book bridal trial
           </BookButton>
@@ -70,7 +70,7 @@ export default function BridalPage() {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full border-background/30 bg-background/10 px-7 text-base text-background backdrop-blur-sm hover:bg-background/20 hover:text-background"
+              className="h-9 rounded-full border-background/30 bg-background/10 px-4 text-xs sm:h-11 sm:px-7 sm:text-base text-background backdrop-blur-sm hover:bg-background/20 hover:text-background"
             >
               See bridal gallery <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -79,18 +79,18 @@ export default function BridalPage() {
       </PageHero>
 
       {/* ============== INTRO STATS ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-12">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             {introStats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 80} className="flex flex-col items-center text-center">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-primary">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-secondary text-primary">
                   <stat.icon className="h-6 w-6" />
                 </span>
                 {stat.isStars ? (
                   <Stars rating={5} size={18} className="mt-4" />
                 ) : null}
-                <span className="mt-3 font-serif font-bold text-foreground text-lg md:text-xl lg:text-2xl">
+                <span className="mt-3 font-serif font-bold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                   {stat.value}
                 </span>
                 <span className="mt-1 text-sm text-muted-foreground">{stat.label}</span>
@@ -101,14 +101,14 @@ export default function BridalPage() {
       </section>
 
       {/* ============== BRIDAL SERVICES ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-16">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Bridal services"
             title="Looks for every function"
             description="From your engagement to the wedding morning, each look is tailored to your outfit, your features and your story — and crafted to photograph beautifully."
           />
-          <div className="mt-8 md:mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
             {bridalServices.map((s, i) => (
               <Reveal key={s.slug} delay={i * 80}>
                 <Link href={`/services/${s.slug}`} className="group block h-full">
@@ -127,10 +127,10 @@ export default function BridalPage() {
                       </Badge>
                     </div>
                     <CardContent className="space-y-2 pt-4">
-                      <h3 className="font-serif text-lg font-semibold leading-snug text-foreground">
+                      <h3 className="font-serif text-sm font-semibold sm:text-lg leading-snug text-foreground">
                         {s.name}
                       </h3>
-                      <p className="line-clamp-2 text-sm text-muted-foreground">
+                      <p className="line-clamp-2 text-xs text-muted-foreground sm:text-sm">
                         {s.shortDescription}
                       </p>
                       <p className="text-sm font-medium text-primary">
@@ -146,24 +146,24 @@ export default function BridalPage() {
       </section>
 
       {/* ============== PROCESS ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The journey"
             title="Your bridal journey, step by step"
             description="A calm, considered process that begins months before your wedding — so the only thing you feel on the day is beautiful."
           />
-          <div className="mt-8 md:mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {processSteps.map((step, i) => (
               <Reveal key={step.num} delay={i * 80}>
                 <div className="relative h-full rounded-2xl border border-border/70 bg-secondary/30 p-4 md:p-5 lg:p-6">
-                  <span className="font-serif font-semibold text-primary/30 text-lg md:text-xl lg:text-2xl">
+                  <span className="font-serif font-semibold text-primary/30 text-base sm:text-lg md:text-xl lg:text-2xl">
                     {step.num}
                   </span>
-                  <h3 className="mt-3 font-serif text-lg font-semibold text-foreground">
+                  <h3 className="mt-3 font-serif text-sm font-semibold sm:text-lg text-foreground">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                  <p className="mt-2 text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                     {step.description}
                   </p>
                   {i < processSteps.length - 1 && (
@@ -178,7 +178,7 @@ export default function BridalPage() {
 
       {/* ============== LEAD ARTIST ============== */}
       {kavya && (
-        <section className="border-y border-border/60 bg-foreground text-background py-6 md:py-10 lg:py-16">
+        <section className="border-y border-border/60 bg-foreground text-background py-5 sm:py-6 md:py-10 lg:py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-center lg:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
               <Reveal className="relative mx-auto w-full max-w-sm">
@@ -192,7 +192,7 @@ export default function BridalPage() {
                   />
                 </div>
                 <div className="absolute -bottom-5 -right-5 rounded-2xl bg-salon-gold px-5 py-3 text-center shadow-xl">
-                  <p className="font-serif font-bold text-foreground text-lg md:text-xl lg:text-2xl">
+                  <p className="font-serif font-bold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                     {kavya.reviews}+
                   </p>
                   <p className="text-xs font-medium uppercase tracking-wider text-foreground/80">
@@ -203,7 +203,7 @@ export default function BridalPage() {
 
               <Reveal delay={120}>
                 <Badge className="bg-salon-gold text-foreground">Lead bridal artist</Badge>
-                <h2 className="mt-4 font-serif font-semibold text-xl md:text-2xl lg:text-3xl">
+                <h2 className="mt-4 font-serif font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl">
                   {kavya.name}
                 </h2>
                 <p className="mt-1 text-background/70">{kavya.position}</p>
@@ -244,14 +244,14 @@ export default function BridalPage() {
       )}
 
       {/* ============== BRIDAL PACKAGES ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Bridal packages"
             title="Complete bridal bundles"
             description="Curated bundles that bring prep, trial and wedding-day artistry together — with savings and on-location service included."
           />
-          <div className="mt-8 md:mt-12 grid gap-6 md:grid-cols-2">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-2">
             {bridalPackages.map((p, i) => (
               <Reveal key={p.slug} delay={i * 100}>
                 <Card className="h-full overflow-hidden border-border/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -270,12 +270,12 @@ export default function BridalPage() {
                       )}
                       <Badge className="bg-primary text-primary-foreground">Save {p.save}%</Badge>
                     </div>
-                    <h3 className="absolute bottom-4 left-4 right-4 font-serif font-semibold text-background text-lg md:text-xl lg:text-2xl">
+                    <h3 className="absolute bottom-4 left-4 right-4 font-serif font-semibold text-background text-base sm:text-lg md:text-xl lg:text-2xl">
                       {p.name}
                     </h3>
                   </div>
                   <CardContent className="space-y-4 pt-5">
-                    <p className="text-sm text-muted-foreground leading-snug md:leading-relaxed">{p.description}</p>
+                    <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">{p.description}</p>
                     <ul className="space-y-2">
                       {p.services.map((svc) => (
                         <li key={svc} className="flex items-start gap-2 text-sm text-foreground/85">
@@ -289,7 +289,7 @@ export default function BridalPage() {
                         <span className="text-sm text-muted-foreground line-through">
                           ${p.originalPrice}
                         </span>
-                        <span className="ml-2 font-serif font-semibold text-primary text-xl md:text-2xl lg:text-3xl">
+                        <span className="ml-2 font-serif font-semibold text-primary text-lg sm:text-xl md:text-2xl lg:text-3xl">
                           ${p.price}
                         </span>
                       </div>
@@ -308,14 +308,14 @@ export default function BridalPage() {
       </section>
 
       {/* ============== TESTIMONIALS ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-16">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Bride stories"
             title="Loved by our brides"
             description="Real words from real weddings — the moments that make everything we do worth it."
           />
-          <div className="mt-8 md:mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-5 md:mt-12 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3">
             {testimonials.slice(0, 3).map((t, i) => (
               <Reveal key={t.id} delay={i * 90}>
                 <Card className="h-full border-border/70 bg-card">
@@ -349,7 +349,7 @@ export default function BridalPage() {
       </section>
 
       {/* ============== FINAL CTA ============== */}
-      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground py-8 md:py-12 lg:py-20">
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground py-5 sm:py-8 md:py-12 lg:py-20">
         <div className="absolute inset-0 -z-10">
           <Image
             src={getImage("bridal2", 1)}
@@ -361,10 +361,10 @@ export default function BridalPage() {
         </div>
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal className="flex flex-col items-center gap-5">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-background/15 text-salon-gold ring-1 ring-background/20">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-background/15 text-salon-gold ring-1 ring-background/20">
               <Gem className="h-7 w-7" />
             </span>
-            <h2 className="font-serif font-semibold leading-tight text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold leading-tight text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Let&apos;s plan your wedding-day look
             </h2>
             <p className="max-w-xl text-pretty text-base text-primary-foreground/85 sm:text-lg leading-snug md:leading-relaxed">

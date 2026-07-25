@@ -52,14 +52,14 @@ export function BlogClient() {
         <Button
           onClick={() => openBooking()}
           size="lg"
-          className="rounded-full bg-primary px-7 text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
+          className="h-9 rounded-full bg-primary px-4 text-xs sm:h-11 sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
         >
           <CalendarHeart className="mr-2 h-5 w-5" /> Book a consultation
         </Button>
       </PageHero>
 
       {/* ============== FEATURED POST ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <Link href={`/blog/${featured.slug}`} className="group block">
@@ -77,14 +77,14 @@ export function BlogClient() {
                       Featured
                     </Badge>
                   </div>
-                  <CardContent className="flex flex-col gap-4 p-7 sm:p-9">
+                  <CardContent className="flex flex-col gap-4 p-3 sm:p-9">
                     <div className="flex items-center gap-3 text-xs text-muted-foreground">
                       <Badge className="bg-secondary text-secondary-foreground">{featured.category}</Badge>
                       <span className="flex items-center gap-1">
                         <Clock className="h-3.5 w-3.5" /> {featured.readTime}
                       </span>
                     </div>
-                    <h2 className="font-serif font-semibold leading-tight text-foreground text-lg md:text-xl lg:text-2xl">
+                    <h2 className="font-serif font-semibold leading-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                       {featured.title}
                     </h2>
                     <p className="text-pretty text-muted-foreground leading-snug md:leading-relaxed">
@@ -111,7 +111,7 @@ export function BlogClient() {
       </section>
 
       {/* ============== SEARCH + FILTER ============== */}
-      <section className="bg-blush py-6 md:py-10 lg:py-12">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-5">
             <Reveal className="relative max-w-xl">
@@ -146,12 +146,12 @@ export function BlogClient() {
       </section>
 
       {/* ============== POSTS GRID ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
-            <div className="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-border/80 bg-secondary/30 text-center py-8 md:py-12 lg:py-20">
+            <div className="flex flex-col items-center gap-4 rounded-3xl border border-dashed border-border/80 bg-secondary/30 text-center py-5 sm:py-8 md:py-12 lg:py-20">
               <Search className="h-10 w-10 text-muted-foreground" />
-              <h3 className="font-serif text-xl font-semibold text-foreground">No articles found</h3>
+              <h3 className="font-serif text-base font-semibold sm:text-xl text-foreground">No articles found</h3>
               <p className="max-w-sm text-sm text-muted-foreground">
                 Try a different search term or browse all articles by clearing the filters.
               </p>
@@ -167,7 +167,7 @@ export function BlogClient() {
               </Button>
             </div>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
               {filtered.map((post, i) => (
                 <Reveal key={post.slug} delay={(i % 3) * 80}>
                   <Link href={`/blog/${post.slug}`} className="group block h-full">
@@ -192,10 +192,10 @@ export function BlogClient() {
                             <Clock className="h-3 w-3" /> {post.readTime}
                           </span>
                         </div>
-                        <h3 className="font-serif text-lg font-semibold leading-snug text-foreground">
+                        <h3 className="font-serif text-sm font-semibold sm:text-lg leading-snug text-foreground">
                           {post.title}
                         </h3>
-                        <p className="line-clamp-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                        <p className="line-clamp-2 text-xs text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
                           {post.excerpt}
                         </p>
                         <p className="text-xs font-medium text-foreground/70">

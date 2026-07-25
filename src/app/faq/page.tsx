@@ -40,7 +40,7 @@ export default function FaqPage() {
       >
         <div className="flex flex-wrap items-center gap-3">
           <BookButton
-            className="rounded-full bg-primary px-6 text-sm shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+            className="h-8 rounded-full bg-primary px-4 text-xs sm:h-9 sm:px-6 sm:text-sm shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
           >
             <CalendarHeart className="mr-1.5 h-4 w-4" />
             Book now
@@ -58,7 +58,7 @@ export default function FaqPage() {
         </div>
       </PageHero>
 
-      <main className="bg-background py-6 md:py-10 lg:py-14">
+      <main className="bg-background py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           {categories.map((category, cIdx) => {
             const items = faqs.filter((f) => f.category === category);
@@ -73,7 +73,7 @@ export default function FaqPage() {
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <HelpCircle className="h-5 w-5" />
                   </span>
-                  <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
+                  <h2 className="font-serif font-semibold tracking-tight text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
                     {category}
                   </h2>
                 </div>
@@ -103,11 +103,11 @@ export default function FaqPage() {
 
           {/* Still have questions? */}
           <Reveal delay={120}>
-            <section className="mt-8 md:mt-12 rounded-3xl bg-foreground text-center text-background p-4 md:p-6 lg:p-8">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-background/10">
+            <section className="mt-5 md:mt-12 rounded-3xl bg-foreground text-center text-background p-4 md:p-6 lg:p-8">
+              <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-background/10">
                 <MessageCircle className="h-6 w-6 text-salon-gold" />
               </span>
-              <h2 className="mt-4 font-serif font-semibold text-lg md:text-xl lg:text-2xl">
+              <h2 className="mt-4 font-serif font-semibold text-base sm:text-lg md:text-xl lg:text-2xl">
                 Still have questions?
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-pretty text-sm text-background/80 sm:text-base leading-snug md:leading-relaxed">

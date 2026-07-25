@@ -34,7 +34,7 @@ const navItems: NavItem[] = [
 function Logo() {
   return (
     <Link href="/" className="group flex items-center gap-2.5" aria-label="Lumière Beauty Lounge — home">
-      <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
+      <span className="relative flex h-8 w-8 items-center justify-center rounded-full sm:h-10 sm:w-10 bg-primary text-primary-foreground shadow-sm transition-transform group-hover:scale-105">
         <Sparkles className="h-5 w-5" />
         <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-salon-gold ring-2 ring-background" />
       </span>

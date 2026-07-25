@@ -155,7 +155,7 @@ export function BookingWizard({
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
           <PartyPopper className="h-9 w-9" />
         </span>
-        <h3 className="mt-5 font-serif font-semibold text-foreground text-lg md:text-xl lg:text-2xl">
+        <h3 className="mt-5 font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
           You&apos;re all set, {name.split(" ")[0] || "friend"}!
         </h3>
         <p className="mx-auto mt-2 max-w-md text-pretty text-sm text-muted-foreground leading-snug md:leading-relaxed">

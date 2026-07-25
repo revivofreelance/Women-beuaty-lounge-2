@@ -81,11 +81,11 @@ export default async function BlogDetailPage({ params }: Props) {
       </nav>
 
       {/* ============== ARTICLE ============== */}
-      <article className="bg-background py-6 md:py-10 lg:py-12">
+      <article className="bg-background py-5 sm:py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <Badge className="bg-secondary text-secondary-foreground">{post.category}</Badge>
-            <h1 className="mt-4 font-serif font-semibold leading-tight tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h1 className="mt-4 font-serif font-semibold leading-tight tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               {post.title}
             </h1>
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
@@ -116,7 +116,7 @@ export default async function BlogDetailPage({ params }: Props) {
           </Reveal>
 
           <Reveal delay={160} className="mt-8">
-            <p className="text-lg font-medium text-foreground leading-snug md:leading-relaxed">
+            <p className="text-sm font-medium text-foreground leading-snug sm:text-lg md:leading-relaxed">
               {post.excerpt}
             </p>
           </Reveal>
@@ -163,7 +163,7 @@ export default async function BlogDetailPage({ params }: Props) {
                     <Sparkles className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="font-serif text-lg font-semibold text-foreground">
+                    <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                       Want personalised advice from {post.author}?
                     </h3>
                     <p className="mt-1 text-sm text-muted-foreground">
@@ -183,14 +183,14 @@ export default async function BlogDetailPage({ params }: Props) {
       </section>
 
       {/* ============== RELATED ============== */}
-      <section className="border-t border-border/60 bg-secondary/30 py-6 md:py-10 lg:py-14">
+      <section className="border-t border-border/60 bg-secondary/30 py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h2 className="font-serif font-semibold text-foreground text-lg md:text-xl lg:text-2xl">
+            <h2 className="font-serif font-semibold text-foreground text-base sm:text-lg md:text-xl lg:text-2xl">
               More to read
             </h2>
           </Reveal>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {related.map((rel, i) => (
               <Reveal key={rel.slug} delay={i * 80}>
                 <Link href={`/blog/${rel.slug}`} className="group block h-full">
@@ -208,10 +208,10 @@ export default async function BlogDetailPage({ params }: Props) {
                       </Badge>
                     </div>
                     <CardContent className="flex flex-col gap-2 pt-4">
-                      <h3 className="font-serif text-lg font-semibold leading-snug text-foreground">
+                      <h3 className="font-serif text-sm font-semibold sm:text-lg leading-snug text-foreground">
                         {rel.title}
                       </h3>
-                      <p className="line-clamp-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                      <p className="line-clamp-2 text-xs text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
                         {rel.excerpt}
                       </p>
                       <span className="mt-1 inline-flex items-center gap-1 text-sm font-semibold text-primary">

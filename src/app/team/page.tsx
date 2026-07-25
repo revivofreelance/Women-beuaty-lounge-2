@@ -40,32 +40,32 @@ export default function TeamPage() {
       >
         <BookButton
           size="lg"
-          className="rounded-full bg-primary px-7 text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
+          className="h-9 rounded-full bg-primary px-4 text-xs sm:h-11 sm:px-7 sm:text-base shadow-lg shadow-primary/25 hover:bg-primary/90"
         >
           <CalendarHeart className="mr-2 h-5 w-5" /> Book with a stylist
         </BookButton>
       </PageHero>
 
       {/* ============== TEAM GRID ============== */}
-      <section className="bg-background py-6 md:py-10 lg:py-16">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-10 flex flex-col gap-3 text-center">
+          <Reveal className="mb-5 flex flex-col gap-2 text-center sm:mb-10 sm:gap-3">
             <span className="mx-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-salon-rose">
               <span className="h-px w-6 bg-salon-rose/50" />
               The Lumière family
               <span className="h-px w-6 bg-salon-rose/50" />
             </span>
-            <h2 className="font-serif font-semibold tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold leading-tight tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Certified, passionate, here for you
             </h2>
-            <p className="mx-auto max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
+            <p className="mx-auto max-w-2xl text-pretty text-xs text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
               Every stylist at Lumière is hand-picked for their craft and their
               care. Tap a profile to see their work, certifications, signature
               styles and reviews.
             </p>
           </Reveal>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
             {stylists.map((st, i) => (
               <Reveal key={st.slug} delay={i * 80} as="article">
                 <Link href={`/team/${st.slug}`} className="group block h-full">
@@ -79,45 +79,45 @@ export default function TeamPage() {
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/15 to-transparent" />
-                      <div className="absolute inset-x-0 bottom-0 p-3 md:p-4 lg:p-5">
-                        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-background/80">
+                      <div className="absolute inset-x-0 bottom-0 p-2 sm:p-3 md:p-4 lg:p-5">
+                        <span className="text-[0.55rem] font-semibold uppercase tracking-[0.18em] text-background/80 sm:text-xs">
                           {st.position}
                         </span>
-                        <h3 className="mt-1 font-serif text-xl font-semibold text-background">
+                        <h3 className="mt-0.5 font-serif text-xs font-semibold leading-tight text-background sm:mt-1 sm:text-xl">
                           {st.name}
                         </h3>
-                        <div className="mt-2 flex items-center gap-2">
+                        <div className="mt-1 flex items-center gap-1 sm:mt-2 sm:gap-2">
                           <Stars rating={st.rating} size={14} />
-                          <span className="text-xs font-medium text-background/85">
+                          <span className="text-[0.55rem] font-medium text-background/85 sm:text-xs">
                             {st.rating.toFixed(1)} · {st.reviews} reviews
                           </span>
                         </div>
                       </div>
-                      <span className="absolute right-4 top-6 rounded-full bg-background/90 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
+                      <span className="absolute right-2 top-2 rounded-full bg-background/90 px-1.5 py-0 text-[0.5rem] font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur sm:right-4 sm:top-6 sm:px-2.5 sm:py-1 sm:text-[0.65rem]">
                         {st.tier}
                       </span>
                     </div>
-                    <CardContent className="flex flex-col gap-3 px-2 pb-2 pt-4">
-                      <p className="line-clamp-2 text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                    <CardContent className="flex flex-col gap-1.5 px-1 pb-1 pt-2 sm:gap-3 sm:px-2 sm:pb-2 sm:pt-4">
+                      <p className="line-clamp-2 text-[0.7rem] text-muted-foreground sm:text-sm leading-snug md:leading-relaxed">
                         {st.bio}
                       </p>
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-1 sm:gap-1.5">
                         {st.expertise.slice(0, 3).map((e) => (
                           <Badge
                             key={e}
                             variant="secondary"
-                            className="rounded-full bg-primary/10 text-xs font-medium text-primary hover:bg-primary/15"
+                            className="rounded-full bg-primary/10 px-1.5 py-0 text-[0.6rem] font-medium text-primary hover:bg-primary/15 sm:px-2 sm:py-0.5 sm:text-xs"
                           >
                             {e}
                           </Badge>
                         ))}
                       </div>
-                      <div className="mt-1 flex items-center justify-between border-t border-border/60 pt-3">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+                      <div className="mt-0.5 flex items-center justify-between border-t border-border/60 pt-2 sm:mt-1 sm:pt-3">
+                        <span className="inline-flex items-center gap-1 text-[0.6rem] font-medium text-muted-foreground sm:gap-1.5 sm:text-xs">
                           <Clock className="h-3.5 w-3.5 text-salon-rose" />
                           {st.experience} experience
                         </span>
-                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition-transform group-hover:translate-x-0.5">
+                        <span className="inline-flex items-center gap-1 text-[0.6rem] font-semibold text-primary transition-transform group-hover:translate-x-0.5 sm:text-xs">
                           View profile <ArrowRight className="h-3.5 w-3.5" />
                         </span>
                       </div>
@@ -131,16 +131,16 @@ export default function TeamPage() {
       </section>
 
       {/* ============== JOIN OUR TEAM CTA ============== */}
-      <section className="border-t border-border/60 bg-blush py-6 md:py-10 lg:py-16">
+      <section className="border-t border-border/60 bg-blush py-5 sm:py-6 md:py-10 lg:py-16">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <Reveal className="flex flex-col items-center gap-5">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full sm:h-14 sm:w-14 bg-primary text-primary-foreground shadow-sm">
               <Sparkles className="h-6 w-6" />
             </span>
-            <h2 className="font-serif font-semibold tracking-tight text-foreground text-xl md:text-2xl lg:text-3xl">
+            <h2 className="font-serif font-semibold leading-tight tracking-tight text-foreground text-lg sm:text-xl md:text-2xl lg:text-3xl">
               Want to join our team?
             </h2>
-            <p className="max-w-2xl text-pretty text-base text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
+            <p className="max-w-2xl text-pretty text-xs text-muted-foreground sm:text-lg leading-snug md:leading-relaxed">
               We're always looking for certified, kind, curious stylists,
               colourists, makeup artists and therapists to join the Lumière
               family. We offer the city's best commission structure, ongoing

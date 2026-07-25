@@ -78,26 +78,26 @@ export default function CareersPage() {
       />
 
       {/* WHY WORK WITH US */}
-      <section className="bg-background py-6 md:py-10 lg:py-14">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Why Lumière"
             title="A place to grow"
             description="We're a small, tight-knit team that treats every artist like family. Here's what you can count on when you join us."
           />
-          <div className="mt-6 md:mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 md:mt-10 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
             {perks.map((p, i) => (
               <Reveal key={p.title} delay={i * 70}>
                 <Card className="h-full border-border/70 shadow-sm transition-shadow hover:shadow-md p-4 md:p-5 lg:p-6">
                   <CardContent className="flex h-full flex-col gap-4 p-0">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-primary/10 text-primary">
                       <p.icon className="h-6 w-6" />
                     </span>
                     <div className="flex flex-col gap-2">
-                      <h3 className="font-serif text-lg font-semibold text-foreground">
+                      <h3 className="font-serif text-sm font-semibold sm:text-lg text-foreground">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                      <p className="text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                         {p.description}
                       </p>
                     </div>
@@ -110,7 +110,7 @@ export default function CareersPage() {
       </section>
 
       {/* OPEN ROLES */}
-      <section className="bg-blush py-6 md:py-10 lg:py-14">
+      <section className="bg-blush py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Open positions"
@@ -124,7 +124,7 @@ export default function CareersPage() {
                   <CardContent className="flex flex-col gap-5 p-0 md:flex-row md:items-center md:justify-between">
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="font-serif text-xl font-semibold text-foreground">
+                        <h3 className="font-serif text-base font-semibold sm:text-xl text-foreground">
                           {r.title}
                         </h3>
                         <Badge
@@ -134,7 +134,7 @@ export default function CareersPage() {
                           {r.type}
                         </Badge>
                       </div>
-                      <p className="mt-2 max-w-2xl text-sm text-muted-foreground leading-snug md:leading-relaxed">
+                      <p className="mt-2 max-w-2xl text-xs text-muted-foreground leading-snug sm:text-sm md:leading-relaxed">
                         {r.description}
                       </p>
                       <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
@@ -155,7 +155,7 @@ export default function CareersPage() {
                     <div className="md:ml-6 md:shrink-0">
                       <Button
                         asChild
-                        className="w-full rounded-full bg-primary px-6 text-sm transition-colors hover:bg-primary/90 md:w-auto"
+                        className="w-full h-8 rounded-full bg-primary px-4 text-xs sm:h-9 sm:px-6 sm:text-sm transition-colors hover:bg-primary/90 md:w-auto"
                       >
                         <a
                           href={`mailto:${salonInfo.email}?subject=Application: ${encodeURIComponent(r.title)}`}
@@ -175,11 +175,11 @@ export default function CareersPage() {
           <Reveal delay={120}>
             <section className="mt-6 md:mt-10 flex flex-col gap-6 rounded-3xl bg-foreground text-background md:flex-row md:items-center md:justify-between p-4 md:p-6 lg:p-8">
               <div className="flex flex-1 flex-col gap-4">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-salon-gold text-foreground">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full sm:h-12 sm:w-12 bg-salon-gold text-foreground">
                   <Heart className="h-6 w-6" />
                 </span>
                 <div>
-                  <h2 className="font-serif font-semibold text-lg md:text-xl lg:text-2xl">
+                  <h2 className="font-serif font-semibold text-base sm:text-lg md:text-xl lg:text-2xl">
                     Don&apos;t see your role?
                   </h2>
                   <p className="mt-2 max-w-xl text-pretty text-sm text-background/80 sm:text-base leading-snug md:leading-relaxed">
@@ -208,7 +208,7 @@ export default function CareersPage() {
       </section>
 
       {/* VISIT / TOUR CTA */}
-      <section className="bg-background py-6 md:py-10 lg:py-14">
+      <section className="bg-background py-5 sm:py-6 md:py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="grid overflow-hidden rounded-3xl border border-border/70 bg-card shadow-sm md:grid-cols-2 md:items-center p-4 md:p-5 lg:p-6 gap-4 md:gap-6 lg:gap-8">
@@ -221,7 +221,7 @@ export default function CareersPage() {
                 />
                 <div className="mt-6 flex flex-wrap gap-3">
                   <BookButton
-                    className="rounded-full bg-primary px-6 text-sm transition-colors hover:bg-primary/90"
+                    className="h-8 rounded-full bg-primary px-4 text-xs sm:h-9 sm:px-6 sm:text-sm transition-colors hover:bg-primary/90"
                   >
                     Book a tour
                   </BookButton>
