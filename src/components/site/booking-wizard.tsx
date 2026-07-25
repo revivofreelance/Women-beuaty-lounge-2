@@ -44,7 +44,6 @@ const STEPS = ["Service", "Details", "Confirm"] as const;
 
 const contactMethods = [
   { v: "Phone", label: "Phone", icon: Phone },
-  { v: "WhatsApp", label: "WhatsApp", icon: Phone },
   { v: "Email", label: "Email", icon: Mail },
 ] as const;
 
@@ -194,9 +193,9 @@ export function BookingWizard({
         </div>
 
         <p className="mt-4 max-w-md text-xs text-muted-foreground">
-          We&apos;ll send a confirmation message shortly and a reminder two hours
-          before your appointment. Need to reschedule? Call us at{" "}
-          {salonInfo.phone}.
+          We&apos;ll send a confirmation shortly and a reminder two hours before
+          your appointment. Need to reschedule? Email us at{" "}
+          {salonInfo.bookingEmail}.
         </p>
 
         <Button
@@ -367,7 +366,7 @@ export function BookingWizard({
                 id="bk-phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="+1 (415) 555-0142"
+                placeholder="Your mobile number"
                 className="h-11 rounded-xl"
               />
             </div>

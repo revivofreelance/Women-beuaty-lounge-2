@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { salonInfo, services } from "@/lib/salon-data";
 import {
-  MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube,
+  MapPin, Mail, Clock, Instagram, Facebook, Youtube,
   Sparkles, ArrowRight, Heart,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -132,10 +132,6 @@ export function Footer() {
               <li className="flex gap-2.5">
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
                 <span>{salonInfo.address.line1}, {salonInfo.address.line2}</span>
-              </li>
-              <li className="flex gap-2.5">
-                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
-                <a href={`tel:${salonInfo.phoneRaw}`} className="hover:text-primary">{salonInfo.phone}</a>
               </li>
               <li className="flex gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />

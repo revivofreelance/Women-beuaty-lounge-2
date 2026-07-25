@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/accordion";
 import {
   CalendarHeart,
-  Phone,
+  Mail,
   HelpCircle,
   MessageCircle,
 } from "lucide-react";
@@ -50,9 +50,9 @@ export default function FaqPage() {
             variant="outline"
             className="rounded-full border-background/40 bg-background/10 px-6 text-sm text-background backdrop-blur-sm transition-colors hover:bg-background/20 hover:text-background"
           >
-            <Link href={`tel:${salonInfo.phoneRaw}`}>
-              <Phone className="mr-1.5 h-4 w-4" />
-              Call us
+            <Link href="/contact">
+              <Mail className="mr-1.5 h-4 w-4" />
+              Contact us
             </Link>
           </Button>
         </div>
@@ -127,13 +127,9 @@ export default function FaqPage() {
                   variant="outline"
                   className="rounded-full border-background/40 bg-transparent px-6 text-sm text-background transition-colors hover:bg-background/10 hover:text-background"
                 >
-                  <a
-                    href={`https://wa.me/${salonInfo.whatsappRaw}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={`mailto:${salonInfo.email}`}>
                     <MessageCircle className="mr-1.5 h-4 w-4" />
-                    WhatsApp us
+                    Email us
                   </a>
                 </Button>
               </div>

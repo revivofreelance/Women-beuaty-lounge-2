@@ -2,7 +2,7 @@
 
 import { useSalonStore } from "@/lib/store";
 import { salonInfo } from "@/lib/salon-data";
-import { CalendarHeart, MessageCircle, X } from "lucide-react";
+import { CalendarHeart, Mail, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -18,25 +18,23 @@ export function FloatingButtons() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const waText = encodeURIComponent(
-    "Hi Lumière Beauty Lounge! I'd like to book an appointment."
+  const mailSubject = encodeURIComponent(
+    "Appointment request — Lumiere Beauty Lounge"
   );
 
   return (
     <>
-      {/* WhatsApp — always visible bottom-right */}
+      {/* Email — always visible bottom-right */}
       <a
-        href={`https://wa.me/${salonInfo.whatsappRaw}?text=${waText}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-[5.25rem] right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/20 transition-transform hover:scale-110 md:bottom-5 sm:h-14 sm:w-14"
+        href={`mailto:${salonInfo.bookingEmail}?subject=${mailSubject}`}
+        aria-label="Email us about an appointment"
+        className="fixed bottom-[5.25rem] right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background shadow-lg shadow-black/20 transition-transform hover:scale-110 md:bottom-5 sm:h-14 sm:w-14"
       >
-        <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-20" />
+        <Mail className="h-6 w-6 sm:h-7 sm:w-7" />
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-foreground opacity-20" />
       </a>
 
-      {/* Sticky Book bar — appears after scroll, above WhatsApp */}
+      {/* Sticky Book bar — appears after scroll, above the email button */}
       <div
         className={cn(
           // Hidden on phones (<768): the mobile bottom nav already has a Book action,

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useSalonStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import {
-  Menu, CalendarHeart, ChevronDown, Sparkles, Phone, Home, Scissors
+  Menu, CalendarHeart, ChevronDown, Sparkles, Mail, Home, Scissors
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -128,11 +128,11 @@ export function Navbar() {
         {/* Right actions */}
         <div className="flex items-center gap-2">
           <Link
-            href="tel:+14155550142"
+            href="/contact"
             className="hidden items-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-primary md:flex"
           >
-            <Phone className="h-4 w-4 text-primary" />
-            <span className="hidden xl:inline">Call us</span>
+            <Mail className="h-4 w-4 text-primary" />
+            <span className="hidden xl:inline">Contact</span>
           </Link>
           <Button
             onClick={() => openBooking()}
@@ -204,9 +204,9 @@ export function Navbar() {
               <Button onClick={() => openBooking()} className="w-full rounded-full bg-primary min-h-[44px]">
                 <CalendarHeart className="mr-1.5 h-4 w-4" /> Book Appointment
               </Button>
-              <Link href="tel:+14155550142">
+              <Link href="/contact">
                 <Button variant="outline" className="w-full rounded-full min-h-[44px]">
-                  <Phone className="mr-1.5 h-4 w-4" /> +1 (415) 555-0142
+                  <Mail className="mr-1.5 h-4 w-4" /> Contact us
                 </Button>
               </Link>
             </div>

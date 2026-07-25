@@ -6,7 +6,7 @@ import { salonInfo } from "@/lib/salon-data";
 import { Reveal } from "@/components/site/reveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookingWizard } from "@/components/site/booking-wizard";
-import { Clock, Phone, ShieldCheck } from "lucide-react";
+import { Clock, Mail, ShieldCheck } from "lucide-react";
 
 export function BookingPanel() {
   const router = useRouter();
@@ -62,17 +62,17 @@ export function BookingPanel() {
             <Card className="border-border/70 py-4 shadow-sm">
               <CardContent className="flex items-center gap-3 p-0 px-4">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Phone className="h-5 w-5" />
+                  <Mail className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-foreground">
                     Need help?
                   </p>
                   <a
-                    href={`tel:${salonInfo.phoneRaw}`}
+                    href={`mailto:${salonInfo.bookingEmail}`}
                     className="text-xs text-primary hover:underline"
                   >
-                    Call {salonInfo.phone}
+                    {salonInfo.bookingEmail}
                   </a>
                 </div>
               </CardContent>

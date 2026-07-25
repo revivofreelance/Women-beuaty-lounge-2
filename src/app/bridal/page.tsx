@@ -13,7 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
   CalendarHeart, CheckCircle2, ArrowRight, Heart, Sparkles, Camera,
-  MapPin, Clock, Phone, Gem, Quote,
+  MapPin, Clock, Mail, Gem, Quote,
 } from "lucide-react";
 
 const processSteps = [
@@ -377,13 +377,13 @@ export default function BridalPage() {
               >
                 <CalendarHeart className="mr-2 h-5 w-5" /> Book bridal trial
               </BookButton>
-              <Link href={`tel:${salonInfo.phoneRaw}`}>
+              <Link href={`mailto:${salonInfo.bookingEmail}`}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="rounded-full border-background/30 bg-transparent px-7 text-base text-primary-foreground hover:bg-background/10 hover:text-primary-foreground"
                 >
-                  <Phone className="mr-2 h-5 w-5" /> Call
+                  <Mail className="mr-2 h-5 w-5" /> Email us
                 </Button>
               </Link>
             </div>

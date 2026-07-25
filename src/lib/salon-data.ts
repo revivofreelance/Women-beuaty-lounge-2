@@ -8,10 +8,6 @@ export const salonInfo = {
   shortName: "Lumière",
   tagline: "Where modern beauty meets timeless care",
   established: 2014,
-  phone: "+1 (415) 555-0142",
-  phoneRaw: "+14155550142",
-  whatsapp: "+1 (415) 555-0142",
-  whatsappRaw: "14155550142",
   email: "hello@lumierebeauty.com",
   bookingEmail: "bookings@lumierebeauty.com",
   address: {
@@ -59,7 +55,6 @@ export const salonInfo = {
     {
       name: "Hayes Valley Flagship",
       address: "248 Hayes Street, San Francisco, CA 94102",
-      phone: "+1 (415) 555-0142",
       hours: "Mon–Sat 9 AM – 9 PM · Sun 10 AM – 5 PM",
       isFlagship: true,
     },
@@ -1768,7 +1763,7 @@ export const blogPosts: BlogPost[] = [
 export interface Faq { q: string; a: string; category: string; }
 
 export const faqs: Faq[] = [
-  { category: "Booking", q: "How do I book an appointment?", a: "You can book online through our website, call us at +1 (415) 555-0142, or WhatsApp the same number. We recommend online booking for the fastest confirmation and to see real-time stylist availability." },
+  { category: "Booking", q: "How do I book an appointment?", a: "Book online through our website or email us at bookings@lumierebeauty.com. Online booking is fastest — you get instant confirmation and can see real-time stylist availability." },
   { category: "Booking", q: "Can I choose my stylist?", a: "Absolutely. You can pick any stylist based on their expertise, or let us recommend one for your service. Senior stylists and our Creative Director are in higher demand, so we recommend booking 1–2 weeks ahead." },
   { category: "Booking", q: "Do you accept walk-ins?", a: "We do, subject to stylist availability. To avoid a wait, we always recommend booking ahead, especially on weekends and evenings." },
   { category: "Booking", q: "How early should I arrive?", a: "Please arrive 5–10 minutes before your appointment to settle in and enjoy a complimentary beverage. First-time clients should arrive 10 minutes early for a brief consultation." },
@@ -1779,8 +1774,8 @@ export const faqs: Faq[] = [
   { category: "Pricing", q: "Do you offer price matching?", a: "We don't price-match, but we're transparent about our pricing and the expertise behind it. Our prices reflect premium products, certified stylists and a hygiene-first experience." },
   { category: "Pricing", q: "Is there a service charge or gratuity?", a: "Gratuity is never required but always appreciated. There's no automatic service charge added to your bill." },
   { category: "Cancellation", q: "What is your cancellation policy?", a: "We kindly ask for 4 hours' notice to cancel or reschedule. Repeated no-shows may require a deposit for future bookings. Bridal bookings have a separate policy shared at the time of booking." },
-  { category: "Cancellation", q: "Can I reschedule my appointment?", a: "Yes, free of charge with 4 hours' notice. Just call, WhatsApp or use the link in your confirmation message." },
-  { category: "Cancellation", q: "What if I'm running late?", a: "Call us — we'll do our best to accommodate. If you're more than 15 minutes late, we may need to shorten your service or reschedule to respect the next client's appointment." },
+  { category: "Cancellation", q: "Can I reschedule my appointment?", a: "Yes, free of charge with 4 hours' notice. Just use the reschedule link in your confirmation email." },
+  { category: "Cancellation", q: "What if I'm running late?", a: "Email us as soon as you can — we'll do our best to accommodate. If you're more than 15 minutes late, we may need to shorten your service or reschedule to respect the next client's appointment." },
   { category: "Services", q: "Are your products safe for sensitive skin?", a: "We use premium, salon-grade products and offer sensitive-skin alternatives for every service. Please inform your stylist of any allergies during consultation." },
   { category: "Services", q: "Do you offer services for kids?", a: "Yes! We have a dedicated kids' haircut service for children aged 2–12, with patient stylists and a kid-friendly chair. We also offer gentle threading for teens." },
   { category: "Services", q: "Do you provide bridal services at home or venue?", a: "Yes. Our bridal team travels across the Bay Area for weddings and related functions. Outstation travel is available on request — please mention this when booking." },

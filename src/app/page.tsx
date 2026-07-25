@@ -22,7 +22,7 @@ import { StatCounter } from "@/components/site/stat-counter";
 import { TestimonialMarquee } from "@/components/site/testimonial-marquee";
 import { GlowFinder } from "@/components/site/glow-finder";
 import {
-  CalendarHeart, Phone, MapPin, Clock, ArrowRight, Sparkles,
+  CalendarHeart, Mail, MapPin, Clock, ArrowRight, Sparkles,
   Heart, ShieldCheck, Leaf, Award, Users, CheckCircle2,
   ArrowUpRight, Wand2, Instagram, Scissors, Star,
 } from "lucide-react";
@@ -153,7 +153,7 @@ export default function HomePage() {
             {[
               { icon: MapPin, label: "Visit us", value: salonInfo.address.line1 },
               { icon: Clock, label: "Open today", value: "9 AM – 9 PM" },
-              { icon: Phone, label: "Call to book", value: salonInfo.phone },
+              { icon: Mail, label: "Email us", value: salonInfo.email },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-3 px-2 py-4 sm:px-6">
                 <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-background/15 text-background"><item.icon className="h-4 w-4" /></span>
@@ -488,7 +488,7 @@ export default function HomePage() {
       {/* ============== FAQ ============== */}
       <section className="bg-background py-6 md:py-10 lg:py-12">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Good to know" title="Frequently asked questions" description="Everything you need to know before your visit. Can't find your answer? Just call us." />
+          <SectionHeading eyebrow="Good to know" title="Frequently asked questions" description="Everything you need to know before your visit. Can't find your answer? Just drop us a message." />
           <Accordion type="single" collapsible className="mt-6 md:mt-10 space-y-3">
             {faqs.slice(0, 6).map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="overflow-hidden rounded-xl border border-border/70 bg-background px-5">
@@ -509,7 +509,7 @@ export default function HomePage() {
             <div className="mt-8 space-y-5">
               <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><MapPin className="h-5 w-5" /></span><div><h4 className="font-semibold">Address</h4><p className="mt-1 text-sm text-muted-foreground">{salonInfo.address.line1}<br />{salonInfo.address.line2}</p></div></div>
               <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Clock className="h-5 w-5" /></span><div className="flex-1"><h4 className="font-semibold">Opening hours</h4><ul className="mt-2 space-y-1 text-sm text-muted-foreground">{salonInfo.hours.map((h) => (<li key={h.day} className="flex justify-between border-b border-border/40 pb-1"><span>{h.day}</span><span className="font-medium text-foreground/80">{h.open} – {h.close}</span></li>))}</ul></div></div>
-              <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Phone className="h-5 w-5" /></span><div><h4 className="font-semibold">Contact</h4><p className="mt-1 text-sm text-muted-foreground"><a href={`tel:${salonInfo.phoneRaw}`} className="hover:text-primary">{salonInfo.phone}</a> · <a href={`mailto:${salonInfo.email}`} className="hover:text-primary">{salonInfo.email}</a></p></div></div>
+              <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><Mail className="h-5 w-5" /></span><div><h4 className="font-semibold">Contact</h4><p className="mt-1 text-sm text-muted-foreground"><a href={`mailto:${salonInfo.email}`} className="hover:text-primary">{salonInfo.email}</a></p></div></div>
               <div className="flex gap-4"><span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"><MapPin className="h-5 w-5" /></span><div><h4 className="font-semibold">Nearby landmarks</h4><ul className="mt-1 space-y-1 text-sm text-muted-foreground">{salonInfo.landmarks.map((l) => <li key={l}>· {l}</li>)}</ul></div></div>
             </div>
             <div className="mt-7 flex flex-wrap gap-3">
@@ -538,11 +538,11 @@ export default function HomePage() {
           <Reveal>
             <Wand2 className="mx-auto h-10 w-10 text-salon-gold" />
             <h2 className="mt-5 font-serif font-semibold leading-tight text-xl md:text-2xl lg:text-3xl">Ready for your Lumière moment?</h2>
-            <p className="mx-auto mt-4 max-w-xl text-pretty text-primary-foreground/85">Book online in under two minutes, or call us — we'll find a time and stylist that's perfect for you.</p>
+            <p className="mx-auto mt-4 max-w-xl text-pretty text-primary-foreground/85">Book online in under two minutes, or drop us an email — we'll find a time and stylist that's perfect for you.</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <BookButton size="lg" className="rounded-full bg-background px-7 text-base text-primary hover:bg-background/90"><CalendarHeart className="mr-2 h-5 w-5" /> Book Appointment</BookButton>
-              <Link href={`tel:${salonInfo.phoneRaw}`}>
-                <Button size="lg" variant="outline" className="rounded-full border-primary-foreground/40 bg-primary-foreground/10 px-7 text-base text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground/20"><Phone className="mr-2 h-5 w-5" /> {salonInfo.phone}</Button>
+              <Link href={`mailto:${salonInfo.bookingEmail}`}>
+                <Button size="lg" variant="outline" className="rounded-full border-primary-foreground/40 bg-primary-foreground/10 px-7 text-base text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground/20"><Mail className="mr-2 h-5 w-5" /> {salonInfo.bookingEmail}</Button>
               </Link>
             </div>
           </Reveal>

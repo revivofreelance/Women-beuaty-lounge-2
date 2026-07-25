@@ -16,7 +16,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import {
   MapPin,
-  Phone,
   Mail,
   Clock,
   MessageCircle,
@@ -61,10 +60,10 @@ const contactCards: ContactCard[] = [
     href: `https://www.google.com/maps?q=${encodeURIComponent(salonInfo.mapQuery)}`,
   },
   {
-    icon: Phone,
-    title: "Call us",
-    lines: [salonInfo.phone, "Mon–Sat, 9 AM – 9 PM"],
-    href: `tel:${salonInfo.phoneRaw}`,
+    icon: CalendarHeart,
+    title: "Book online",
+    lines: ["Real-time availability", "Instant confirmation"],
+    href: "/book",
   },
   {
     icon: Mail,
@@ -74,9 +73,9 @@ const contactCards: ContactCard[] = [
   },
   {
     icon: MessageCircle,
-    title: "WhatsApp",
-    lines: [salonInfo.whatsapp, "Fast replies, 9 AM – 9 PM"],
-    href: `https://wa.me/${salonInfo.whatsappRaw}`,
+    title: "Message us",
+    lines: ["@lumierebeauty on Instagram", "Replies 9 AM – 9 PM"],
+    href: salonInfo.social.instagram,
   },
 ];
 
@@ -161,12 +160,11 @@ export function ContactClient() {
             <Reveal>
               <section className="flex flex-col">
                 <h2 className="font-serif font-semibold tracking-tight text-foreground text-lg md:text-xl lg:text-2xl">
-                  Visit, call or message
+                  Visit, book or message
                 </h2>
                 <p className="mt-3 max-w-md text-pretty text-sm text-muted-foreground sm:text-base leading-snug md:leading-relaxed">
-                  However you like to reach us, we're here. Drop by the salon,
-                  give us a ring, or send a quick message — whatever's easiest
-                  for you.
+                  However you like to reach us, we're here. Drop by the salon, book
+                  online, or send a quick message — whatever's easiest for you.
                 </p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -200,12 +198,12 @@ export function ContactClient() {
                           rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
                           className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
                         >
-                          {c.href.startsWith("tel:")
-                            ? "Call now"
-                            : c.href.startsWith("mailto:")
-                              ? "Send email"
-                              : c.href.startsWith("https://wa.me")
-                                ? "Open chat"
+                          {c.href.startsWith("mailto:")
+                            ? "Send email"
+                            : c.href.startsWith("/book")
+                              ? "Start booking"
+                              : c.href.includes("instagram")
+                                ? "Open Instagram"
                                 : "Get directions"}
                           {" →"}
                         </a>
@@ -356,7 +354,7 @@ export function ContactClient() {
                               id="c-phone"
                               value={form.phone}
                               onChange={(e) => update("phone", e.target.value)}
-                              placeholder="+1 (415) 555-0142"
+                              placeholder="Your mobile number"
                               className="h-11 rounded-xl"
                             />
                           </div>
