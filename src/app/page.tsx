@@ -21,6 +21,7 @@ import { MarqueeRibbon } from "@/components/site/marquee-ribbon";
 import { StatCounter } from "@/components/site/stat-counter";
 import { TestimonialMarquee } from "@/components/site/testimonial-marquee";
 import { GlowFinder } from "@/components/site/glow-finder";
+import { cn } from "@/lib/utils";
 import {
   CalendarHeart, Mail, MapPin, Clock, ArrowRight, Sparkles,
   Heart, ShieldCheck, Leaf, Award, Users, CheckCircle2,
@@ -150,17 +151,18 @@ export default function HomePage() {
 
         {/* Bottom info strip */}
         <div className="relative border-t border-background/15 bg-foreground/40 backdrop-blur-sm">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-background/10 px-4 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-background/10 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
             {[
               { icon: MapPin, label: "Visit us", value: salonInfo.address.line1 },
               { icon: Clock, label: "Open today", value: "9 AM – 9 PM" },
-              { icon: Mail, label: "Email us", value: salonInfo.email },
+              // third card is desk-only — three of these never fit a phone row
+              { icon: Mail, label: "Email us", value: salonInfo.email, desktopOnly: true },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2.5 px-2 py-2.5 sm:gap-3 sm:px-6 sm:py-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-background/15 text-background sm:h-10 sm:w-10"><item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" /></span>
+              <div key={item.label} className={cn("flex items-center gap-1.5 px-2 py-2 sm:gap-3 sm:px-6 sm:py-4", item.desktopOnly && "hidden sm:flex")}>
+                <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-background/15 text-background sm:h-10 sm:w-10"><item.icon className="h-3 w-3 sm:h-4 sm:w-4" /></span>
                 <div className="min-w-0">
-                  <p className="text-[0.6rem] uppercase tracking-wider text-background/60 sm:text-xs">{item.label}</p>
-                  <p className="truncate text-xs font-medium text-background sm:text-sm">{item.value}</p>
+                  <p className="text-[0.55rem] uppercase tracking-wider text-background/60 sm:text-xs">{item.label}</p>
+                  <p className="truncate text-[0.7rem] font-medium leading-tight text-background sm:text-sm">{item.value}</p>
                 </div>
               </div>
             ))}
